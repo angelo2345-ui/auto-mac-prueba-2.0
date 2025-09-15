@@ -14,6 +14,7 @@
   </script>
   
   <style>
+  
 /* Los estilos globales están en main.css */
 </style>
   
