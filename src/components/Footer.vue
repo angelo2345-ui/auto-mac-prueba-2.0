@@ -59,7 +59,7 @@
             <a href="https://wa.me/18296874000" target="_blank" aria-label="WhatsApp" class="hover:scale-110 transition">
               <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.028-.967-.271-.099-.469-.149-.667.15-.197.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.373-.025-.522-.075-.149-.667-1.611-.916-2.207-.242-.579-.487-.5-.667-.51-.173-.008-.373-.01-.572-.01-.198 0-.52.075-.792.373-.271.298-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.075.149.198 2.099 3.205 5.077 4.377.711.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.007-1.413.248-.694.248-1.289.173-1.413-.075-.124-.271-.198-.568-.347z"></path></svg>
             </a>
-            <a href="mailto:info@automacdom.com.do" aria-label="Email" class="hover:scale-110 transition">
+            <a href="mailto:info@automacdom.com.do" target="_blank" aria-label="Email" class="hover:scale-110 transition">
               <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M21 8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2V8zm-2 0l-7 5-7-5"></path></svg>
             </a>
             <a href="https://maps.google.com/?q=Av.+Máximo+Gómez,+No+103-A,+Esq.+Américo+Lugo,+Villa+Juana" target="_blank" aria-label="Ubicación" class="hover:scale-110 transition">

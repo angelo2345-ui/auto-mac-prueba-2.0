@@ -17,9 +17,11 @@
       <!-- Grid de marcas -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
         <div v-for="(brand, index) in brands" :key="index" 
-             class="brand-card bg-gray-50 rounded-lg p-4 text-center border border-gray-200 flex flex-col items-center justify-center h-24">
-          <i class="fas fa-tools text-blue-600 text-2xl mb-2"></i>
-          <span class="font-semibold text-gray-800">{{ brand }}</span>
+             class="brand-card bg-white rounded-lg p-4 text-center border border-gray-200 flex flex-col items-center justify-center">
+          <div class="brand-image-container mb-3">
+            <img :src="`/images/marcas/${brand}.png`" :alt="brand" class="brand-image" />
+          </div>
+          <span class="font-semibold text-gray-800 mt-2">{{ brand }}</span>
         </div>
       </div>
       
@@ -54,8 +56,8 @@ export default {
     return {
       brands: [
         'MACK', 'JOHN DEERE', 'FREIGHTLINER', 'NEW HOLLAND', 
-        'INTERNATIONAL', 'CATERPILLAR', 'VOLVO', 'FORD', 
-        'KENWORTH', 'CASE IH', 'SCANIA', 'ZETOR'
+        'INTERNATIONAL', 'CATERPILLAR', 'volvo', 'ford', 
+        'KENWORTH', 'Case ih Logo', 'SCANIA', 'ZETOR'
       ]
     }
   }
@@ -68,10 +70,25 @@ export default {
 .brand-card {
   transition: all 0.3s ease;
   font-family: 'Montserrat', sans-serif;
+  height: auto;
+  padding: 1rem;
 }
 
 .brand-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.brand-image-container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-image {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
 }
 </style>
