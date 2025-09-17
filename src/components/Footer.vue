@@ -14,7 +14,6 @@
           <nav class="flex flex-col space-y-1 mt-4">
             <router-link to="/" class="hover:text-yellow-400 transition">Inicio</router-link>
             <router-link to="/productos" class="hover:text-yellow-400 transition">Productos</router-link>
-            <router-link to="/blog" class="hover:text-yellow-400 transition">Blog</router-link>
             <router-link to="/contacto" class="hover:text-yellow-400 transition">Contacto</router-link>
           </nav>
         </div>
