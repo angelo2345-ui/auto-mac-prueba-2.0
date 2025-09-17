@@ -41,12 +41,7 @@
         </div>
         <h3 class="text-xl font-bold text-gray-900 mb-2">¿No encuentras tu marca?</h3>
         <p class="text-gray-600 mb-6">¡Lo traemos para ti!</p>
-        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 flex items-center shadow-lg">
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z"/>
-          </svg>
-          Contáctanos
-        </button>
+       
       </div>
     </div>
 
