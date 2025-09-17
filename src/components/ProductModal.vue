@@ -25,7 +25,6 @@
                 <div class="md:w-1/2">
                   <img :src="product.image" :alt="product.name" class="w-full h-auto rounded-lg object-cover mb-4 shadow-md">
                   <div class="bg-blue-50 p-4 rounded-lg shadow-sm border border-blue-100">
-                    <p class="text-blue-800 font-medium">Estado: <span class="text-green-600 font-bold">Disponible</span></p>
                     <p class="text-blue-800 font-medium">Marca: <span class="font-bold">{{ product.marca }}</span></p>
                     <p class="text-blue-800 font-medium">Modelo: <span class="font-bold">{{ product.modelo }}</span></p>
                   </div>
@@ -50,7 +49,7 @@
         <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse border-t border-blue-100">
           <button 
             type="button" 
-            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-md px-5 py-2.5 bg-blue-800 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm transition-all duration-300 hover:scale-105"
+            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-md px-5 py-2.5 bg-yellow-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm transition-all duration-300 hover:scale-105"
             @click="requestQuote"
           >
             Cotizar precio y disponibilidad

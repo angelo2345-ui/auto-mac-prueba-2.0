@@ -7,7 +7,6 @@ import Contacto from '../pages/Contacto.vue'
 const routes = [
   { path: '/', component: Home },
   { path: '/productos', component: Productos },
-  { path: '/blog', component: Blog },
   { path: '/contacto', component: Contacto },
 ]
 

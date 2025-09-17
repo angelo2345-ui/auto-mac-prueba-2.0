@@ -58,18 +58,6 @@
             <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </router-link>
 
-          <router-link 
-            to="/blog" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group"
-            active-class="text-yellow-400"
-          >
-            Blog
-            <span 
-              class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
-              :class="{ 'scale-x-100': $route.path.startsWith('/blog') }"
-            ></span>
-            <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </router-link>
 
           <router-link 
             to="/contacto" 

@@ -6,9 +6,7 @@
     <div class="p-5">
       <div class="flex items-center justify-between mb-2">
         <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-800 transition-colors">{{ product.name }}</h3>
-        <span class="text-xs font-medium px-2 py-1 rounded-full bg-green-100 text-green-800">
-          Disponible
-        </span>
+        
       </div>
       <p class="text-sm text-gray-600 mb-3 line-clamp-2">{{ product.description }}</p>
       <div class="flex flex-col space-y-2 mb-4">
@@ -19,7 +17,7 @@
           <span class="font-semibold mr-1">Modelo:</span> {{ product.modelo }}
         </div>
       </div>
-      <button @click="$emit('show-details', product)" class="w-full bg-blue-800 hover:bg-blue-900 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+      <button @click="$emit('show-details', product)" class="w-full bg-yellow-600 hover:bg-yellow-900 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
         Ver Detalles
       </button>
     </div>

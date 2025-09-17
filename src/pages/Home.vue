@@ -227,18 +227,17 @@
   <section class="py-16 bg-gradient-to-r from-yellow-500 to-yellow-600">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-        ¿Necesitas un repuesto específico?
+        ¿Quieres ver todos nuestros productos?
       </h2>
       <p class="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
-        Contáctanos ahora y recibe una cotización personalizada. Nuestros expertos te ayudarán a encontrar 
-        exactamente lo que necesitas.
+        Explora nuestro catálogo completo y encuentra el repuesto ideal para tu camión, tractor o equipo industrial.
       </p>
-      <a href="#contacto" 
+      <a href="/productos"
          class="inline-flex items-center px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M12 3l9 9-9 9"/>
         </svg>
-        Solicitar Cotización
+        Ver todos los productos
       </a>
     </div>
   </section>
