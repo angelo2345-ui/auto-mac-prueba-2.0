@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Encabezado de la sección -->
       <div class="text-center mb-12">
-        <div class="inline-block p-3 rounded-full bg-yellow-600 text-white mb-4">
+        <div class="inline-block p-3 rounded-full text-white mb-4" style="background-color: var(--color-amarillo);">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
           </svg>
@@ -19,13 +19,13 @@
         <div class="flex flex-wrap justify-center gap-3">
           <button @click="selectedCategory = 'todos'" 
                   :class="['px-4 py-2 rounded-lg font-medium transition-all', 
-                          selectedCategory === 'todos' ? 'bg-yellow-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-200']">
+                          selectedCategory === 'todos' ? 'bg-[var(--color-amarillo)] text-white' : 'bg-white text-gray-700 hover:bg-gray-200']">
             Todos
           </button>
           <button v-for="category in categories" :key="category.id"
                   @click="selectedCategory = category.id"
                   :class="['px-4 py-2 rounded-lg font-medium transition-all', 
-                          selectedCategory === category.id ? 'bg-yellow-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-200']">
+                          selectedCategory === category.id ? 'bg-[var(--color-amarillo)] text-white' : 'bg-white text-gray-700 hover:bg-gray-200']">
             {{ category.name }}
           </button>
         </div>

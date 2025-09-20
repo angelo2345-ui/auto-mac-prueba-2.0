@@ -18,11 +18,11 @@
     <div class="max-w-4xl text-left pl-4 sm:pl-10 lg:pl-20">
 
       <!-- Título -->
-      <h1 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
-        <span class="text-yellow-400">
+      <h1 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight" style="font-family:var(--fuente-titulos);">
+  <span style="color:var(--color-amarillo);">
           {{ slides[currentSlideIndex].title }}
         </span>
-        <span class="block text-xl sm:text-2xl lg:text-3xl mt-2 font-normal text-gray-200">
+        <span class="block text-xl sm:text-2xl lg:text-3xl mt-2 font-normal text-gray-200" style="font-family:var(--fuente-principal);">
           {{ slides[currentSlideIndex].subtitle }}
         </span>
       </h1>
@@ -38,23 +38,19 @@
   <!-- Flecha: Slide anterior -->
   <button
     @click="previousSlide"
-    class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-1.5 sm:p-2 rounded-full transition-all duration-300"
+    class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full transition-all duration-300"
     aria-label="Slide anterior"
   >
-    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-    </svg>
+    <i class="las la-angle-left la-2x"></i>
   </button>
 
   <!-- Flecha: Slide siguiente -->
   <button
     @click="nextSlide"
-    class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-1.5 sm:p-2 rounded-full transition-all duration-300"
+    class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full transition-all duration-300"
     aria-label="Slide siguiente"
   >
-    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-    </svg>
+    <i class="las la-angle-right la-2x"></i>
   </button>
 </section>
    <!-- Marcas Certificadas -->
@@ -63,58 +59,48 @@
   <section id="servicios" class="py-16 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full mb-6">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
+  <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style="background-color:var(--color-amarillo);">
+          <i class="las la-cogs la-3x text-white"></i>
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Servicios que <span class="text-yellow-600">Nos Destacan</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">
+          Servicios que <span style="color:var(--color-amarillo);font-family:var(--fuente-titulos);">Nos Destacan</span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           Contamos con servicios integrales que complementan nuestra oferta de repuestos de alta calidad
         </p>
-        <div class="w-24 h-1 bg-yellow-500 mx-auto mt-6 rounded-full"></div>
+  <div class="w-24 h-1 mx-auto mt-6 rounded-full" style="background-color:var(--color-amarillo);"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         <div class="group bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-green-200">
           <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-            </svg>
+            <i class="las la-warehouse la-3x text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Stock Inmediato</h3>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Stock Inmediato</h3>
           <p class="text-gray-600">Miles de repuestos disponibles en nuestra tienda física</p>
         </div>
 
         <div class="group bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-200">
           <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
-            </svg>
+            <i class="las la-shipping-fast la-3x text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Importación Directa</h3>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Importación Directa</h3>
           <p class="text-gray-600">Pedidos especiales y personalizados desde fábrica</p>
         </div>
 
         <div class="group bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-purple-200">
           <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
-            </svg>
+            <i class="las la-globe la-3x text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Comercio Global</h3>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Comercio Global</h3>
           <p class="text-gray-600">Red internacional de proveedores certificados</p>
         </div>
 
         <div class="group bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-yellow-200">
           <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+            <i class="las la-headset la-3x text-white"></i>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Atención Inmediata</h3>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Atención Inmediata</h3>
           <p class="text-gray-600">Respuesta rápida y asesoría técnica especializada</p>
         </div>
       </div>
@@ -122,13 +108,13 @@
   </section>
 
   <!-- Sección Nosotros -->
-  <section id="nosotros" class="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
+  <section id="nosotros" class="py-16 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <!-- Encabezado -->
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            <span class="text-yellow-600">Compromiso</span>, Respaldo y <span class="text-yellow-600">Calidad</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" style="font-family:var(--fuente-titulos);">
+            <span style="color:var(--color-amarillo);">Compromiso</span>, Respaldo y <span style="color:var(--color-amarillo);">Calidad</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             15 años siendo el socio confiable para el mantenimiento de tu flota
@@ -141,18 +127,16 @@
             <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
               <div class="flex items-start gap-6">
                 <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                  </svg>
+                  <i class="la la-users la-2x text-white"></i>
                 </div>
                 <div>
-                  <h3 class="text-2xl font-bold text-gray-900 mb-4">QUIÉNES SOMOS</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">QUIÉNES SOMOS</h3>
                   <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                    Somos especialistas en la <strong class="text-yellow-600">importación, exportación y comercialización</strong> 
+                    Somos especialistas en la <strong style="color: var(--color-amarillo)">importación, exportación y comercialización</strong> 
                     de repuestos para camiones, tractores y equipos industriales.
                   </p>
                   <p class="text-gray-700 leading-relaxed text-lg">
-                    Con <strong class="text-yellow-600">más de 15 años de experiencia</strong>, nos hemos consolidado como 
+                    Con <strong style="color: var(--color-amarillo)">más de 15 años de experiencia</strong>, nos hemos consolidado como 
                     líderes en el sector, ofreciendo soluciones integrales para el mantenimiento preventivo y correctivo.
                   </p>
                 </div>
@@ -162,14 +146,12 @@
             <!-- Misión destacada -->
             <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl">
               <div class="flex items-center gap-4 mb-4">
-                <svg class="w-8 h-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z"/>
-                </svg>
-                <h3 class="text-2xl font-bold text-yellow-400">NUESTRA MISIÓN</h3>
+                <i class="la la-bullseye la-2x" style="color:var(--color-amarillo);"></i>
+                <h3 class="text-2xl font-bold" style="font-family:var(--fuente-titulos);color: var(--color-amarillo);">NUESTRA MISIÓN</h3>
               </div>
               <p class="text-gray-100 leading-relaxed text-lg">
                 Mantener la excelencia en la distribución de repuestos para los sectores de 
-                <strong class="text-yellow-400">transporte, industrial, minería, agrícola y construcción</strong>, 
+                <strong style="color:var(--color-amarillo);">transporte, industrial, minería, agrícola y construcción</strong>, 
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
               </p>
             </div>
@@ -177,42 +159,34 @@
 
           <!-- Características destacadas -->
           <div class="space-y-6">
-            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-xl">
+            <div class="bg-yellow-50 border-l-4 p-6 rounded-r-xl" style="border-color:var(--color-amarillo);">
               <div class="flex items-center gap-4">
-                <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
-                </svg>
-                <h4 class="text-xl font-bold text-gray-900">Envíos Nacionales</h4>
+                <i class="la la-truck la-2x" style="color:var(--color-amarillo);"></i>
+                <h4 class="text-xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Envíos Nacionales</h4>
               </div>
               <p class="text-gray-700 mt-2">Cobertura completa en todo el territorio nacional</p>
             </div>
 
             <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-xl">
               <div class="flex items-center gap-4">
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <h4 class="text-xl font-bold text-gray-900">Garantía de Calidad</h4>
+                <i class="la la-certificate la-2x text-green-600"></i>
+                <h4 class="text-xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Garantía de Calidad</h4>
               </div>
               <p class="text-gray-700 mt-2">100% repuestos originales y compatibles certificados</p>
             </div>
 
             <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl">
               <div class="flex items-center gap-4">
-                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <h4 class="text-xl font-bold text-gray-900">Entrega Rápida</h4>
+                <i class="la la-shipping-fast la-2x text-blue-600"></i>
+                <h4 class="text-xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Entrega Rápida</h4>
               </div>
               <p class="text-gray-700 mt-2">Stock disponible y tiempos de entrega optimizados</p>
             </div>
 
             <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-r-xl">
               <div class="flex items-center gap-4">
-                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                </svg>
-                <h4 class="text-xl font-bold text-gray-900">Asesoría Técnica</h4>
+                <i class="la la-user-cog la-2x text-purple-600"></i>
+                <h4 class="text-xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Asesoría Técnica</h4>
               </div>
               <p class="text-gray-700 mt-2">Equipo especializado para resolver tus consultas</p>
             </div>
@@ -224,19 +198,18 @@
        <BrandCarousel />
 
   <!-- Call to Action -->
-  <section class="py-16 bg-gradient-to-r from-yellow-500 to-yellow-600">
+  <section class="py-16" style="background:linear-gradient(90deg, var(--color-amarillo) 0%, #ffe066 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+  <h2 class="text-3xl md:text-4xl mb-6" style="font-family:var(--fuente-titulos);color:var(--color-negro);font-weight:bold;">
         ¿Quieres ver todos nuestros productos?
       </h2>
       <p class="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
         Explora nuestro catálogo completo y encuentra el repuesto ideal para tu camión, tractor o equipo industrial.
       </p>
       <a href="/productos"
-         class="inline-flex items-center px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M12 3l9 9-9 9"/>
-        </svg>
+         class="inline-flex items-center px-8 py-4 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+         style="background-color:var(--color-negro);">
+        <i class="la la-search la-lg mr-2" style="color:var(--color-amarillo);"></i>
         Ver todos los productos
       </a>
     </div>

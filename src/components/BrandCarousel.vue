@@ -2,7 +2,7 @@
   <div class="w-full py-12 px-4 sm:px-6 lg:px-8">
     <!-- Encabezado elegante -->
     <div class="text-center mb-12">
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 rounded-full mb-4">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background-color: var(--color-amarillo);">
         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2L15.09 8.26L22 9L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9L8.91 8.26L12 2Z"/>
         </svg>
@@ -13,7 +13,7 @@
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
         Repuestos originales y compatibles para las mejores marcas del mercado
       </p>
-      <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4 rounded-full"></div>
+      <div class="w-24 h-1 mx-auto mt-4 rounded-full" style="background-color: var(--color-amarillo);"></div>
     </div>
     
     <!-- Grid de marcas con diseño profesional -->
@@ -32,9 +32,9 @@
     </div>
     
     <!-- Sección de valor agregado -->
-    <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 mb-8">
+    <div class=" rounded-2xl p-8 mb-8">
       <div class="flex flex-col items-center text-center">
-        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mb-4">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4" style="background-color: var(--color-amarillo);">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>

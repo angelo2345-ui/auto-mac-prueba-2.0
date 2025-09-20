@@ -2,9 +2,13 @@
   <header 
     :class="[
       'fixed w-full top-0 left-0 z-50 transition-all duration-500 ease-in-out backdrop-blur-md',
-      !isHeaderVisible ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100',
-      scrolled ? 'bg-slate-900/95 shadow-2xl border-b border-gray-700/50' : 'bg-slate-900/80'
+      !isHeaderVisible ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
     ]"
+    :style="{
+      background: scrolled ? 'var(--color-negro)' : 'rgba(0, 0, 0, 0.8)',
+      borderBottom: scrolled ? '1px solid rgba(107, 114, 128, 0.5)' : 'none',
+      boxShadow: scrolled ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
+    }"
   >
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="flex items-center justify-between h-20 lg:h-24">
@@ -14,7 +18,7 @@
           class="flex items-center space-x-4 group transition-all duration-300 hover:scale-105 ml-2"
           @click="closeMenu"
         >
-          <div class="bg-gradient-to-br from-yellow-500 to-amber-600 p-2 rounded-xl shadow-lg ring-2 ring-yellow-400/20">
+          <div class="rounded-xl shadow-lg p-2" style="background: linear-gradient(to bottom right, var(--color-amarillo), var(--color-amarillo)); border: 2px solid rgba(var(--color-amarillo), 0.2);">
             <img 
               src="/public/images/logos/Automac Imagen.png" 
               alt="Automac Logo" 
@@ -23,7 +27,7 @@
           </div>
           <div class="flex flex-col">
             <span class="text-white text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-              Auto<span class="text-yellow-400 drop-shadow-md">mac</span>
+              Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
             <span class="text-xs text-gray-400 font-medium tracking-wide -mt-1">Soluciones automotrices</span>
           </div>
@@ -34,12 +38,14 @@
           <router-link 
             to="/" 
             exact
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group"
-            active-class="text-yellow-400"
+            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            :class="{ 'text-[var(--color-amarillo)]': $route.path === '/' }"
           >
+            <i class="las la-home"></i>
             Inicio
             <span 
-              class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
+              class="absolute inset-x-1 -bottom-1 h-0.5 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
+              :style="{ backgroundColor: 'var(--color-amarillo)' }"
               :class="{ 'scale-x-100': $route.path === '/' }"
             ></span>
             <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -47,9 +53,10 @@
 
           <router-link 
             to="/productos" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group"
-            active-class="text-yellow-400"
+            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/productos') }"
           >
+            <i class="las la-tools"></i>
             Productos
             <span 
               class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
@@ -61,9 +68,10 @@
 
           <router-link 
             to="/contacto" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group"
-            active-class="text-yellow-400"
+            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/contacto') }"
           >
+            <i class="las la-envelope"></i>
             Contacto
             <span 
               class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
@@ -83,26 +91,8 @@
           aria-label="Toggle navigation menu"
           :aria-expanded="menuActive"
         >
-          <div class="w-6 h-5 relative flex flex-col justify-between">
-            <span 
-              :class="[
-                'block h-0.5 w-full bg-white rounded-full transition-all duration-300 origin-center',
-                menuActive ? 'rotate-45 translate-y-2' : ''
-              ]"
-            ></span>
-            <span 
-              :class="[
-                'block h-0.5 w-full bg-white rounded-full transition-all duration-300',
-                menuActive ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
-              ]"
-            ></span>
-            <span 
-              :class="[
-                'block h-0.5 w-full bg-white rounded-full transition-all duration-300 origin-center',
-                menuActive ? '-rotate-45 -translate-y-2' : ''
-              ]"
-            ></span>
-          </div>
+          <i class="las la-bars text-2xl" :class="{ 'hidden': menuActive }"></i>
+          <i class="las la-times text-2xl" :class="{ 'hidden': !menuActive }"></i>
         </button>
       </div>
 

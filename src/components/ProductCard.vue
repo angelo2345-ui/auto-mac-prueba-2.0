@@ -17,7 +17,15 @@
           <span class="font-semibold mr-1">Modelo:</span> {{ product.modelo }}
         </div>
       </div>
-      <button @click="$emit('show-details', product)" class="w-full bg-yellow-600 hover:bg-yellow-900 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
+      <button 
+        @click="$emit('show-details', product)" 
+        class="w-full text-white font-medium py-2 px-4 rounded-lg transition-all duration-300"
+        :style="{
+          backgroundColor: 'var(--color-amarillo)',
+        }"
+        @mouseenter="$event.target.style.backgroundColor = 'var(--color-negro)'"
+        @mouseleave="$event.target.style.backgroundColor = 'var(--color-amarillo)'"
+      >
         Ver Detalles
       </button>
     </div>
