@@ -61,7 +61,7 @@
             <a href="https://instagram.com/automacdom" target="_blank" aria-label="Instagram" class="hover:scale-110 transition">
               <i class="lab la-instagram la-2x"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="hover:scale-110 transition">
+            <a href="https://www.facebook.com/AUTOMACDOM" target="_blank" aria-label="Facebook" class="hover:scale-110 transition">
               <i class="lab la-facebook la-2x"></i>
             </a>
             <a href="https://wa.me/18296874000" target="_blank" aria-label="WhatsApp" class="hover:scale-110 transition">
@@ -70,7 +70,7 @@
             <a href="mailto:info@automacdom.com.do" target="_blank" aria-label="Email" class="hover:scale-110 transition">
               <i class="las la-envelope la-2x"></i>
             </a>
-            <a href="https://maps.google.com/?q=Av.+Máximo+Gómez,+No+103-A,+Esq.+Américo+Lugo,+Villa+Juana" target="_blank" aria-label="Ubicación" class="hover:scale-110 transition">
+            <a href="https://www.google.com/maps/place/Automac+Dominicana,+S.R.L/@18.4901516,-69.9182441,17z/data=!4m10!1m2!2m1!1sautomacdom!3m6!1s0x8eaf89bd3f041d7b:0x2adaafbed2d2f4a7!8m2!3d18.4901516!4d-69.9145709!15sCgphdXRvbWFjZG9tWgwiCmF1dG9tYWNkb22SARd0cnVja19hY2Nlc3Nvcmllc19zdG9yZZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSUGIyOWxja2hSRUFF4AEA-gEECAAQJA!16s%2Fg%2F11t5r90sk3?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" aria-label="Ubicación" class="hover:scale-110 transition">
               <i class="las la-map-marker la-2x"></i>
             </a>
           </div>

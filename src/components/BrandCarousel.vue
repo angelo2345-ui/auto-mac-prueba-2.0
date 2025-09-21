@@ -22,7 +22,11 @@
            class="brand-card group cursor-pointer">
         <div class="bg-white rounded-xl p-6 h-32 flex flex-col items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
           <div class="brand-image-container mb-2">
-            <img :src="`/images/marcas/${brand}.png`" :alt="brand" class="brand-image opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+            <img :src="getImagePath(brand)" :alt="brand" 
+                 :class="[
+                   'brand-image opacity-80 group-hover:opacity-100 transition-opacity duration-300',
+                   {'automann-image': brand === 'automann'}
+                 ]" />
           </div>
           <span class="font-semibold text-gray-700 text-sm text-center group-hover:text-yellow-600 transition-colors duration-300">
             {{ brand }}
@@ -54,10 +58,18 @@
 import { ref } from 'vue'
 
 const brands = ref([
-  'MACK', 'JOHN DEERE', 'FREIGHTLINER', 'NEW HOLLAND', 
-  'INTERNATIONAL', 'CATERPILLAR', 'volvo', 'ford', 
-  'KENWORTH', 'Case ih Logo', 'SCANIA', 'ZETOR'
+  'pai', 'automann', 'KTC', 'KMP brand', 'N.Y.C Genuine Parts', 'Premier_Manufacturing'
 ])
+
+// Función para obtener la ruta correcta de la imagen según la marca
+const getImagePath = (brand) => {
+  // Marcas con extensión .webp
+  if (brand === 'automann' || brand === 'Premier_Manufacturing') {
+    return `/images/marcas/${brand}.webp`
+  }
+  // Para el resto de marcas, usar .png
+  return `/images/marcas/${brand}.png`
+}
 </script>
 
 <style scoped>
@@ -80,9 +92,18 @@ const brands = ref([
   transition: all 0.3s ease;
 }
 
+.automann-image {
+  max-height: 70px !important; /* Aumentando el tamaño específicamente para Automann */
+  transform: scale(1.3); /* Haciendo la imagen un 30% más grande */
+}
+
 .brand-card:hover .brand-image {
   filter: grayscale(0%);
   transform: scale(1.1);
+}
+
+.brand-card:hover .automann-image {
+  transform: scale(1.4); /* Efecto hover ligeramente más grande para Automann */
 }
 
 /* Animación sutil para el gradiente */
