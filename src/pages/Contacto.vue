@@ -2,8 +2,7 @@
   <section class="section contact-section">
     <div class="container">
       <div class="section-header">
-        <div class="section-icon">📞</div>
-        <h2>Contáctanos</h2>
+        <div class="section-icon">📞 Contáctanos </div>
         <p class="section-description">Estamos aquí para ayudarte con cualquier consulta sobre nuestros productos y servicios</p>
       </div>
       
@@ -92,6 +91,14 @@ export default {
   padding: 2rem;
   width: 100%;
   max-width: none;
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: var(--color-negro);
+  margin-bottom: 1rem;
+  text-align: center;
+
 }
 
 .section-description {

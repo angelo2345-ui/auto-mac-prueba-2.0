@@ -73,91 +73,505 @@ export default {
         stock: ''
       },
       categories: [
-        { id: 'motor-transmision', name: 'Motor y Transmisión' },
-        { id: 'chasis-suspension-frenos', name: 'Chasis, Suspensión y Frenos' },
+        { id: 'motor', name: 'Motor' },
+        { id: 'Sistema de Enfriamiento', name: 'Sistema de Enfriamiento' },
+        { id: 'Transmisión / Cardán', name: 'Transmisión / Cardán' },
+        { id: 'Suspensión', name: 'Suspensión' },
+        { id: 'Hidráulico', name: 'Hidráulico' },
+        { id: 'Filtros', name: 'Filtros' },
+        { id: 'Turbo / Admisión', name: 'Turbo / Admisión' },
         { id: 'sistemas-electricos', name: 'Sistemas Eléctricos, Sensores e Iluminación' },
-        { id: 'mantenimiento-general', name: 'Mantenimiento y Partes Generales' }
+        { id: 'mantenimiento-general', name: 'Mantenimiento y Partes Generales' },
+        { id: 'frenos', name: 'Frenos' }
       ],
       products: [
-        // Motor y Transmisión
+        // Motor 
+        // juego de juntas
         {
           id: 1,
-          name: 'Kit de reparación de motor',
-          category: 'motor-transmision',
-          description: 'Kit completo para reparación de motores diésel. Incluye pistones, anillos, cojinetes y juntas de alta calidad.',
-          price: '$850.00',
-          image: '/images/productos/Kit de reparación de motor.jpg',
+          name: 'Juego de juntas',
+          category: 'motor',
+          description: 'Juego de juntas para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/motor/Juego de juntas.png',
           stock: 'Disponible',
-          marca: 'MAHLE',
+          marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Guías de válvulas
         {
           id: 2,
-          name: 'Sistema de admisión',
-          category: 'motor-transmision',
-          description: 'Sistema de admisión de aire optimizado para mayor rendimiento y eficiencia del motor.',
-          price: '$320.00',
-          image: '/images/productos/Sistema de admisión.jpeg',
+          name: 'Guía de válvulas',
+          category: 'motor',
+          description: 'Guía de válvulas para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/motor/Guías de válvulas.png',
           stock: 'Disponible',
-          marca: 'K&N',
-          modelo: 'Compatible con múltiples marcas'
+          marca: 'PAI; KTC; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Kit reparación motor
         {
           id: 3,
-          name: 'Transmisión',
-          category: 'motor-transmision',
-          description: 'Componentes de transmisión de alta resistencia para vehículos de carga pesada.',
-          price: '$1200.00',
-          image: '/images/productos/Transmisión.webp',
-          stock: 'Bajo pedido',
-          marca: 'ZF',
-          modelo: 'Para camiones de carga pesada'
+          name: 'Kit reparación motor',
+          category: 'motor',
+          description: 'Kit reparación motor para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/motor/Kit reparación motor.png',
+          stock: 'Disponible',
+          marca: 'PAI; KTC; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Solenoides
         {
           id: 4,
-          name: 'Kit de clutch',
-          category: 'motor-transmision',
-          description: 'Kit completo de embrague que incluye disco, plato de presión y rodamiento.',
-          price: '$450.00',
-          image: '/images/productos/Kit de clutch.webp',
+          name: 'Solenoides',
+          category: 'motor',
+          description: 'Solenoides para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/motor/Solenoides.png',
           stock: 'Disponible',
-          marca: 'SACHS',
-          modelo: 'Para vehículos comerciales'
+          marca: 'PAI; KTC; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Sellos de válvula
         {
           id: 5,
-          name: 'Lubricantes',
-          category: 'motor-transmision',
-          description: 'Aceites y lubricantes de alta calidad para motores diésel y sistemas de transmisión.',
-          price: '$45.00',
-          image: '/images/productos/Lubricantes.webp',
+          name: 'Sellos de válvula',
+          category: 'motor',
+          description: 'Sellos de válvula para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/motor/Sellos de válvula.png',
           stock: 'Disponible',
-          marca: 'SHELL',
-          modelo: 'Grado premium para trabajo pesado'
+          marca: 'PAI; KTC; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        
-        // Chasis, Suspensión y Frenos
+        //Bomba de combustible
         {
           id: 6,
-          name: 'Chasis y estructura',
-          category: 'chasis-suspension-frenos',
-          description: 'Componentes estructurales para chasis de vehículos comerciales y maquinaria pesada.',
-          price: '$580.00',
-          image: '/images/productos/Chasis y estructura.jpg',
-          stock: 'Bajo pedido',
-          marca: 'HENDRICKSON',
-          modelo: 'Para camiones y remolques'
+          name: 'Bomba de combustible',
+          category: 'motor',
+          description: 'Bomba de combustible para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/motor/Bomba de combustible.png',
+          stock: 'Disponible',
+          marca: 'PAI; KTC; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        
+        // Sistema de Enfriamiento
+        //Depósito de coolant
         {
           id: 7,
-          name: 'Sistemas de freno',
-          category: 'chasis-suspension-frenos',
-          description: 'Sistemas completos de frenos incluyendo discos, pastillas y componentes hidráulicos.',
-          price: '$320.00',
-          image: '/images/productos/Sistemas de freno.webp',
+          name: 'Depósito de coolant',
+          category: 'Sistema de Enfriamiento',
+          description: 'Depósito de coolant para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Sistema de Enfriamiento/Depósito de coolant.png',
           stock: 'Disponible',
-          marca: 'BREMBO',
-          modelo: 'Para vehículos de carga pesada'
+          marca: 'VALEO; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Radiadores
+        {
+          id: 8,
+          name: 'Radiadores',
+          category: 'Sistema de Enfriamiento',
+          description: 'Radiadores para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Sistema de Enfriamiento/Radiadores.webp',
+          stock: 'Disponible',
+          marca: 'VALEO; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Coolers
+        {
+          id: 9,
+          name: 'Coolers',
+          category: 'Sistema de Enfriamiento',
+          description: 'Coolers para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Sistema de Enfriamiento/Coolers.png',
+          stock: 'Disponible',
+          marca: 'VALEO; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Abrazaderas
+        {
+          id: 10,
+          name: 'Abrazaderas',
+          category: 'Sistema de Enfriamiento',
+          description: 'Abrazaderas para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Sistema de Enfriamiento/Abrazaderas.png',
+          stock: 'Disponible',
+          marca: 'VALEO; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Mangueras de silicona
+        {
+          id: 11,
+          name: 'Mangueras de silicona',
+          category: 'Sistema de Enfriamiento',
+          description: 'Mangueras de silicona para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Sistema de Enfriamiento/Mangueras de silicona.webp',
+          stock: 'Disponible',
+          marca: 'VALEO; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Bombas de agua
+        {
+          id: 12,
+          name: 'Bombas de agua',
+          category: 'Sistema de Enfriamiento',
+          description: 'Bombas de agua para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Sistema de Enfriamiento/Bombas de agua.png',
+          stock: 'Disponible',
+          marca: 'VALEO; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Transmisión / Cardán
+        //Kit de clutch
+        {
+          id: 13,
+          name: 'Kit de clutch',
+          category: 'Transmisión / Cardán',
+          description: 'Kit de clutch para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Transmisión - Cardán/Kit de clutch.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Crucetas de cardán
+        {
+          id: 14,
+          name: 'Crucetas de cardán',
+          category: 'Transmisión / Cardán',
+          description: 'Crucetas de cardán para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Transmisión - Cardán/Crucetas de cardán.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Gomas de cardán
+        {
+          id: 15,
+          name: 'Gomas de cardán',
+          category: 'Transmisión / Cardán',
+          description: 'Gomas de cardán para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Transmisión - Cardán/Gomas de cardán.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Soportes de cardán
+        {
+          id: 16,
+          name: 'Soportes de cardán',
+          category: 'Transmisión / Cardán',
+          description: 'Soportes de cardán para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Transmisión - Cardán/soportes de cardán.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Retenedoras
+        {
+          id: 17,
+          name: 'Retenedoras',
+          category: 'Transmisión / Cardán',
+          description: 'Retenedoras para motores diésel y sistemas de transmisión.',
+          price: '$250.00',
+          image: '/images/productos/Transmisión - Cardán/Retenedoras.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Suspensión
+        //Tensores
+        {
+          id: 18,
+          name: 'Tensores',
+          category: 'Suspensión',
+          description:'Tensores para motores diésel y sistemas de Suspensión .',
+          price: '$250.00',
+          image: '/images/productos/Suspensión/Tensores.png',
+          stock: 'Disponible',
+          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Bolsas de aire
+        {
+          id: 19,
+          name: 'Bolsas de aire',
+          category: 'Suspensión',
+          description:'Bolsas de aire para motores diésel y sistemas de Suspensión .',
+          price: '$250.00',
+          image: '/images/productos/Suspensión/Bolsas de aire.png',
+          stock: 'Disponible',
+          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Grapas
+        {
+          id: 20,
+          name: 'Grapas',
+          category: 'Suspensión',
+          description:'Grapas para motores diésel y sistemas de Suspensión .',
+          price: '$250.00',
+          image: '/images/productos/Suspensión/Grapas.png',
+          stock: 'Disponible',
+          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Bujes
+        {
+          id: 21,
+          name: 'Bujes',
+          category: 'Suspensión',
+          description:'Bujes para motores diésel y sistemas de Suspensión .',
+          price: '$250.00',
+          image: '/images/productos/Suspensión/Bujes.png',
+          stock: 'Disponible',
+          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Muelles
+        {
+          id: 22,
+          name: 'Muelles',
+          category: 'Suspensión',
+          description:'Muelles para motores diésel y sistemas de Suspensión .',
+          price: '$250.00',
+          image: '/images/productos/Suspensión/Muelles.png',
+          stock: 'Disponible',
+          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Hidráulico 
+        //Bombas hidráulicas
+        {
+          id: 23,
+          name: 'Bombas hidráulicas',
+          category: 'Hidráulico',
+          description: 'Bombas hidráulicas para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Hidráulico/Bombas hidráulicas.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Válvulas de control
+        {
+          id: 24,
+          name: 'Válvulas de control',
+          category: 'Hidráulico',
+          description: 'Válvulas de control para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Hidráulico/Válvulas de control.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Cilindros hidráulicos
+        {
+          id: 25,
+          name: 'Cilindros hidráulicos',
+          category: 'Hidráulico',
+          description: 'Cilindros hidráulicos para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Hidráulico/Cilindros hidráulicos.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Mangueras hidráulicas
+        {
+          id: 26,
+          name: 'Mangueras hidráulicas',
+          category: 'Hidráulico',
+          description: 'Mangueras hidráulicas para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Hidráulico/Mangueras hidráulicas.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Válvulas de aire 4 y 5 vías
+        {
+          id: 27,
+          name: 'Válvulas de aire 4/5 vías',
+          category: 'Hidráulico',
+          description: 'Válvulas de aire 4 y 5 vías para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Hidráulico/Válvulas de aire 4 y 5 vías.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Gatos hidráulicos
+        {
+          id: 28,
+          name: 'Gatos hidráulicos',
+          category: 'Hidráulico',
+          description: 'Gatos hidráulicos para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Hidráulico/Gatos hidráulicos.png',
+          stock: 'Disponible',
+          marca: 'AUTOMANN; PAI; PREMIER',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Filtros
+        //Filtros Aire
+        {
+          id: 29,
+          name: 'Filtros de Aire',
+          category: 'Filtros',
+          description: 'Filtros de aire para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Filtros/Filtros Aire.png',
+          stock: 'Disponible',
+          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Filtros Aceite
+        {
+          id: 30,
+          name: 'Filtros de Aceite',
+          category: 'Filtros',
+          description: 'Filtros de aceite para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Filtros/Filtros de aceite.png',
+          stock: 'Disponible',
+          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Filtros de Cabina
+        {
+          id: 31,
+          name: 'Filtros de Cabina',
+          category: 'Filtros',
+          description: 'Filtros de cabina para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Filtros/Filtros de cabina.png',
+          stock: 'Disponible',
+          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Filtros Hidráulicos
+        {
+          id: 32,
+          name: 'Filtros Hidráulico',
+          category: 'Filtros',
+          description: 'Filtros de hidráulico para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Filtros/Filtros Hidráulicos.png',
+          stock: 'Disponible',
+          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Filtros de Combustible
+        {
+          id: 33,
+          name: 'Filtros de Combustible',
+          category: 'Filtros',
+          description: 'Filtros de combustible para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Filtros/Filtros Combustible.png',
+          stock: 'Disponible',
+          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Filtros de Transmisión
+        {
+          id: 34,
+          name: 'Filtros de Transmisión',
+          category: 'Filtros',
+          description: 'Filtros de transmisión para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Filtros/Filtros Transmisión.png',
+          stock: 'Disponible',
+          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Turbo / Admisión
+        //Cartucho CHRA
+        {
+          id: 35,
+          name: 'Cartucho CHRA',
+          category: 'Turbo / Admisión',
+          description: 'Cartucho CHRA para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Turbo y Admisión/Cartucho CHRA.png',
+          stock: 'Disponible',
+          marca: 'PAI; PREMIER; KTC',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Válvula de control
+        {
+          id: 36,
+          name: 'Válvula de control',
+          category: 'Turbo / Admisión',
+          description: 'Válvula de control para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Turbo y Admisión/Válvula de control.png',
+          stock: 'Disponible',
+          marca: 'PAI; PREMIER; KTC',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Abrazadera turbo
+        {
+          id: 37,
+          name: 'Abrazadera turbo',
+          category: 'Turbo / Admisión',
+          description: 'Abrazadera turbo para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Turbo y Admisión/Abrazadera turbo.png',
+          stock: 'Disponible',
+          marca: 'PAI; PREMIER; KTC',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Carcasa compresor
+        {
+          id: 38,
+          name: 'Carcasa compresor',
+          category: 'Turbo / Admisión',
+          description: 'Carcasa compresor para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Turbo y Admisión/Carcasa compresor.png',
+          stock: 'Disponible',
+          marca: 'PAI; PREMIER; KTC',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Carcasa turbina
+        {
+          id: 39,
+          name: 'Carcasa turbina',
+          category: 'Turbo / Admisión',
+          description: 'Carcasa turbina para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Turbo y Admisión/Carcasa turbina.png',
+          stock: 'Disponible',
+          marca: 'PAI; PREMIER; KTC',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Turbo compresor
+        {
+          id: 40,
+          name: 'Turbo compresor',
+          category: 'Turbo / Admisión',
+          description: 'Turbo compresor para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Turbo y Admisión/Turbo compresor.png',
+          stock: 'Disponible',
+          marca: 'PAI; PREMIER; KTC',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
         {
           id: 8,
@@ -165,7 +579,7 @@ export default {
           category: 'chasis-suspension-frenos',
           description: 'Componentes de suspensión de alta durabilidad para todo tipo de terrenos.',
           price: '$280.00',
-          image: '/images/productos/Suspensión.jpg',
+          image: '/images/productos/Sistema de Enfriamiento/Suspensión.webp',
           stock: 'Disponible',
           marca: 'CONTITECH',
           modelo: 'Para ejes traseros de camiones pesados'
@@ -294,7 +708,82 @@ export default {
           stock: 'Disponible',
           marca: 'SKF',
           modelo: 'Alta resistencia y durabilidad'
-        }
+        },
+
+
+        // Categoria frenos
+        //Bandas
+        {
+          id: 20,
+          name: 'Bandas',
+          category: 'frenos',
+          description: 'Bandas de frenos para vehículos comerciales y maquinaria pesada.',
+          price: '$250.00',
+          image: '/images/productos/frenos/Bandas.png',
+          stock: 'Disponible',
+          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
+          modelo: 'Múltiples aplicaciones'
+        },
+        // Pulmón
+        {
+          id: 21,
+          name: 'Pulmón',
+          category: 'frenos',
+          description: 'Pulmones de frenos para vehículos comerciales y maquinaria pesada.',
+          price: '$250.00',
+          image: '/images/productos/frenos/Pulmón.png',
+          stock: 'Disponible',
+          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
+          modelo: 'Múltiples aplicaciones'
+        },
+        //Secador
+        {
+          id: 22,
+          name: 'Secador',
+          category: 'frenos',
+          description: 'Secadores de frenos para vehículos comerciales y maquinaria pesada.',
+          price: '$250.00',
+          image: '/images/productos/frenos/Secador.png',
+          stock: 'Disponible',
+          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
+          modelo: 'Múltiples aplicaciones'
+        },
+        //Tambores
+        {
+          id: 23,
+          name: 'Tambores',
+          category: 'frenos',
+          description: 'Tambores de frenos para vehículos comerciales y maquinaria pesada.',
+          price: '$250.00',
+          image: '/images/productos/frenos/Tambores.webp',
+          stock: 'Disponible',
+          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
+          modelo: 'Múltiples aplicaciones'
+        },
+        //Válvula de pedal
+        {
+          id: 24,
+          name: 'Válvula de pedal',
+          category: 'frenos',
+          description: 'Válvula de pedal para vehículos comerciales y maquinaria pesada.',
+          price: '$250.00',
+          image: '/images/productos/frenos/Válvula de pedal.png',
+          stock: 'Disponible',
+          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
+          modelo: 'Múltiples aplicaciones'
+        },
+        //Válvula relay
+        {
+          id: 25,
+          name: 'Válvula relay',
+          category: 'frenos',
+          description: 'Válvula relay para vehículos comerciales y maquinaria pesada.',
+          price: '$250.00',
+          image: '/images/productos/frenos/Válvula relay.png',
+          stock: 'Disponible',
+          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
+          modelo: 'Múltiples aplicaciones'
+        },
       ]
     };
   },
