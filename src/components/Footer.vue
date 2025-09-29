@@ -20,6 +20,10 @@
               <i class="las la-tools la-lg"></i>
               <span>Productos</span>
             </router-link>
+            <router-link to="/blog" class="transition hover:[color:var(--color-amarillo)] flex items-center gap-2">
+             <i class="las la-rss"></i>
+             <span>Blog</span>
+           </router-link>
             <router-link to="/contacto" class="transition hover:[color:var(--color-amarillo)] flex items-center gap-2">
               <i class="las la-envelope la-lg"></i>
               <span>Contacto</span>

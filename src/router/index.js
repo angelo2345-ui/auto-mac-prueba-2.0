@@ -8,6 +8,8 @@ const routes = [
   { path: '/', component: Home },
   { path: '/productos', component: Productos },
   { path: '/contacto', component: Contacto },
+  { path: '/blog', component: Blog},
+  { path: '/blog/:id/:slug', component: Blog, props: true }
 ]
 
 export default createRouter({

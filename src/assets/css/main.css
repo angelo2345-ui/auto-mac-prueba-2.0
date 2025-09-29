@@ -32,3 +32,60 @@ h1, h2, h3, h4 {
 	font-weight: 400;
 	letter-spacing: 0.04em;
 }
+
+.subtitulo-amarillo {
+    color: var(--color-amarillo);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+/* Estilos para el blog */
+.blog-breadcrumb {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.5rem 0;
+}
+
+.breadcrumb-link {
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.breadcrumb-link:hover {
+    background-color: rgba(255, 196, 0, 0.1);
+    color: var(--color-amarillo);
+}
+
+.blog-content {
+    line-height: 1.8;
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+}
+
+.blog-content strong {
+    color: var(--color-amarillo);
+    font-weight: 600;
+}
+
+/* Animaciones suaves */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para categorías */
+.category-badge {
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}

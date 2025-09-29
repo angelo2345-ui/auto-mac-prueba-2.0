@@ -1,11 +1,11 @@
-<template>
+<template class="bg-gray-50">
   <header 
     :class="[
-      'fixed w-full top-0 left-0 z-50 transition-all duration-500 ease-in-out backdrop-blur-md',
+      'fixed w-full top-0 left-0 z-50 transition-all duration-500 ease-in-out',
       !isHeaderVisible ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
     ]"
     :style="{
-      background: scrolled ? 'var(--color-negro)' : 'rgba(0, 0, 0, 0.8)',
+      background: scrolled ? 'var(--color-negro)' : 'var(--color-negro)',
       borderBottom: scrolled ? '1px solid rgba(107, 114, 128, 0.5)' : 'none',
       boxShadow: scrolled ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
     }"
@@ -79,43 +79,58 @@
             ></span>
             <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </router-link>
+          <router-link 
+            to="/blog" 
+            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/blog') }"
+          >
+            <i class="las la-rss"></i>
+            Blog
+            <span 
+              class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
+              :class="{ 'scale-x-100': $route.path.startsWith('/blog') }"
+            ></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          </router-link>
         </nav>
 
        
 
-        <!-- Mobile Menu Button - Mejorado con animación más suave -->
+        <!-- Mobile Menu Button - Corregido -->
         <button
           @click="toggleMenu"
-          class="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
-          :class="{ 'bg-yellow-400/10': menuActive }"
+          class="md:hidden relative w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/80 hover:bg-gray-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+          :class="{ 'bg-yellow-400 hover:bg-yellow-500': menuActive }"
           aria-label="Toggle navigation menu"
           :aria-expanded="menuActive"
         >
-          <i class="las la-bars text-2xl" :class="{ 'hidden': menuActive }"></i>
-          <i class="las la-times text-2xl" :class="{ 'hidden': !menuActive }"></i>
+          <i v-if="!menuActive" class="las la-bars text-2xl text-white"></i>
+          <i v-if="menuActive" class="las la-times text-2xl" :class="menuActive ? 'text-black' : 'text-white'"></i>
         </button>
       </div>
 
-      <!-- Mobile Navigation - Mejorado con mejor diseño y animaciones -->
+      <!-- Mobile Navigation - Sin opacidad -->
       <div 
         :class="[
-          'md:hidden overflow-hidden transition-all duration-500 ease-in-out',
-          menuActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          'md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-black',
+          menuActive ? 'max-h-screen visible' : 'max-h-0 invisible'
         ]"
       >
-        <nav class="py-6 space-y-3 border-t border-gray-700/50 mt-4">
+        <nav class="py-6 space-y-2 border-t border-gray-700/50 mt-4" style="font-family: var(--fuente-principal);">
           <router-link 
             to="/" 
             exact
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-300 hover:text-white font-semibold transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
-              'text-yellow-400 bg-gradient-to-r from-yellow-400/10 to-orange-500/5': $route.path === '/',
-              'hover:bg-gradient-to-r hover:from-white/5 hover:to-white/2': $route.path !== '/'
+              'text-yellow-400 bg-yellow-400/10': $route.path === '/',
+              'hover:bg-white/5': $route.path !== '/'
             }"
+            style="font-family: var(--fuente-principal);"
           >
-            <div class="flex items-center">
-              <span class="text-lg">Inicio</span>
+            <div class="flex items-center gap-3">
+              <i class="las la-home text-xl"></i>
+              <span class="text-lg font-medium">Inicio</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -130,14 +145,16 @@
           <router-link 
             to="/productos" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-300 hover:text-white font-semibold transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
-              'text-yellow-400 bg-gradient-to-r from-yellow-400/10 to-orange-500/5': $route.path.startsWith('/productos'),
-              'hover:bg-gradient-to-r hover:from-white/5 hover:to-white/2': !$route.path.startsWith('/productos')
+              'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/productos'),
+              'hover:bg-white/5': !$route.path.startsWith('/productos')
             }"
+            style="font-family: var(--fuente-principal);"
           >
-            <div class="flex items-center">
-              <span class="text-lg">Productos</span>
+            <div class="flex items-center gap-3">
+              <i class="las la-tools text-xl"></i>
+              <span class="text-lg font-medium">Productos</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -152,14 +169,16 @@
           <router-link 
             to="/blog" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-300 hover:text-white font-semibold transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
-              'text-yellow-400 bg-gradient-to-r from-yellow-400/10 to-orange-500/5': $route.path.startsWith('/blog'),
-              'hover:bg-gradient-to-r hover:from-white/5 hover:to-white/2': !$route.path.startsWith('/blog')
+              'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/blog'),
+              'hover:bg-white/5': !$route.path.startsWith('/blog')
             }"
+            style="font-family: var(--fuente-principal);"
           >
-            <div class="flex items-center">
-              <span class="text-lg">Blog</span>
+            <div class="flex items-center gap-3">
+              <i class="las la-rss text-xl"></i>
+              <span class="text-lg font-medium">Blog</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -174,14 +193,16 @@
           <router-link 
             to="/contacto" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-300 hover:text-white font-semibold transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
-              'text-yellow-400 bg-gradient-to-r from-yellow-400/10 to-orange-500/5': $route.path.startsWith('/contacto'),
-              'hover:bg-gradient-to-r hover:from-white/5 hover:to-white/2': !$route.path.startsWith('/contacto')
+              'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/contacto'),
+              'hover:bg-white/5': !$route.path.startsWith('/contacto')
             }"
+            style="font-family: var(--fuente-principal);"
           >
-            <div class="flex items-center">
-              <span class="text-lg">Contacto</span>
+            <div class="flex items-center gap-3">
+              <i class="las la-envelope text-xl"></i>
+              <span class="text-lg font-medium">Contacto</span>
             </div>
           
           </router-link>
@@ -190,16 +211,6 @@
         </nav>
       </div>
     </div>
-
-    <!-- Mobile Menu Overlay - Mejorado con animación de entrada -->
-    <div 
-      v-if="menuActive"
-      @click="closeMenu"
-      :class="[
-        'md:hidden fixed inset-0 bg-gradient-to-b from-black/50 to-black/70 backdrop-blur-sm transition-opacity duration-500',
-        menuActive ? 'opacity-100' : 'opacity-0'
-      ]"
-    ></div>
   </header>
 </template>
 

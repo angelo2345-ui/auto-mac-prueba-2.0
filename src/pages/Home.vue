@@ -1,58 +1,78 @@
 <template>
   <!-- Hero Section -->
-<section
-  class="relative h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden transition-all duration-1000 ease-in-out"
-  :style="{
-    backgroundImage: `url(${slides[currentSlideIndex].backgroundImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat'
-  }"
-  aria-label="Sección principal de Automac"
->
-  <!-- Overlay oscuro -->
-  <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/60 z-0"></div>
+  <section
+    class="relative h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
+    aria-label="Sección principal de Automac"
+  >
+    <!-- Capas de fondo precargadas -->
+    <div
+      v-for="(slide, index) in slides"
+      :key="index"
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700 ease-in-out"
+      :class="{ 'opacity-100': index === currentSlideIndex, 'opacity-0': index !== currentSlideIndex }"
+      :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
+    ></div>
 
-  <!-- Contenido -->
-  <div class="container relative z-10 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl text-left pl-4 sm:pl-10 lg:pl-20">
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/60 z-10"></div>
 
-      <!-- Título -->
-      <h1 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight" style="font-family:var(--fuente-titulos);">
-  <span style="color:var(--color-amarillo);">
-          {{ slides[currentSlideIndex].title }}
-        </span>
-        <span class="block text-xl sm:text-2xl lg:text-3xl mt-2 font-normal text-gray-200" style="font-family:var(--fuente-principal);">
-          {{ slides[currentSlideIndex].subtitle }}
-        </span>
-      </h1>
+    <!-- Contenido con transición sincronizada -->
+    <div class="container relative z-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl text-left pl-4 sm:pl-10 lg:pl-20">
+        <Transition name="slide-content" mode="out-in">
+          <div :key="currentSlideIndex" class="content-wrapper">
+            <!-- Título -->
+            <h1 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight" style="font-family:var(--fuente-titulos);">
+              <span style="color:var(--color-amarillo);">
+                {{ slides[currentSlideIndex].title }}
+              </span>
+              <span class="block text-xl sm:text-2xl lg:text-3xl mt-2 font-normal text-gray-200" style="font-family:var(--fuente-principal);">
+                {{ slides[currentSlideIndex].subtitle }}
+              </span>
+            </h1>
 
-      <!-- Descripción -->
-      <p class="text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl">
-        {{ slides[currentSlideIndex].description }}
-      </p>
-
+            <!-- Descripción -->
+            <p class="text-base sm:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl">
+              {{ slides[currentSlideIndex].description }}
+            </p>
+          </div>
+        </Transition>
+      </div>
     </div>
-  </div>
 
-  <!-- Flecha: Slide anterior -->
-  <button
-    @click="previousSlide"
-    class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full transition-all duration-300"
-    aria-label="Slide anterior"
-  >
-    <i class="las la-angle-left la-2x"></i>
-  </button>
+    <!-- Indicadores de slides -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
+      <button
+        v-for="(slide, index) in slides"
+        :key="index"
+        @click="setCurrentSlide(index)"
+        class="w-3 h-3 rounded-full transition-all duration-300"
+        :class="{
+          'bg-yellow-500 scale-125': index === currentSlideIndex,
+          'bg-white/60 hover:bg-white/80': index !== currentSlideIndex
+        }"
+        :aria-label="`Ir al slide ${index + 1}`"
+      ></button>
+    </div>
 
-  <!-- Flecha: Slide siguiente -->
-  <button
-    @click="nextSlide"
-    class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full transition-all duration-300"
-    aria-label="Slide siguiente"
-  >
-    <i class="las la-angle-right la-2x"></i>
-  </button>
-</section>
+    <!-- Flecha: Slide anterior -->
+    <button
+      @click="previousSlide"
+      class="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full transition-all duration-300"
+      aria-label="Slide anterior"
+    >
+      <i class="las la-angle-left la-2x"></i>
+    </button>
+
+    <!-- Flecha: Slide siguiente -->
+    <button
+      @click="nextSlide"
+      class="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 sm:p-3 rounded-full transition-all duration-300"
+      aria-label="Slide siguiente"
+    >
+      <i class="las la-angle-right la-2x"></i>
+    </button>
+  </section>
    <!-- Marcas Certificadas -->
 
   <!-- Servicios Principales -->
@@ -220,7 +240,7 @@ import BrandCarousel from '../components/BrandCarousel.vue'
 
   
 export default {
-components: {
+  components: {
     BrandCarousel
   },  
   name: 'HeroCarousel',
@@ -228,6 +248,7 @@ components: {
     return {
       currentSlideIndex: 0,
       autoSlideInterval: null,
+      imagesLoaded: false,
       slides: [
         {
           title: 'Compromiso y Calidad',
@@ -235,7 +256,7 @@ components: {
           description: '¡Contamos con servicios que complementan nuestra oferta de repuestos! Compromiso, respaldo y calidad en cada producto que ofrecemos.',
           badge: '15 años de experiencia garantizada',
           primaryButton: 'Ver Catálogo',
-          backgroundImage: 'images/tractor.jpg',
+          backgroundImage: 'images/tractor.webp',
           stats: [
             { value: '500+', label: 'Marcas Certificadas' },
             { value: '100%', label: 'Calidad Garantizada' },
@@ -248,7 +269,7 @@ components: {
           description: 'Stock disponible en tienda con atención INMEDIATA. Mantenemos inventario completo para satisfacer tus necesidades al instante.',
           badge: 'Disponibilidad inmediata',
           primaryButton: 'Ver Stock',
-          backgroundImage: 'images/truck.jpg',
+          backgroundImage: 'images/truck_1.webp',
           stats: [
             { value: '24/7', label: 'Disponibilidad' },
             { value: '1000+', label: 'Productos en Stock' },
@@ -261,47 +282,72 @@ components: {
           description: 'Importaciones personalizadas y comercio internacional. Somos especialistas en la importación de repuestos para equipos industriales.',
           badge: 'Importación directa',
           primaryButton: 'Solicitar Importación',
-          backgroundImage: 'images/mechanic.jpg',
+          backgroundImage: 'images/mechanic_1.webp',
           stats: [
             { value: '50+', label: 'Países Proveedores' },
             { value: '30 días', label: 'Tiempo de Importación' },
             { value: '100%', label: 'Productos Originales' }
           ]
-        },
-        
+        }
       ]
     }
   },
   mounted() {
-    this.startAutoSlide()
+    this.preloadImages().then(() => {
+      this.imagesLoaded = true
+      this.startAutoSlide()
+    })
   },
   beforeUnmount() {
     this.stopAutoSlide()
   },
   methods: {
-    setCurrentSlide(index) {
-      this.currentSlideIndex = index
-      this.resetAutoSlide()
+    // Precarga todas las imágenes para evitar peticiones durante las transiciones
+    preloadImages() {
+      const imagePromises = this.slides.map(slide => {
+        return new Promise((resolve, reject) => {
+          const img = new Image()
+          img.onload = resolve
+          img.onerror = reject
+          img.src = slide.backgroundImage
+        })
+      })
+      
+      return Promise.all(imagePromises)
     },
+    
+    setCurrentSlide(index) {
+      if (index !== this.currentSlideIndex) {
+        this.currentSlideIndex = index
+        this.resetAutoSlide()
+      }
+    },
+    
     nextSlide() {
       this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length
       this.resetAutoSlide()
     },
+    
     previousSlide() {
       this.currentSlideIndex = this.currentSlideIndex === 0 ? this.slides.length - 1 : this.currentSlideIndex - 1
       this.resetAutoSlide()
     },
+    
     startAutoSlide() {
-      this.autoSlideInterval = setInterval(() => {
-        this.nextSlide()
-      }, 5000)
+      if (this.imagesLoaded) {
+        this.autoSlideInterval = setInterval(() => {
+          this.nextSlide()
+        }, 5000)
+      }
     },
+    
     stopAutoSlide() {
       if (this.autoSlideInterval) {
         clearInterval(this.autoSlideInterval)
         this.autoSlideInterval = null
       }
     },
+    
     resetAutoSlide() {
       this.stopAutoSlide()
       this.startAutoSlide()
@@ -311,22 +357,75 @@ components: {
 </script>
 
 <style scoped>
-/* Animación personalizada para elementos */
+/* Transiciones para el contenido del slide */
+.slide-content-enter-active,
+.slide-content-leave-active {
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
+.slide-content-enter-from {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.slide-content-leave-to {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.slide-content-enter-to,
+.slide-content-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Contenedor del contenido para asegurar transiciones fluidas */
+.content-wrapper {
+  display: block;
+}
+
+/* Optimización de rendimiento para las capas de fondo */
+.bg-cover {
+  will-change: opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 
 /* Mejoras visuales para el hero */
 .hero-content {
   backdrop-filter: blur(10px);
 }
 
-/* Optimización de imágenes de fondo */
-section[style*="background-image"] {
-  background-attachment: fixed;
+/* Preloader para mejorar la experiencia inicial */
+.carousel-preloader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 }
 
+/* Optimización para dispositivos móviles */
 @media (max-width: 768px) {
-  section[style*="background-image"] {
-    background-attachment: scroll;
+  .slide-content-enter-from,
+  .slide-content-leave-to {
+    transform: translateY(20px);
   }
+  
+  .slide-content-leave-to {
+    transform: translateY(-20px);
+  }
+}
+
+/* Mejora de rendimiento para las animaciones */
+* {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Suavizado de las transiciones de opacidad */
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 </style>
