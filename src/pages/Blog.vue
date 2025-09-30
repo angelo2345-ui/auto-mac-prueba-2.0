@@ -140,7 +140,7 @@ export default {
             
             <p class="mb-6">Esos tres productos iniciales nos enseñaron la importancia de la calidad, la confianza del cliente, y que en este negocio, cada pieza cuenta para mantener las operaciones de nuestros clientes en funcionamiento.</p>
           `,
-          author: 'Automac Corporate',
+          author: 'Automac',
           date: '2025-02-27',
           category: 'Historia',
           featuredImage: '/images/blog/2.webp'
@@ -160,57 +160,12 @@ export default {
             
             <p class="mb-6">En menos de 18 meses, no solo cumplimos con el compromiso de compra del inmueble, sino que habíamos triplicado nuestra capacidad de producción y creado 45 nuevos empleos directos. Esa planta se convirtió en el corazón técnico de Automac y el punto de partida para nuestra expansión hacia el ensamblaje de componentes especializados.</p>
           `,
-          author: 'Automac Corporate',
+          author: 'Automac',
           date: '2025-04-09',
           category: 'Expansión',
           featuredImage: '/images/blog/1.webp'
         },
-        {
-          id: 3,
-          title: 'En 2024, cerramos una alianza que nos convirtió en Premier en menos de 24 horas',
-          excerpt: 'El acuerdo estratégico más importante en la historia de Automac. Cómo una negociación de último minuto cambió completamente nuestro posicionamiento en el mercado.',
-          content: `
-            <p class="mb-6">El 15 de marzo de 2024 será recordado como el día que cambió para siempre la trayectoria de Automac. En menos de 24 horas, pasamos de ser un distribuidor regional a convertirnos en el distribuidor Premier exclusivo para República Dominicana y el Caribe de una de las marcas más reconocidas del sector.</p>
-            
-            <p class="mb-6">Todo comenzó con una llamada telefónica inesperada un jueves por la tarde. El director regional de Premier Manufacturing nos contactó para informarnos que su distribuidor exclusivo para la región había decidido no renovar el contrato. Tenían un contenedor con productos valorados en más de $2.5 millones que debía ser distribuido inmediatamente.</p>
-            
-            <p class="mb-6">La propuesta era audaz: si podíamos garantizar la compra inmediata del inventario completo y cumplir con los estándares de distribución Premier en un plazo de 24 horas, obtendríamos la exclusividad para toda la región del Caribe.</p>
-            
-            <p class="mb-6">Esa noche no dormimos. Todo el equipo directivo se reunió en nuestras oficinas para evaluar la propuesta. Significaba duplicar nuestro inventario de inmediato, contratar 15 nuevos empleados especializados, y reestructurar completamente nuestro sistema de distribución. Pero también representaba posicionarnos como líderes indiscutibles en el mercado regional.</p>
-            
-            <p class="mb-6">A las 8:00 AM del viernes, confirmamos la operación. A las 2:00 PM del mismo día, el contenedor estaba siendo descargado en nuestras instalaciones. A las 6:00 PM, habíamos firmado el contrato de distribución exclusiva.</p>
-            
-            <p class="mb-6">Hoy, menos de un año después, esa decisión nos ha permitido expandir nuestras operaciones a Puerto Rico, Jamaica, y Trinidad y Tobago. La línea Premier representa el 40% de nuestras ventas actuales y nos ha posicionado como el distribuidor de repuestos de maquinaria pesada más importante del Caribe.</p>
-          `,
-          author: 'Automac Corporate',
-          date: '2025-07-28',
-          category: 'Alianzas',
-          featuredImage: '/images/blog/premier-2024.jpg'
-        },
-        {
-          id: 4,
-          title: 'El día que nuestro técnico salvó una cosecha completa con una reparación de emergencia',
-          excerpt: 'Una historia real de servicio excepcional. Cómo nuestro equipo técnico trabajó 18 horas continuas para reparar una cosechadora en plena temporada de recolección.',
-          content: `
-            <p class="mb-6">Era la segunda semana de enero de 2023, en plena temporada de cosecha de arroz en el Cibao. La cosechadora John Deere S780 de la Cooperativa Arrocera San José había sufrido una avería crítica en su sistema hidráulico principal, paralizando la recolección de más de 500 tareas de arroz maduro.</p>
-            
-            <p class="mb-6">La llamada llegó a nuestras oficinas un sábado a las 5:30 AM. El presidente de la cooperativa explicaba con urgencia que cada día de retraso representaba pérdidas de más de RD$800,000, y que otras empresas de repuestos le habían informado que el componente necesario tardaría al menos 15 días en llegar desde Estados Unidos.</p>
-            
-            <p class="mb-6">Nuestro técnico senior, Miguel Rodríguez, conocía perfectamente ese modelo de cosechadora. Después de una videollamada con el operador para diagnosticar el problema, confirmó que se trataba de una falla en la bomba hidráulica principal, específicamente en el conjunto de pistones de la serie 90R.</p>
-            
-            <p class="mb-6">Lo que Miguel sabía, y otros no, es que en nuestro almacén teníamos los componentes individuales necesarios para reconstruir completamente esa bomba. No era el repuesto original completo, pero con su experiencia de 15 años, podía ensamblar una solución funcional.</p>
-            
-            <p class="mb-6">A las 7:00 AM del sábado, Miguel y su asistente partieron hacia Moca con una camioneta cargada de herramientas especializadas y componentes. Trabajaron 18 horas continuas, desarmando completamente la bomba hidráulica, reemplazando pistones, sellos, y válvulas, y rearmando el conjunto con precisión milimétrica.</p>
-            
-            <p class="mb-6">El domingo a la 1:00 PM, cuando encendieron la cosechadora y el sistema hidráulico respondió perfectamente, más de 50 productores que se habían reunido en el lugar estallaron en aplausos. Esa semana, la Cooperativa Arrocera San José logró completar su cosecha sin pérdidas adicionales.</p>
-            
-            <p class="mb-6">Esa reparación no solo salvó una cosecha, sino que consolidó nuestra reputación como el socio técnico más confiable del sector agrícola dominicano. Hoy, más del 70% de las cooperativas arroceras del país confían en Automac para sus necesidades de repuestos y servicio técnico.</p>
-          `,
-          author: 'Automac Corporate',
-          date: '2025-08-15',
-          category: 'Servicio Técnico',
-          featuredImage: '/images/blog/reparacion-emergencia.jpg'
-        }
+       
       ]
     }
   },
