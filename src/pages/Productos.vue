@@ -80,9 +80,9 @@ export default {
         { id: 'Hidráulico', name: 'Hidráulico' },
         { id: 'Filtros', name: 'Filtros' },
         { id: 'Turbo / Admisión', name: 'Turbo / Admisión' },
-        { id: 'sistemas-electricos', name: 'Sistemas Eléctricos, Sensores e Iluminación' },
-        { id: 'mantenimiento-general', name: 'Mantenimiento y Partes Generales' },
-        { id: 'frenos', name: 'Frenos' }
+        { id: 'Rodamientos y Poleas', name: 'Rodamientos y Poleas' },
+        { id: 'sistemas-electricos', name: 'Sistemas Eléctricos' },
+        { id: 'iluminacion-cabina', name: 'Iluminación / Cabina' },
       ],
       products: [
         // Motor 
@@ -573,216 +573,261 @@ export default {
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Rodamientos y Poleas 
+        //Rodamientos de bola
         {
-          id: 8,
-          name: 'Suspensión',
-          category: 'chasis-suspension-frenos',
-          description: 'Componentes de suspensión de alta durabilidad para todo tipo de terrenos.',
-          price: '$280.00',
-          image: '/images/productos/Sistema de Enfriamiento/Suspensión.webp',
+          id: 41,
+          name: 'Rodamientos de bola',
+          category: 'Rodamientos y Poleas',
+          description: 'Rodamientos de bola para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Rodamientos y Poleas/Rodamientos de bola.png',
           stock: 'Disponible',
-          marca: 'CONTITECH',
-          modelo: 'Para ejes traseros de camiones pesados'
+          marca: 'SKF; NTN; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Rodillos cónicos
         {
-          id: 9,
-          name: 'Enganches y arrastre',
-          category: 'chasis-suspension-frenos',
-          description: 'Sistemas de enganche y arrastre para remolques y equipos de carga.',
-          price: '$420.00',
-          image: '/images/productos/Enganches y arrastre.png',
+          id: 42,
+          name: 'Rodillos cónicos',
+          category: 'Rodamientos y Poleas',
+          description: 'Rodillos cónicos para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Rodamientos y Poleas/Rodillos cónicos.png',
           stock: 'Disponible',
-          marca: 'JOST',
-          modelo: 'Capacidad de carga elevada'
+          marca: 'SKF; NTN; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        
+        //Chumaceras
+        {
+          id: 43,
+          name: 'Chumaceras',
+          category: 'Rodamientos y Poleas',
+          description: 'Chumaceras para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Rodamientos y Poleas/Chumaceras.png',
+          stock: 'Disponible',
+          marca: 'SKF; NTN; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Rodamientos de aguja
+        {
+          id: 44,
+          name: 'Rodamientos de aguja',
+          category: 'Rodamientos y Poleas',
+          description: 'Rodamientos de aguja para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Rodamientos y Poleas/Rodamientos de aguja.png',
+          stock: 'Disponible',
+          marca: 'SKF; NTN; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Correas y poleas
+        {
+          id: 45,
+          name: 'Correas y poleas',
+          category: 'Rodamientos y Poleas',
+          description: 'Correas y poleas para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Rodamientos y Poleas/Correas y poleas.png',
+          stock: 'Disponible',
+          marca: 'SKF; NTN; GATES; DAYCO; BAND',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+
         // Sistemas Eléctricos, Sensores e Iluminación
+        //Ventiladores
         {
-          id: 10,
-          name: 'Baterías',
+          id: 46,
+          name: 'Ventiladores',
           category: 'sistemas-electricos',
-          description: 'Baterías de alto rendimiento para vehículos comerciales y maquinaria pesada.',
-          price: '$180.00',
-          image: '/images/productos/Baterías.webp',
+          description: 'Ventiladores para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Sistemas Eléctricos/Ventiladores.png',
           stock: 'Disponible',
-          marca: 'BOSCH',
-          modelo: 'Para arranque en condiciones extremas'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Bombillos
         {
-          id: 11,
-          name: 'Sensores',
+          id: 47,
+          name: 'Bombillos',
           category: 'sistemas-electricos',
-          description: 'Sensores de precisión para monitoreo de sistemas críticos del vehículo.',
-          price: '$85.00',
-          image: '/images/productos/Sensores.webp',
+          description: 'Bombillos para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Sistemas Eléctricos/Bombillos.png',
           stock: 'Disponible',
-          marca: 'DELPHI',
-          modelo: 'Compatible con sistemas electrónicos modernos'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Fusibles
         {
-          id: 12,
-          name: 'Iluminación',
+          id: 48,
+          name: 'Fusibles',
           category: 'sistemas-electricos',
-          description: 'Sistemas de iluminación LED de alta visibilidad para mayor seguridad.',
-          price: '$120.00',
-          image: '/images/productos/Iluminación.webp',
+          description: 'Fusibles para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Sistemas Eléctricos/Fusibles.png',
           stock: 'Disponible',
-          marca: 'HELLA',
-          modelo: 'Para condiciones de baja visibilidad'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Pitos
         {
-          id: 13,
-          name: 'Repuestos de cabina',
+          id: 49,
+          name: 'Pitos',
           category: 'sistemas-electricos',
-          description: 'Componentes eléctricos y electrónicos para el interior de la cabina.',
-          price: '$95.00',
-          image: '/images/productos/Repuestos de cabina.png',
-          stock: 'Bajo pedido',
-          marca: 'CONTINENTAL',
-          modelo: 'Para sistemas de confort y control'
-        },
-        
-        // Mantenimiento y Partes Generales
-        {
-          id: 14,
-          name: 'Filtros',
-          category: 'mantenimiento-general',
-          description: 'Filtros de aire, aceite y combustible de alta eficiencia para motores diésel.',
-          price: '$35.00',
-          image: '/images/productos/filtros.png',
-          stock: 'Disponible',
-          marca: 'MANN-FILTER',
-          modelo: 'Para mantenimiento preventivo'
-        },
-        {
-          id: 15,
-          name: 'Partes hidráulicas',
-          category: 'mantenimiento-general',
-          description: 'Componentes para sistemas hidráulicos de maquinaria pesada y equipos industriales.',
+          description: 'Pitos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Partes hidráulicas.png',
+          image: '/images/productos/Sistemas Eléctricos/Pitos.png',
           stock: 'Disponible',
-          marca: 'PARKER',
-          modelo: 'Para sistemas de alta presión'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
+        //Conectores
         {
-          id: 16,
-          name: 'Accesorios',
-          category: 'mantenimiento-general',
-          description: 'Accesorios y complementos para vehículos comerciales y maquinaria pesada.',
-          price: '$75.00',
-          image: '/images/productos/Accesorios.jpg',
-          stock: 'Disponible',
-          marca: 'VARIOS',
-          modelo: 'Múltiples aplicaciones'
-        },
-        {
-          id: 17,
-          name: 'Sistema de aire',
-          category: 'mantenimiento-general',
-          description: 'Componentes para sistemas neumáticos de frenos y suspensión.',
-          price: '$180.00',
-          image: '/images/productos/Sistema de aire.jpg',
-          stock: 'Disponible',
-          marca: 'WABCO',
-          modelo: 'Para sistemas de aire comprimido'
-        },
-        {
-          id: 18,
-          name: 'Complementos',
-          category: 'mantenimiento-general',
-          description: 'Productos complementarios para mantenimiento y reparación de vehículos.',
-          price: '$60.00',
-          image: '/images/productos/Complementos.jpg',
-          stock: 'Disponible',
-          marca: 'VARIOS',
-          modelo: 'Uso general'
-        },
-        {
-          id: 19,
-          name: 'Rodamientos, chumaceras y correas',
-          category: 'mantenimiento-general',
-          description: 'Componentes de transmisión mecánica para equipos industriales y vehículos.',
-          price: '$95.00',
-          image: '/images/productos/Rodamientos, chumaceras y correas.webp',
-          stock: 'Disponible',
-          marca: 'SKF',
-          modelo: 'Alta resistencia y durabilidad'
-        },
-
-
-        // Categoria frenos
-        //Bandas
-        {
-          id: 20,
-          name: 'Bandas',
-          category: 'frenos',
-          description: 'Bandas de frenos para vehículos comerciales y maquinaria pesada.',
+          id: 50,
+          name: 'Conectores',
+          category: 'sistemas-electricos',
+          description: 'Conectores para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/frenos/Bandas.png',
+          image: '/images/productos/Sistemas Eléctricos/Conectores.png',
           stock: 'Disponible',
-          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
-          modelo: 'Múltiples aplicaciones'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        // Pulmón
+        //Switches
         {
-          id: 21,
-          name: 'Pulmón',
-          category: 'frenos',
-          description: 'Pulmones de frenos para vehículos comerciales y maquinaria pesada.',
+          id: 51,
+          name: 'Switches',
+          category: 'sistemas-electricos',
+          description: 'Switches para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/frenos/Pulmón.png',
+          image: '/images/productos/Sistemas Eléctricos/Switches.png',
           stock: 'Disponible',
-          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
-          modelo: 'Múltiples aplicaciones'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        //Secador
+        //Iluminación / Cabina 
+        //Lámparas
         {
-          id: 22,
-          name: 'Secador',
-          category: 'frenos',
-          description: 'Secadores de frenos para vehículos comerciales y maquinaria pesada.',
+          id: 52,
+          name: 'Lámparas',
+          category: 'iluminacion-cabina',
+          description: 'Lámparas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/frenos/Secador.png',
+          image: '/images/productos/Iluminación y  Cabina/Lámparas.png',
           stock: 'Disponible',
-          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
-          modelo: 'Múltiples aplicaciones'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        //Tambores
+        //Faros
         {
-          id: 23,
-          name: 'Tambores',
-          category: 'frenos',
-          description: 'Tambores de frenos para vehículos comerciales y maquinaria pesada.',
+          id: 53,
+          name: 'Faros',
+          category: 'iluminacion-cabina',
+          description: 'Faros para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/frenos/Tambores.webp',
+          image: '/images/productos/Iluminación y  Cabina/Faros.png',
           stock: 'Disponible',
-          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
-          modelo: 'Múltiples aplicaciones'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        //Válvula de pedal
+        //Lámparas de prevención
         {
-          id: 24,
-          name: 'Válvula de pedal',
-          category: 'frenos',
-          description: 'Válvula de pedal para vehículos comerciales y maquinaria pesada.',
+          id: 54,
+          name: 'Lámparas de prevención',
+          category: 'iluminacion-cabina',
+          description: 'Lámparas de prevención para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/frenos/Válvula de pedal.png',
+          image: '/images/productos/Iluminación y  Cabina/Lámparas de prevención.png',
           stock: 'Disponible',
-          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
-          modelo: 'Múltiples aplicaciones'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
-        //Válvula relay
+        //Lámparas de trabajo
         {
-          id: 25,
-          name: 'Válvula relay',
-          category: 'frenos',
-          description: 'Válvula relay para vehículos comerciales y maquinaria pesada.',
+          id: 55,
+          name: 'Lámparas de trabajo',
+          category: 'iluminacion-cabina',
+          description: 'Lámparas de trabajo para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/frenos/Válvula relay.png',
+          image: '/images/productos/Iluminación y  Cabina/Lámparas de trabajo.png',
           stock: 'Disponible',
-          marca: 'MERITOR; AUTOMANN; PAI; PREMIER',
-          modelo: 'Múltiples aplicaciones'
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Parrillas
+        {
+          id: 56,
+          name: 'Parrillas',
+          category: 'iluminacion-cabina',
+          description: 'Parrillas para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/Parrillas.png',
+          stock: 'Disponible',
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Lámparas de trabajo
+        {
+          id: 57,
+          name: 'Lámparas de trabajo',
+          category: 'iluminacion-cabina',
+          description: 'Lámparas de trabajo para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/Lámparas de trabajo.png',
+          stock: 'Disponible',
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Limpiabrisas
+        {
+          id: 58,
+          name: 'Limpiabrisas',
+          category: 'iluminacion-cabina',
+          description: 'Limpiabrisas para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/Limpiabrisas.png',
+          stock: 'Disponible',
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Espejos
+        {
+          id: 59,
+          name: 'Espejos',
+          category: 'iluminacion-cabina',
+          description: 'Espejos para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/Espejos.png',
+          stock: 'Disponible',
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Cornetas
+        {
+          id: 60,
+          name: 'Cornetas',
+          category: 'iluminacion-cabina',
+          description: 'Cornetas para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/Cornetas.png',
+          stock: 'Disponible',
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
+        },
+        //Accesorios de cabina
+        {
+          id: 61,
+          name: 'Accesorios de cabina',
+          category: 'iluminacion-cabina',
+          description: 'Accesorios de cabina para motores diésel y sistemas de hidráulico.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/Accesorios de cabina.png',
+          stock: 'Disponible',
+          marca: 'BOSH; HELLA',
+          modelo: 'Para motores diésel de alto rendimiento'
         },
       ]
     };
