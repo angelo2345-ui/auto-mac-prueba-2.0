@@ -47,6 +47,88 @@
         :product="selectedProduct" 
         @close="closeProductModal" 
       />
+      
+      <!-- Sección de marcas asociadas -->
+      <div class="mt-16  rounded-2xl  p-8">
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4" style="background-color: var(--color-amarillo);">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: var(--fuente-titulos);">
+            Visite las webs de nuestras <span style="color: var(--color-amarillo);">marcas asociadas</span> para importarla para usted
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Explore directamente los catálogos oficiales de nuestros socios comerciales y solicítenos cualquier producto específico.
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">PAI INDUSTRIES</span>
+              <a href="https://www.pai.com/new-pai-products" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://www.pai.com/new-pai-products
+              </a>
+            </li>
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">AUTOMANN</span>
+              <a href="https://www.automann.com/products" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://www.automann.com/products
+              </a>
+            </li>
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">KTC BROTHERS</span>
+              <a href="https://ktcbrothers.com/en/business-lines/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://ktcbrothers.com/en/business-lines/
+              </a>
+            </li>
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">KMP BRAND</span>
+              <a href="https://www.kmpbrand.com/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://www.kmpbrand.com/
+              </a>
+            </li>
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">N.Y.C GENUINE PARTS</span>
+              <a href="https://www.nycofamerica.com/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://www.nycofamerica.com/
+              </a>
+            </li>
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">PREMIER MANUFACTURING</span>
+              <a href="https://www.premier-mfg.com/shop/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://www.premier-mfg.com/shop/
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="text-center mt-8">
+          <p class="text-gray-600 text-sm">
+            💡 <strong>¿Encontró algo que le interesa?</strong> Contáctenos y nosotros nos encargamos de importarlo para usted.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
