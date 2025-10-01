@@ -19,8 +19,8 @@
     <!-- Grid de marcas con diseño profesional -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
       <div v-for="(brand, index) in brands" :key="index" 
-           class="brand-card group cursor-pointer">
-        <div class="bg-white rounded-xl p-6 h-32 flex flex-col items-center justify-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+           class="brand-card group cursor-pointer relative overflow-hidden">
+        <div class="bg-white rounded-xl p-6 h-32 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 relative">
           <div class="brand-image-container mb-2">
             <img :src="getImagePath(brand)" :alt="brand" 
                  :class="[
@@ -29,11 +29,28 @@
                  ]" />
           </div>
           <span class="font-semibold text-gray-700 text-sm text-center group-hover:text-yellow-600 transition-colors duration-300">
-            {{ brand }}
+            {{ brand.toUpperCase() }}
           </span>
+          
+          <!-- Botón de enlace (solo aparece si tiene URL) -->
+          <div v-if="getBrandUrl(brand)" 
+               class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <a :href="getBrandUrl(brand)" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-lg font-bold text-sm transform hover:scale-105 transition-all duration-200 flex items-center gap-2"
+               @click.stop>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+              Ir a Página
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
     
     <!-- Sección de valor agregado -->
     <div class=" rounded-2xl p-8 mb-8">
@@ -58,17 +75,32 @@
 import { ref } from 'vue'
 
 const brands = ref([
-  'pai', 'automann', 'KTC', 'KMP brand', 'N.Y.C Genuine Parts', 'Premier_Manufacturing'
+  'pai', 'automann', 'KTC', 'KMP brand', 'N.Y.C Genuine Parts', 'Premier Manufacturing'
 ])
 
 // Función para obtener la ruta correcta de la imagen según la marca
 const getImagePath = (brand) => {
   // Marcas con extensión .webp
-  if (brand === 'automann' || brand === 'Premier_Manufacturing') {
-    return `/images/marcas/${brand}.webp`
+  if (brand === 'automann' || brand === 'Premier Manufacturing') {
+    // Para Premier Manufacturing, usar el nombre del archivo con underscore
+    const fileName = brand === 'Premier Manufacturing' ? 'Premier_Manufacturing' : brand
+    return `/images/marcas/${fileName}.webp`
   }
   // Para el resto de marcas, usar .png
   return `/images/marcas/${brand}.png`
+}
+
+// Función para obtener la URL correspondiente a cada marca
+const getBrandUrl = (brand) => {
+  const urlMap = {
+    'pai': 'https://www.pai.com/new-pai-products',
+    'automann': 'https://www.automann.com/products',
+    'KTC': 'https://ktcbrothers.com/en/business-lines/',
+    'KMP brand': 'https://www.kmpbrand.com/',
+    'N.Y.C Genuine Parts': 'https://www.nycofamerica.com/',
+    'Premier Manufacturing': 'https://www.premier-mfg.com/shop/'
+  }
+  return urlMap[brand] || null
 }
 </script>
 
