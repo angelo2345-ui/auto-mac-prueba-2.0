@@ -105,7 +105,7 @@
             <i class="las la-shipping-fast la-3x text-white"></i>
           </div>
     <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Importación Directa</h3>
-          <p class="text-gray-600">Pedidos especiales y personalizados desde fábrica</p>
+          <p class="text-gray-600">Atendemos solicitudes especiales de productos según disponibilidad de nuestras marcas representadas.</p>
         </div>
 
         <div class="group bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-purple-200">
@@ -279,7 +279,7 @@ export default {
         {
           title: 'Importaciones',
           subtitle: 'Comercio Internacional',
-          description: 'Importaciones personalizadas y comercio internacional. Somos especialistas en la importación de repuestos para equipos industriales.',
+          description: 'Importaciones y soluciones en comercio internacional. Contamos con amplia experiencia en repuestos para equipos industriales.',
           badge: 'Importación directa',
           primaryButton: 'Solicitar Importación',
           backgroundImage: 'images/mechanic_1.webp',

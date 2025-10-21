@@ -12,6 +12,10 @@
           </div>
           <p class="text-sm text-gray-400 mb-2">Soluciones automotrices</p>
           <nav class="flex flex-col space-y-3 mt-4">
+            <router-link to="/quienes-somos" class="transition hover:[color:var(--color-amarillo)] flex items-center gap-2">
+              <i class="las la-users la-lg"></i>
+              <span>Quiénes Somos</span>
+            </router-link>
             <router-link to="/" class="transition hover:[color:var(--color-amarillo)] flex items-center gap-2">
               <i class="las la-home la-lg"></i>
               <span>Inicio</span>

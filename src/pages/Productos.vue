@@ -57,7 +57,7 @@
             </svg>
           </div>
           <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family: var(--fuente-titulos);">
-            Visite las webs de nuestras <span style="color: var(--color-amarillo);">marcas asociadas</span> para importarla para usted
+            Visite las webs de nuestras <span style="color: var(--color-amarillo);">marcas representadas</span> y contáctenos para más información sobre sus productos.
           </h3>
           <p class="text-gray-600 mb-6">
             Explore directamente los catálogos oficiales de nuestros socios comerciales y solicítenos cualquier producto específico.
@@ -251,7 +251,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Sistema de Enfriamiento/Depósito de coolant.png',
           stock: 'Disponible',
-          marca: 'VALEO; GATES; DAYCO; BAND',
+          marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Radiadores
@@ -263,7 +263,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Sistema de Enfriamiento/Radiadores.webp',
           stock: 'Disponible',
-          marca: 'VALEO; GATES; DAYCO; BAND',
+          marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Coolers
@@ -275,7 +275,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Sistema de Enfriamiento/Coolers.png',
           stock: 'Disponible',
-          marca: 'VALEO; GATES; DAYCO; BAND',
+          marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Abrazaderas
@@ -287,7 +287,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Sistema de Enfriamiento/Abrazaderas.png',
           stock: 'Disponible',
-          marca: 'VALEO; GATES; DAYCO; BAND',
+          marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Mangueras de silicona
@@ -299,7 +299,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Sistema de Enfriamiento/Mangueras de silicona.webp',
           stock: 'Disponible',
-          marca: 'VALEO; GATES; DAYCO; BAND',
+          marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Bombas de agua
@@ -311,7 +311,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Sistema de Enfriamiento/Bombas de agua.png',
           stock: 'Disponible',
-          marca: 'VALEO; GATES; DAYCO; BAND',
+          marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Transmisión / Cardán
@@ -324,7 +324,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Transmisión - Cardán/Kit de clutch.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Crucetas de cardán
@@ -336,7 +336,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Transmisión - Cardán/Crucetas de cardán.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Gomas de cardán
@@ -348,7 +348,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Transmisión - Cardán/Gomas de cardán.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Soportes de cardán
@@ -360,7 +360,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Transmisión - Cardán/soportes de cardán.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Retenedoras
@@ -372,7 +372,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Transmisión - Cardán/Retenedoras.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Suspensión
@@ -385,7 +385,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Suspensión/Tensores.png',
           stock: 'Disponible',
-          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Bolsas de aire
@@ -397,7 +397,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Suspensión/Bolsas de aire.png',
           stock: 'Disponible',
-          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Grapas
@@ -409,7 +409,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Suspensión/Grapas.png',
           stock: 'Disponible',
-          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Bujes
@@ -421,7 +421,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Suspensión/Bujes.png',
           stock: 'Disponible',
-          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Muelles
@@ -433,7 +433,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Suspensión/Muelles.png',
           stock: 'Disponible',
-          marca: 'FIRESTONE; AUTOMANN; PREMIER',
+          marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Hidráulico 
@@ -446,7 +446,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Hidráulico/Bombas hidráulicas.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Válvulas de control
@@ -458,7 +458,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Hidráulico/Válvulas de control.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Cilindros hidráulicos
@@ -470,7 +470,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Hidráulico/Cilindros hidráulicos.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Mangueras hidráulicas
@@ -482,7 +482,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Hidráulico/Mangueras hidráulicas.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Válvulas de aire 4 y 5 vías
@@ -494,7 +494,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Hidráulico/Válvulas de aire 4 y 5 vías.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Gatos hidráulicos
@@ -506,7 +506,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Hidráulico/Gatos hidráulicos.png',
           stock: 'Disponible',
-          marca: 'AUTOMANN; PAI; PREMIER',
+          marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Filtros
@@ -519,7 +519,6 @@ export default {
           price: '$250.00',
           image: '/images/productos/Filtros/Filtros Aire.png',
           stock: 'Disponible',
-          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Filtros Aceite
@@ -531,7 +530,6 @@ export default {
           price: '$250.00',
           image: '/images/productos/Filtros/Filtros de aceite.png',
           stock: 'Disponible',
-          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Filtros de Cabina
@@ -543,7 +541,6 @@ export default {
           price: '$250.00',
           image: '/images/productos/Filtros/Filtros de cabina.png',
           stock: 'Disponible',
-          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Filtros Hidráulicos
@@ -555,7 +552,6 @@ export default {
           price: '$250.00',
           image: '/images/productos/Filtros/Filtros Hidráulicos.png',
           stock: 'Disponible',
-          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Filtros de Combustible
@@ -567,7 +563,6 @@ export default {
           price: '$250.00',
           image: '/images/productos/Filtros/Filtros Combustible.png',
           stock: 'Disponible',
-          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Filtros de Transmisión
@@ -579,7 +574,6 @@ export default {
           price: '$250.00',
           image: '/images/productos/Filtros/Filtros Transmisión.png',
           stock: 'Disponible',
-          marca: 'BALDWIN; SAKURA; DONALDSON; FLEETGUARD',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Turbo / Admisión
@@ -800,7 +794,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Lámparas.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Faros
@@ -812,7 +806,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Faros.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Lámparas de prevención
@@ -824,7 +818,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Lámparas de prevención.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Lámparas de trabajo
@@ -836,7 +830,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Lámparas de trabajo.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Parrillas
@@ -848,7 +842,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Parrillas.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Lámparas de trabajo
@@ -860,7 +854,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Lámparas de trabajo.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Limpiabrisas
@@ -872,7 +866,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Limpiabrisas.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Espejos
@@ -884,7 +878,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Espejos.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Cornetas
@@ -896,7 +890,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Cornetas.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
         //Accesorios de cabina
@@ -908,7 +902,7 @@ export default {
           price: '$250.00',
           image: '/images/productos/Iluminación y  Cabina/Accesorios de cabina.png',
           stock: 'Disponible',
-          marca: 'BOSH; HELLA',
+          marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
       ]
