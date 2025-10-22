@@ -3,29 +3,29 @@
     <h3 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un mensaje</h3>
     
     <!-- Mensaje de éxito -->
-    <div v-if="showSuccessMessage" class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+    <div v-if="showSuccessMessage" class="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
       <div class="flex items-center">
         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
-        ¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.
+        ¡Gracias! Tu mensaje ha sido enviado exitosamente. Nos pondremos en contacto contigo pronto.
       </div>
     </div>
 
     <!-- Mensaje de error -->
-    <div v-if="showErrorMessage" class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+    <div v-if="showErrorMessage" class="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
       <div class="flex items-center">
         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
         </svg>
-        Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
+        {{ errorMessage }}
       </div>
     </div>
 
     <form @submit.prevent="submitForm" class="space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="form-group">
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
           <input 
             id="name"
             v-model="form.name" 
@@ -33,11 +33,11 @@
             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
             placeholder="Tu nombre" 
             required 
-            :disabled="isSubmitting"
+            :disabled="isLoading"
           />
         </div>
         <div class="form-group">
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico *</label>
           <input 
             id="email"
             v-model="form.email" 
@@ -45,7 +45,7 @@
             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
             placeholder="tu@email.com" 
             required 
-            :disabled="isSubmitting"
+            :disabled="isLoading"
           />
         </div>
       </div>
@@ -57,7 +57,7 @@
           type="text" 
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
           placeholder="Tu número de teléfono" 
-          :disabled="isSubmitting"
+          :disabled="isLoading"
         />
       </div>
       <div class="form-group">
@@ -68,12 +68,11 @@
           type="text" 
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
           placeholder="Asunto de tu mensaje" 
-          required 
-          :disabled="isSubmitting"
+          :disabled="isLoading"
         />
       </div>
       <div class="form-group">
-        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje *</label>
         <textarea 
           id="message"
           v-model="form.message" 
@@ -81,30 +80,32 @@
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
           placeholder="¿En qué podemos ayudarte?" 
           required
-          :disabled="isSubmitting"
+          :disabled="isLoading"
         ></textarea>
       </div>
       <button 
         type="submit" 
         class="w-full py-3 px-6 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-lg transition-colors duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-        :style="{ backgroundColor: 'var(--color-amarillo)' }"
-        :disabled="isSubmitting"
+        :style="{ backgroundColor: isLoading ? '#9CA3AF' : 'var(--color-amarillo)' }"
+        :disabled="isLoading"
       >
-        <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <!-- Spinner de carga -->
+        <svg v-if="isLoading" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
+        <!-- Icono de correo -->
         <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2v10a2 2 0 002 2z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
-        {{ isSubmitting ? 'Enviando...' : 'Enviar Mensaje' }}
+        {{ isLoading ? 'Enviando...' : 'Enviar Mensaje' }}
       </button>
     </form>
   </div>
 </template>
   
 <script>
-import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser';
 
 export default {
   data() {
@@ -116,62 +117,85 @@ export default {
         subject: '',
         message: ''
       },
-      isSubmitting: false,
+      isLoading: false,
       showSuccessMessage: false,
-      showErrorMessage: false
+      showErrorMessage: false,
+      errorMessage: ''
     }
   },
   methods: {
     async submitForm() {
-      this.isSubmitting = true
-      this.showSuccessMessage = false
-      this.showErrorMessage = false
+      // Resetear mensajes
+      this.showSuccessMessage = false;
+      this.showErrorMessage = false;
+      this.errorMessage = '';
+      
+      // Validar campos requeridos
+      if (!this.form.name.trim() || !this.form.email.trim() || !this.form.message.trim()) {
+        this.showError('Por favor, completa todos los campos obligatorios.');
+        return;
+      }
+
+      this.isLoading = true;
 
       try {
-        // Configuración de EmailJS
-        const serviceID = 'service_automac' // Necesitarás configurar esto en EmailJS
-        const templateID = 'template_automac' // Necesitarás configurar esto en EmailJS
-        const publicKey = 'YOUR_PUBLIC_KEY' // Necesitarás obtener esto de EmailJS
-
-        // Preparar los datos del template
+        // Preparar datos para EmailJS
         const templateParams = {
-          to_email: 'info@automacdom.com.do',
-          from_name: this.form.name,
-          from_email: this.form.email,
-          phone: this.form.phone,
-          subject: this.form.subject,
-          message: this.form.message,
-          reply_to: this.form.email
-        }
+          from_name: this.form.name.trim(),
+          from_email: this.form.email.trim(),
+          phone: this.form.phone.trim() || 'No proporcionado',
+          subject: this.form.subject.trim() || 'Consulta desde sitio web',
+          message: this.form.message.trim(),
+          to_email: 'automac.repuestos@gmail.com' // Email de destino
+        };
 
         // Enviar email usando EmailJS
-        await emailjs.send(serviceID, templateID, templateParams, publicKey)
-        
-        this.showSuccessMessage = true
-        
-        // Reiniciar el formulario después de 3 segundos
-        setTimeout(() => {
-          this.form = {
-            name: '',
-            email: '',
-            phone: '',
-            subject: '',
-            message: ''
-          }
-          this.showSuccessMessage = false
-        }, 3000)
+        // NOTA: Necesitas configurar estos valores en tu cuenta de EmailJS:
+        // - SERVICE_ID: ID del servicio de email (ej: Gmail)
+        // - TEMPLATE_ID: ID del template que crearás
+        // - PUBLIC_KEY: Tu clave pública de EmailJS
+        await emailjs.send(
+          'service_f9wl0jh',        // Reemplazar con tu Service ID
+          'template_ri35mw6',       // Reemplazar con tu Template ID
+          templateParams,
+          'ul8xI6kMa5JdQcuq9'         // Reemplazar con tu Public Key
+        );
 
+        this.showSuccess();
+        this.resetForm();
       } catch (error) {
-        console.error('Error al enviar el email:', error)
-        this.showErrorMessage = true
-        
-        // Ocultar mensaje de error después de 5 segundos
-        setTimeout(() => {
-          this.showErrorMessage = false
-        }, 5000)
+        console.error('Error al enviar el email:', error);
+        this.showError('Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente.');
       } finally {
-        this.isSubmitting = false
+        this.isLoading = false;
       }
+    },
+
+    showSuccess() {
+      this.showSuccessMessage = true;
+      // Ocultar mensaje después de 5 segundos
+      setTimeout(() => {
+        this.showSuccessMessage = false;
+      }, 5000);
+    },
+
+    showError(message) {
+      this.errorMessage = message;
+      this.showErrorMessage = true;
+      // Ocultar mensaje después de 8 segundos
+      setTimeout(() => {
+        this.showErrorMessage = false;
+      }, 8000);
+    },
+
+    resetForm() {
+      this.form = {
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      };
     }
   }
 }
