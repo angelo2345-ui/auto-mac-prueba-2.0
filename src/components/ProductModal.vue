@@ -87,13 +87,43 @@ export default {
         stock: ''
       })
     }
+    ,
+    // Número de WhatsApp en formato internacional (ej: "51912345678") sin el signo +.
+    whatsappNumber: {
+      type: String,
+      default: ''
+    }
   },
   methods: {
     closeModal() {
       this.$emit('close');
     },
     requestQuote() {
-      alert('Solicitud de cotización enviada. Nos pondremos en contacto contigo pronto para informarte sobre precio y disponibilidad.');
+      // Construir mensaje con los datos del producto
+      const p = this.product || {};
+      const name = p.name || '';
+      const marca = p.marca || '';
+      const modelo = p.modelo || '';
+      const desc = p.description || '';
+      const stock = p.stock || '';
+
+      const message = `Hola, estoy interesado en este producto:\n\n*${name}*\nMarca: ${marca || '-'}\nModelo: ${modelo || '-'}\nDescripción: ${desc || '-'}\nStock: ${stock || 'Consultar'}\n\n¿Me pueden indicar precio y disponibilidad?`;
+
+      const encoded = encodeURIComponent(message);
+      const recipient = (this.whatsappNumber || '').trim();
+
+      // Si se proporciona número, usar la ruta con phone; si no, abrir WhatsApp sin número para que el usuario elija contacto.
+      let url = '';
+      if (recipient) {
+        // Normalizar: eliminar todo lo que no sea dígito
+        const phoneDigits = recipient.replace(/\D/g, '');
+        url = `https://api.whatsapp.com/send?phone=${phoneDigits}&text=${encoded}`;
+      } else {
+        url = `https://api.whatsapp.com/send?text=${encoded}`;
+      }
+
+      // Abrir en nueva pestaña/ventana
+      window.open(url, '_blank', 'noopener,noreferrer');
       this.closeModal();
     }
   }
