@@ -45,6 +45,7 @@
       <ProductModal 
         :show="showModal" 
         :product="selectedProduct" 
+        whatsapp-number="18496292974"
         @close="closeProductModal" 
       />
       
