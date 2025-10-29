@@ -1,9 +1,8 @@
 {
-    "name": "automac-main",
-    "version": "1.0.0",
-    "description": "Proyecto similar a rodacaribe hecho en Vue 3 + Vite",
-    "author": "Tu Nombre",
-    "license": "MIT",
+      "name": "package",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -15,7 +14,8 @@
         "vue-router": "^4.3.0"
     },
     "devDependencies": {
-        "@vitejs/plugin-vue": "^5.2.4",
-        "vite": "^5.2.0"
-    }
+    "@vitejs/plugin-vue": "^6.0.0",
+    "vite": "^7.0.0",
+    "vite-plugin-vue-devtools": "^7.7.7"
+  }
 }
