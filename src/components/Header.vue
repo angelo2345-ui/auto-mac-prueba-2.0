@@ -5,7 +5,7 @@
       !isHeaderVisible ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
     ]"
     :style="{
-      background: scrolled ? 'var(--color-negro)' : 'var(--color-negro)',
+      background: 'black',
       borderBottom: scrolled ? '1px solid rgba(107, 114, 128, 0.5)' : 'none',
       boxShadow: scrolled ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
     }"
@@ -18,40 +18,27 @@
           class="flex items-center space-x-4 group transition-all duration-300 hover:scale-105 ml-2"
           @click="closeMenu"
         >
-          <div class="rounded-xl shadow-lg p-0.5" style="background: linear-gradient(to bottom right, var(--color-amarillo), var(--color-amarillo)); border: 2px solid rgba(var(--color-amarillo), 0.2);">
+          <div class="mt-10 mb-10">
             <img 
-              src="/public/images/logos/Automac Imagen.png" 
-              alt="Automac Logo" 
-              class="h-12 w-12 sm:h-18 sm:w-18 object-contain transition-transform duration-300 group-hover:scale-110" 
+              src="/images/logos/Automac Imagen.png" 
+              alt="Logo Automac" 
+              class="h-20 w-20 sm:h-25 sm:w-25 object-contain transition-transform duration-300 group-hover:scale-110 " 
             />
           </div>
           <div class="flex flex-col">
             <span class="text-white text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
-            <span class="text-xs text-gray-400 font-medium tracking-wide -mt-1">Soluciones automotrices</span>
+            <span class="text-xs text-white font-medium tracking-wide -mt-1">Soluciones automotrices</span>
           </div>
         </router-link>
 
         <!-- Desktop Navigation - Mejorado con indicador activo y mejores transiciones -->
         <nav class="hidden md:flex items-center space-x-6">
           <router-link 
-            to="/quienes-somos" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
-            :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/quienes-somos') }"
-          >
-            <i class="las la-users"></i>
-            Quiénes Somos
-            <span 
-              class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
-              :class="{ 'scale-x-100': $route.path.startsWith('/quienes-somos') }"
-            ></span>
-            <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-          </router-link>
-          <router-link 
             to="/" 
             exact
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path === '/' }"
           >
             <i class="las la-home"></i>
@@ -63,10 +50,23 @@
             ></span>
             <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </router-link>
+          <router-link 
+            to="/quienes-somos" 
+            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/quienes-somos') }"
+          >
+            <i class="las la-users"></i>
+            Quiénes Somos
+            <span 
+              class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
+              :class="{ 'scale-x-100': $route.path.startsWith('/quienes-somos') }"
+            ></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          </router-link>
 
           <router-link 
             to="/productos" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/productos') }"
           >
             <i class="las la-tools"></i>
@@ -81,7 +81,7 @@
 
           <router-link 
             to="/contacto" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/contacto') }"
           >
             <i class="las la-envelope"></i>
@@ -94,7 +94,7 @@
           </router-link>
           <router-link 
             to="/blog" 
-            class="relative text-gray-300 hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/blog') }"
           >
             <i class="las la-rss"></i>
@@ -125,34 +125,12 @@
       <!-- Mobile Navigation - Sin opacidad -->
       <div 
         :class="[
-          'md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-black',
+          'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
           menuActive ? 'max-h-screen visible' : 'max-h-0 invisible'
         ]"
+        style="background: var(--color-negro);"
       >
         <nav class="py-6 space-y-2 border-t border-gray-700/50 mt-4" style="font-family: var(--fuente-principal);">
-          <router-link 
-            to="/quienes-somos" 
-            @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
-            :class="{
-              'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/quienes-somos'),
-              'hover:bg-white/5': !$route.path.startsWith('/quienes-somos')
-            }"
-            style="font-family: var(--fuente-principal);"
-          >
-            <div class="flex items-center gap-3">
-              <i class="las la-users text-xl"></i>
-              <span class="text-lg font-medium">Quiénes Somos</span>
-            </div>
-            <svg 
-              class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </router-link>
           <router-link 
             to="/" 
             exact
@@ -167,6 +145,29 @@
             <div class="flex items-center gap-3">
               <i class="las la-home text-xl"></i>
               <span class="text-lg font-medium">Inicio</span>
+            </div>
+            <svg 
+              class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </router-link>
+          <router-link 
+            to="/quienes-somos" 
+            @click="closeMenu"
+            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
+            :class="{
+              'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/quienes-somos'),
+              'hover:bg-white/5': !$route.path.startsWith('/quienes-somos')
+            }"
+            style="font-family: var(--fuente-principal);"
+          >
+            <div class="flex items-center gap-3">
+              <i class="las la-users text-xl"></i>
+              <span class="text-lg font-medium">Quiénes Somos</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 

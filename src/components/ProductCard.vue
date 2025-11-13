@@ -9,14 +9,6 @@
         
       </div>
       <p class="text-sm text-gray-600 mb-3 line-clamp-2">{{ product.description }}</p>
-      <div class="flex flex-col space-y-2 mb-4">
-        <div class="flex items-center text-xs text-gray-500">
-          <span class="font-semibold mr-1">Marca:</span> {{ product.marca }}
-        </div>
-        <div class="flex items-center text-xs text-gray-500">
-          <span class="font-semibold mr-1">Modelo:</span> {{ product.modelo }}
-        </div>
-      </div>
       <button @click="$emit('show-details', product)" class="w-full bg-yellow-600 hover:bg-yellow-900 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
         Ver Detalles
       </button>
