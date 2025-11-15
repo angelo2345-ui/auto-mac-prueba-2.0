@@ -1,14 +1,15 @@
 /* Colores principales Automac */
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700&display=swap');
+/* Las fuentes se cargan vía npm (Fontsource) en src/main.js */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css');
 
+
 :root {
-	--color-amarillo: #FFC400;   /* Amarillo Caterpillar */
+	--color-amarillo: #dead23;   /* Amarillo corporativo actualizado */
 	--color-gris: #EAE0C8;       /* Gris Perla */
 	--color-negro: #000000;      /* Negro */
-	--fuente-principal: "Oswald", sans-serif;
-	--fuente-titulos: "Oswald", sans-serif;
+    --fuente-principal: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --fuente-titulos: "Oswald", Arial, Helvetica, sans-serif;
 }
 
 
@@ -20,10 +21,10 @@ body {
 
 /* Tipografía para títulos y subtítulos */
 h1, h2, h3, h4 {
-	font-family: var(--fuente-titulos);
-	font-weight: 400;
-     
-	letter-spacing: 0.03em;
+    font-family: var(--fuente-titulos);
+    font-weight: 700; /* Negrita para títulos */
+    
+    letter-spacing: 0.03em;
 }
 
 /* Subtítulos destacados (como en Home.vue) */
@@ -53,7 +54,7 @@ h1, h2, h3, h4 {
 }
 
 .breadcrumb-link:hover {
-    background-color: rgba(255, 196, 0, 0.1);
+    background-color: rgba(222, 173, 35, 0.1);
     color: var(--color-amarillo);
 }
 
@@ -89,3 +90,41 @@ h1, h2, h3, h4 {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
 }
+
+/* Overrides de clases Tailwind amarillas al amarillo corporativo */
+/* Fondos */
+.bg-yellow-50 { background-color: rgb(222 173 35 / 0.08) !important; }
+.bg-yellow-100 { background-color: rgb(222 173 35 / 0.12) !important; }
+.bg-yellow-200 { background-color: rgb(222 173 35 / 0.2) !important; }
+.bg-yellow-400 { background-color: var(--color-amarillo) !important; }
+.bg-yellow-500 { background-color: var(--color-amarillo) !important; }
+.bg-yellow-600 { background-color: var(--color-amarillo) !important; }
+.bg-yellow-700 { background-color: var(--color-amarillo) !important; }
+.bg-yellow-900 { background-color: var(--color-amarillo) !important; }
+.bg-yellow-400\/10 { background-color: rgb(222 173 35 / 0.1) !important; }
+
+/* Texto */
+.text-yellow-400 { color: var(--color-amarillo) !important; }
+.text-yellow-600 { color: var(--color-amarillo) !important; }
+
+/* Bordes */
+.border-yellow-200 { border-color: var(--color-amarillo) !important; }
+.border-yellow-400 { border-color: var(--color-amarillo) !important; }
+
+/* Gradientes */
+.from-yellow-400 { --tw-gradient-from: var(--color-amarillo) !important; }
+.from-yellow-50 { --tw-gradient-from: rgb(222 173 35 / 0.08) !important; }
+.from-yellow-400\/10 { --tw-gradient-from: rgb(222 173 35 / 0.1) !important; }
+.to-yellow-100 { --tw-gradient-to: rgb(222 173 35 / 0.2) !important; }
+
+/* Ring (focus) */
+.ring-yellow-400 { --tw-ring-color: var(--color-amarillo) !important; }
+.ring-yellow-500 { --tw-ring-color: var(--color-amarillo) !important; }
+.focus\:ring-yellow-400\/50:focus { --tw-ring-color: rgb(222 173 35 / 0.5) !important; }
+.focus\:ring-yellow-500:focus { --tw-ring-color: var(--color-amarillo) !important; }
+
+/* Hovers comunes */
+.hover\:bg-yellow-500:hover { background-color: var(--color-amarillo) !important; }
+.hover\:text-yellow-600:hover { color: var(--color-amarillo) !important; }
+/* Estados group-hover */
+.group:hover .group-hover\:text-yellow-600 { color: var(--color-amarillo) !important; }

@@ -17,7 +17,7 @@
               <div class="contact-icon">📍</div>
               <div class="contact-details">
                 <h4>Dirección</h4>
-                <p>Av. 27 de Febrero, Santo Domingo, República Dominicana</p>
+                <p>Av. Máximo Gómez, No 103-A, Esq. Américo Lugo, Villa Juana</p>
               </div>
             </div>
             
@@ -25,15 +25,24 @@
               <div class="contact-icon">📧</div>
               <div class="contact-details">
                 <h4>Email</h4>
-                <p>info@automac.com</p>
+                <p><a href="mailto:info@automacdom.com.do">info@automacdom.com.do</a></p>
               </div>
             </div>
             
             <div class="contact-item">
               <div class="contact-icon">📱</div>
               <div class="contact-details">
-                <h4>Teléfono</h4>
-                <p>+1 809-555-1234</p>
+                <h4>Teléfonos</h4>
+                <p>829-687-4000</p>
+                <p>849-629-2974</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🟢</div>
+              <div class="contact-details">
+                <h4>WhatsApp</h4>
+                <p><a href="https://wa.me/18296874000" target="_blank" rel="noopener noreferrer">Chat por WhatsApp</a></p>
               </div>
             </div>
             
@@ -42,7 +51,7 @@
               <div class="contact-details">
                 <h4>Horario</h4>
                 <p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
-                <p>Sábado: 8:00 AM - 1:00 PM</p>
+                <p>Sábado: 8:00 AM - 12:00 PM</p>
               </div>
             </div>
           </div>

@@ -1,7 +1,14 @@
 <template>
   <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group">
     <div class="relative h-48 bg-gray-100 flex items-center justify-center p-4">
-      <img :src="product.image" :alt="product.name" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+      <img 
+        :src="product.image" 
+        :alt="product.name" 
+        :class="[
+          'max-h-full max-w-full object-contain transition-transform duration-300',
+          isLargeProduct(product.name) ? 'scale-[1.35] group-hover:scale-[1.55]' : 'group-hover:scale-105'
+        ]" 
+      />
     </div>
     <div class="p-5">
       <div class="flex items-center justify-between mb-2">
@@ -9,14 +16,6 @@
         
       </div>
       <p class="text-sm text-gray-600 mb-3 line-clamp-2">{{ product.description }}</p>
-      <div class="flex flex-col space-y-2 mb-4">
-        <div class="flex items-center text-xs text-gray-500">
-          <span class="font-semibold mr-1">Marca:</span> {{ product.marca }}
-        </div>
-        <div class="flex items-center text-xs text-gray-500">
-          <span class="font-semibold mr-1">Modelo:</span> {{ product.modelo }}
-        </div>
-      </div>
       <button @click="$emit('show-details', product)" class="w-full bg-yellow-600 hover:bg-yellow-900 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
         Ver Detalles
       </button>
@@ -30,6 +29,19 @@ export default {
     product: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    isLargeProduct(name) {
+      const large = [
+        'Bolsas de aire',
+        'Tensores',
+        'Parrillas',
+        'Espejos',
+        'Radiadores',
+        'Depósito de coolant'
+      ]
+      return large.includes(name)
     }
   }
 }

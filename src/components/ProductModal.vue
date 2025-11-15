@@ -24,10 +24,6 @@
               <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/2">
                   <img :src="product.image" :alt="product.name" class="w-full h-auto rounded-lg object-cover mb-4 shadow-md">
-                  <div class="bg-blue-50 p-4 rounded-lg shadow-sm border border-blue-100">
-                    <p class="text-blue-800 font-medium">Marca: <span class="font-bold">{{ product.marca }}</span></p>
-                    <p class="text-blue-800 font-medium">Modelo: <span class="font-bold">{{ product.modelo }}</span></p>
-                  </div>
                 </div>
                 
                 <div class="md:w-1/2">

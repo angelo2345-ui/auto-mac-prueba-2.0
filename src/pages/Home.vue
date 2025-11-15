@@ -83,10 +83,10 @@
           <i class="las la-cogs la-3x text-white"></i>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">
-          Servicios que <span style="color:var(--color-amarillo);font-family:var(--fuente-titulos);">Nos Destacan</span>
+          Servicios que <span style="color:var(--color-amarillo);font-family:var(--fuente-titulos);">Nos caracterizan</span>
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Contamos con servicios integrales que complementan nuestra oferta de repuestos de alta calidad
+          Contamos con Asistencia profesional que complementa nuestra oferta de suministros de alta calidad
         </p>
   <div class="w-24 h-1 mx-auto mt-6 rounded-full" style="background-color:var(--color-amarillo);"></div>
       </div>
@@ -170,7 +170,7 @@
                 <h3 class="text-2xl font-bold" style="font-family:var(--fuente-titulos);color: var(--color-amarillo);">NUESTRA MISIÓN</h3>
               </div>
               <p class="text-gray-100 leading-relaxed text-lg">
-                Mantener la excelencia en la distribución de repuestos para los sectores de 
+                Mantener la excelencia en la distribución de repuestos para el sector de 
                 <strong style="color:var(--color-amarillo);">transporte, industrial, minería, agrícola y construcción</strong>, 
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
               </p>
@@ -218,7 +218,7 @@
        <BrandCarousel />
 
   <!-- Call to Action -->
-  <section class="py-16" style="background:linear-gradient(90deg, var(--color-amarillo) 0%, #ffe066 100%);">
+        <section class="py-16" style="background:linear-gradient(90deg, var(--color-amarillo) 0%, var(--color-amarillo) 100%);">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
   <h2 class="text-3xl md:text-4xl mb-6" style="font-family:var(--fuente-titulos);color:var(--color-negro);font-weight:bold;">
         ¿Quieres ver todos nuestros productos?
@@ -252,8 +252,8 @@ export default {
       slides: [
         {
           title: 'Compromiso y Calidad',
-          subtitle: 'Repuestos Premium Garantizados',
-          description: '¡Contamos con servicios que complementan nuestra oferta de repuestos! Compromiso, respaldo y calidad en cada producto que ofrecemos.',
+          subtitle: 'Suministros para camiones y tractores',
+          description: '¡Contamos con servicios que complementan nuestra oferta de suministros para camiones y tractores! Compromiso, respaldo y calidad en cada producto que ofrecemos.',
           badge: '15 años de experiencia garantizada',
           primaryButton: 'Ver Catálogo',
           backgroundImage: 'images/tractor.webp',
@@ -282,11 +282,50 @@ export default {
           description: 'Importaciones y soluciones en comercio internacional. Contamos con amplia experiencia en repuestos para equipos industriales.',
           badge: 'Importación directa',
           primaryButton: 'Solicitar Importación',
-          backgroundImage: 'images/mechanic_1.webp',
+          backgroundImage: 'images/logos/exportaciones.avif',
           stats: [
             { value: '50+', label: 'Países Proveedores' },
             { value: '30 días', label: 'Tiempo de Importación' },
             { value: '100%', label: 'Productos Originales' }
+          ]
+        },
+        {
+          title: 'Agricultura',
+          subtitle: 'Soluciones para maquinaria agrícola',
+          description: 'Suministros y componentes para tractores, cosechadoras y equipos agrícolas. Calidad y respaldo para el campo.',
+          badge: 'Sector agrícola',
+          primaryButton: 'Conocer más',
+          backgroundImage: 'images/mechanic_1.webp',
+          stats: [
+            { value: '100+', label: 'Referencias agrícolas' },
+            { value: '24/7', label: 'Soporte y asesoría' },
+            { value: '100%', label: 'Calidad Garantizada' }
+          ]
+        },
+        {
+          title: 'Construcción e industria',
+          subtitle: 'Soluciones para construcción e industria',
+          description: 'Componentes y suministros para equipos de construcción e industria: calidad, respaldo y disponibilidad.',
+          badge: 'Sector construcción',
+          primaryButton: 'Conocer más',
+          backgroundImage: 'images/inicio/construccion.jpg',
+          stats: [
+            { value: '200+', label: 'Referencias industriales' },
+            { value: '24/7', label: 'Soporte y asesoría' },
+            { value: '100%', label: 'Calidad Garantizada' }
+          ]
+        },
+        {
+          title: 'Minería',
+          subtitle: 'Soluciones para equipos de minería',
+          description: 'Componentes y suministros resistentes para operaciones mineras. Calidad y respaldo en ambientes extremos.',
+          badge: 'Sector minería',
+          primaryButton: 'Conocer más',
+          backgroundImage: 'images/inicio/vista-de-la-maquinaria-pesada-utilizada-en-la-industria-de-la-construccion.jpg',
+          stats: [
+            { value: '150+', label: 'Referencias mineras' },
+            { value: '24/7', label: 'Soporte y asesoría' },
+            { value: '100%', label: 'Calidad Garantizada' }
           ]
         }
       ]
