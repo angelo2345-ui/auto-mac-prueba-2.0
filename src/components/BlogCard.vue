@@ -36,7 +36,7 @@
           
           <span class="inline-flex items-center text-sm font-medium hover:underline"
                 :style="{ color: 'var(--color-amarillo)' }">
-            Leer más
+            Leer má
             <i class="las la-arrow-right ml-1"></i>
           </span>
         </div>
