@@ -252,8 +252,8 @@ export default {
       slides: [
         {
           title: 'Compromiso y Calidad',
-          subtitle: 'Repuestos Premium Garantizados',
-          description: '¡Contamos con servicios que complementan nuestra oferta de repuestos! Compromiso, respaldo y calidad en cada producto que ofrecemos.',
+          subtitle: 'Suministros para camiones y tractores',
+          description: '¡Contamos con servicios que complementan nuestra oferta de suministros para camiones y tractores! Compromiso, respaldo y calidad en cada producto que ofrecemos.',
           badge: '15 años de experiencia garantizada',
           primaryButton: 'Ver Catálogo',
           backgroundImage: 'images/tractor.webp',
@@ -282,11 +282,50 @@ export default {
           description: 'Importaciones y soluciones en comercio internacional. Contamos con amplia experiencia en repuestos para equipos industriales.',
           badge: 'Importación directa',
           primaryButton: 'Solicitar Importación',
-          backgroundImage: 'images/mechanic_1.webp',
+          backgroundImage: 'images/logos/exportaciones.avif',
           stats: [
             { value: '50+', label: 'Países Proveedores' },
             { value: '30 días', label: 'Tiempo de Importación' },
             { value: '100%', label: 'Productos Originales' }
+          ]
+        },
+        {
+          title: 'Agricultura',
+          subtitle: 'Soluciones para maquinaria agrícola',
+          description: 'Suministros y componentes para tractores, cosechadoras y equipos agrícolas. Calidad y respaldo para el campo.',
+          badge: 'Sector agrícola',
+          primaryButton: 'Conocer más',
+          backgroundImage: 'images/mechanic_1.webp',
+          stats: [
+            { value: '100+', label: 'Referencias agrícolas' },
+            { value: '24/7', label: 'Soporte y asesoría' },
+            { value: '100%', label: 'Calidad Garantizada' }
+          ]
+        },
+        {
+          title: 'Construcción e industria',
+          subtitle: 'Soluciones para construcción e industria',
+          description: 'Componentes y suministros para equipos de construcción e industria: calidad, respaldo y disponibilidad.',
+          badge: 'Sector construcción',
+          primaryButton: 'Conocer más',
+          backgroundImage: 'images/inicio/construccion.jpg',
+          stats: [
+            { value: '200+', label: 'Referencias industriales' },
+            { value: '24/7', label: 'Soporte y asesoría' },
+            { value: '100%', label: 'Calidad Garantizada' }
+          ]
+        },
+        {
+          title: 'Minería',
+          subtitle: 'Soluciones para equipos de minería',
+          description: 'Componentes y suministros resistentes para operaciones mineras. Calidad y respaldo en ambientes extremos.',
+          badge: 'Sector minería',
+          primaryButton: 'Conocer más',
+          backgroundImage: 'images/inicio/vista-de-la-maquinaria-pesada-utilizada-en-la-industria-de-la-construccion.jpg',
+          stats: [
+            { value: '150+', label: 'Referencias mineras' },
+            { value: '24/7', label: 'Soporte y asesoría' },
+            { value: '100%', label: 'Calidad Garantizada' }
           ]
         }
       ]

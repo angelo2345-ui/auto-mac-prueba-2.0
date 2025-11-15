@@ -1,7 +1,14 @@
 <template>
   <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] group">
     <div class="relative h-48 bg-gray-100 flex items-center justify-center p-4">
-      <img :src="product.image" :alt="product.name" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+      <img 
+        :src="product.image" 
+        :alt="product.name" 
+        :class="[
+          'max-h-full max-w-full object-contain transition-transform duration-300',
+          isLargeProduct(product.name) ? 'scale-[1.35] group-hover:scale-[1.55]' : 'group-hover:scale-105'
+        ]" 
+      />
     </div>
     <div class="p-5">
       <div class="flex items-center justify-between mb-2">
@@ -22,6 +29,19 @@ export default {
     product: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    isLargeProduct(name) {
+      const large = [
+        'Bolsas de aire',
+        'Tensores',
+        'Parrillas',
+        'Espejos',
+        'Radiadores',
+        'Depósito de coolant'
+      ]
+      return large.includes(name)
     }
   }
 }

@@ -212,7 +212,7 @@ export default {
           category: 'motor',
           description: 'Solenoides para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/motor/Solenoides.png',
+          image: '/images/productos/nuevos cambios img/solenoides_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -250,7 +250,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Depósito de coolant para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Sistema de Enfriamiento/Depósito de coolant.png',
+          image: '/images/productos/nuevos cambios img/deposito_de_coolant_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -262,7 +262,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Radiadores para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Sistema de Enfriamiento/Radiadores.webp',
+          image: '/images/productos/nuevos cambios img/radiadores_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -380,11 +380,11 @@ export default {
         //Tensores
         {
           id: 18,
-          name: 'Tensores',
+          name: 'Kit de Tensores',
           category: 'Suspensión',
           description:'Tensores para motores diésel y sistemas de Suspensión .',
           price: '$250.00',
-          image: '/images/productos/Suspensión/Tensores.png',
+          image: '/images/productos/nuevos cambios img/tensores_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -392,11 +392,11 @@ export default {
         //Bolsas de aire
         {
           id: 19,
-          name: 'Bolsas de aire',
+          name: 'Yoyos',
           category: 'Suspensión',
           description:'Bolsas de aire para motores diésel y sistemas de Suspensión .',
           price: '$250.00',
-          image: '/images/productos/Suspensión/Bolsas de aire.png',
+          image: '/images/productos/nuevos cambios img/bolsas_de_aire_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -430,7 +430,7 @@ export default {
           id: 22,
           name: 'Muelles',
           category: 'Suspensión',
-          description:'Muelles para motores diésel y sistemas de Suspensión .',
+          description:'Muelle, Madre de muelle & Hojas',
           price: '$250.00',
           image: '/images/productos/Suspensión/Muelles.png',
           stock: 'Disponible',
@@ -789,7 +789,7 @@ export default {
         //Lámparas
         {
           id: 52,
-          name: 'Lámparas',
+          name: 'Luces',
           category: 'iluminacion-cabina',
           description: 'Lámparas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
@@ -801,7 +801,7 @@ export default {
         //Faros
         {
           id: 53,
-          name: 'Faros',
+          name: 'Faroles',
           category: 'iluminacion-cabina',
           description: 'Faros para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
@@ -813,7 +813,7 @@ export default {
         //Lámparas de prevención
         {
           id: 54,
-          name: 'Lámparas de prevención',
+          name: 'Faroles de prevención',
           category: 'iluminacion-cabina',
           description: 'Lámparas de prevención para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
@@ -825,7 +825,7 @@ export default {
         //Lámparas de trabajo
         {
           id: 55,
-          name: 'Lámparas de trabajo',
+          name: 'Faroles de trabajo',
           category: 'iluminacion-cabina',
           description: 'Lámparas de trabajo para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
@@ -841,7 +841,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Parrillas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Parrillas.png',
+          image: '/images/productos/nuevos cambios img/parrillas_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -849,7 +849,7 @@ export default {
         //Lámparas de trabajo
         {
           id: 57,
-          name: 'Lámparas de trabajo',
+          name: 'Faroles de trabajo',
           category: 'iluminacion-cabina',
           description: 'Lámparas de trabajo para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
@@ -861,7 +861,7 @@ export default {
         //Limpiabrisas
         {
           id: 58,
-          name: 'Limpiabrisas',
+          name: 'Para brisas',
           category: 'iluminacion-cabina',
           description: 'Limpiabrisas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
@@ -877,7 +877,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Espejos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Espejos.png',
+          image: '/images/productos/nuevos cambios img/espejos_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
