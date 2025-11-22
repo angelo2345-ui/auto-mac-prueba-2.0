@@ -13,7 +13,7 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="text-center text-white reveal">
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight" style="font-family: var(--fuente-principal);">
-          <span style="color: #2c2b25">Somos</span> <span class="text-[var(--color-amarillo)]">Automac</span>
+          <span class="text-[var(--color-amarillo)]">Automac</span>
         </h1>
         <p class="mt-3 text-black"><b>Compromiso, respaldo y calidad para tu operación</b></p>
         <div class="mt-6 flex items-center justify-center gap-4">
@@ -106,11 +106,11 @@
           <div class="mt-1 text-gray-600">Clientes satisfechos</div>
         </div>
         <div class="stat-card rounded-2xl bg-white border border-gray-200 p-6 text-center reveal">
-          <div class="text-3xl font-extrabold counter" data-target="3500">0</div>
+          <div class="text-3xl font-extrabold counter" data-target="10000" data-plus="true">+0</div>
           <div class="mt-1 text-gray-600">Referencias de repuestos</div>
         </div>
         <div class="stat-card rounded-2xl bg-white border border-gray-200 p-6 text-center reveal">
-          <div class="text-3xl font-extrabold counter" data-target="500">0</div>
+          <div class="text-3xl font-extrabold counter" data-target="500" data-plus="true">+0</div>
           <div class="mt-1 text-gray-600">Proyectos completados</div>
         </div>
       </div>
@@ -211,7 +211,7 @@ export default {
           const tick = (now) => {
             const progress = Math.min((now - start) / duration, 1);
             const value = Math.floor(progress * target);
-            el.textContent = value.toLocaleString();
+            el.textContent = (el.dataset.plus ? '+' : '') + value.toLocaleString(); // Añadir signo + si el atributo data-plus es true
             if (progress < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
