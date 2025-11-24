@@ -83,7 +83,7 @@
           <i class="las la-cogs la-3x text-white"></i>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">
-          Nuestros <span style="color:var(--color-amarillo);font-family:var(--fuente-titulos);">Valores</span>
+          Nuestros Valores
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           Principios que guían nuestro trabajo y relación con cada cliente.
@@ -134,7 +134,7 @@
         <!-- Encabezado -->
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" style="font-family:var(--fuente-titulos);">
-            <span style="color:var(--color-amarillo);">Compromiso</span>, Respaldo y <span style="color:var(--color-amarillo);">Calidad</span>
+            Compromiso, Respaldo y Calidad
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             15 años siendo el socio confiable para el mantenimiento de tu flota
@@ -152,11 +152,11 @@
                 <div>
                   <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">MISIÓN</h3>
                   <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                    Somos especialistas en la <strong style="color: var(--color-amarillo)">importación, exportación y comercialización</strong> 
+                    Somos especialistas en la <strong>importación, exportación y comercialización</strong> 
                     de repuestos para camiones, tractores y equipos industriales.
                   </p>
                   <p class="text-gray-700 leading-relaxed text-lg">
-                    Con <strong style="color: var(--color-amarillo)">más de 15 años de experiencia</strong>, nos hemos consolidado como 
+                    Con <strong>más de 15 años de experiencia</strong>, nos hemos consolidado como 
                     líderes en el sector, ofreciendo soluciones integrales para el mantenimiento preventivo y correctivo.
                   </p>
                 </div>
@@ -164,14 +164,14 @@
             </div>
 
             <!-- Misión destacada -->
-            <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl">
+            <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200">
               <div class="flex items-center gap-4 mb-4">
                 <i class="la la-bullseye la-2x" style="color:var(--color-amarillo);"></i>
-                <h3 class="text-2xl font-bold" style="font-family:var(--fuente-titulos);color: var(--color-amarillo);">VISIÓN</h3>
+                <h3 class="text-2xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">VISIÓN</h3>
               </div>
-              <p class="text-gray-100 leading-relaxed text-lg">
+              <p class="text-gray-700 leading-relaxed text-lg">
                 Mantener la excelencia en la distribución de repuestos para el sector de 
-                <strong style="color:var(--color-amarillo);">transporte, industrial, minería, agrícola y construcción</strong>, 
+                <strong>transporte, industrial, minería, agrícola y construcción</strong>, 
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
               </p>
             </div>

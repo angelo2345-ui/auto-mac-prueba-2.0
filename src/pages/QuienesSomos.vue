@@ -37,13 +37,13 @@
           </div>
           <div class="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              Somos especialistas en la <strong style="color: var(--color-amarillo)">importación, exportación y comercialización</strong> de repuestos para camiones, tractores y equipos industriales.
+              Somos especialistas en la <strong>importación, exportación y comercialización</strong> de repuestos para camiones, tractores y equipos industriales.
             </p>
             <p>
-              Con <strong style="color: var(--color-amarillo)">más de 15 años de experiencia</strong>, ofrecemos soluciones integrales para el mantenimiento preventivo y correctivo.
+              Con <strong>más de 15 años de experiencia</strong>, ofrecemos soluciones integrales para el mantenimiento preventivo y correctivo.
             </p>
             <p>
-              Atendemos a los sectores de <strong style="color: var(--color-amarillo)">transporte, industrial, minería, agrícola y construcción</strong>, con cobertura nacional y soporte en toda la cadena de suministro.
+              Atendemos a los sectores de <strong>transporte, industrial, minería, agrícola y construcción</strong>, con cobertura nacional y soporte en toda la cadena de suministro.
             </p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Importaciones bajo pedido y logística nacional.</li>
@@ -53,14 +53,14 @@
             </ul>
 
             <!-- Visión -->
-            <div class="mt-6 p-6 rounded-2xl bg-gray-900 text-white border border-gray-700 reveal">
+            <div class="mt-6 p-6 rounded-2xl bg-white text-gray-900 border border-gray-200 reveal">
               <div class="flex items-center gap-3 mb-2">
                 <i class="las la-eye text-2xl" style="color: var(--color-amarillo);"></i>
                 <h3 class="text-xl font-bold">Visión</h3>
               </div>
-              <p class="text-gray-100">
+              <p class="text-gray-700">
                 Mantener la excelencia en la distribución de repuestos para el sector de
-                <strong style="color: var(--color-amarillo);">transporte, industrial, minería, agrícola y construcción</strong>,
+                <strong>transporte, industrial, minería, agrícola y construcción</strong>,
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
               </p>
             </div>
