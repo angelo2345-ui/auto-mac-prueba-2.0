@@ -33,7 +33,7 @@
             <div class="h-12 w-12 flex items-center justify-center rounded-full" style="background-color: var(--color-amarillo);">
               <i class="las la-users text-2xl text-black"></i>
             </div>
-            <h2 class="text-2xl font-bold">Quiénes Somos</h2>
+            <h2 class="text-2xl font-bold">Misión</h2>
           </div>
           <div class="space-y-4 text-gray-700 leading-relaxed">
             <p>
@@ -51,6 +51,19 @@
               <li>Garantía de calidad en repuestos originales y compatibles.</li>
               <li>Asesoría técnica para selección, instalación y mantenimiento.</li>
             </ul>
+
+            <!-- Visión -->
+            <div class="mt-6 p-6 rounded-2xl bg-gray-900 text-white border border-gray-700 reveal">
+              <div class="flex items-center gap-3 mb-2">
+                <i class="las la-eye text-2xl" style="color: var(--color-amarillo);"></i>
+                <h3 class="text-xl font-bold">Visión</h3>
+              </div>
+              <p class="text-gray-100">
+                Mantener la excelencia en la distribución de repuestos para el sector de
+                <strong style="color: var(--color-amarillo);">transporte, industrial, minería, agrícola y construcción</strong>,
+                brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
+              </p>
+            </div>
           </div>
         </div>
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden reveal h-full">
@@ -63,35 +76,35 @@
         </div>
       </div>
 
-      <!-- Valores / servicios -->
+      <!-- Valores -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
         <div class="rounded-xl border p-6 reveal" style="background-color: rgb(222 173 35 / 0.1); border-color: var(--color-amarillo);">
           <div class="flex items-center gap-3 mb-2">
-            <i class="las la-truck text-xl" style="color: var(--color-amarillo);"></i>
-            <h3 class="font-semibold">Envíos Nacionales</h3>
+            <i class="las la-shield-alt text-xl" style="color: var(--color-amarillo);"></i>
+            <h3 class="font-semibold">Integridad</h3>
           </div>
-          <p class="text-gray-600">Cobertura completa en todo el territorio nacional</p>
+          <p class="text-gray-600">Actuamos con ética, transparencia y responsabilidad en cada decisión.</p>
         </div>
         <div class="rounded-xl border p-6 reveal" style="background-color:#F0FDF4; border-color:#86EFAC;">
           <div class="flex items-center gap-3 mb-2">
             <i class="las la-award text-xl" style="color: #16a34a;"></i>
-            <h3 class="font-semibold">Garantía de Calidad</h3>
+            <h3 class="font-semibold">Calidad</h3>
           </div>
-          <p class="text-gray-600">100% repuestos originales y compatibles certificados</p>
+          <p class="text-gray-600">Garantizamos repuestos originales y compatibles certificados.</p>
         </div>
         <div class="rounded-xl border p-6 reveal" style="background-color:#EFF6FF; border-color:#93C5FD;">
           <div class="flex items-center gap-3 mb-2">
-            <i class="las la-shipping-fast text-xl" style="color: #2563EB;"></i>
-            <h3 class="font-semibold">Entrega Rápida</h3>
+            <i class="las la-handshake text-xl" style="color: #2563EB;"></i>
+            <h3 class="font-semibold">Compromiso</h3>
           </div>
-          <p class="text-gray-600">Stock disponible y tiempos de entrega optimizados</p>
+          <p class="text-gray-600">Acompañamos a nuestros clientes para asegurar la continuidad operativa.</p>
         </div>
         <div class="rounded-xl border p-6 reveal" style="background-color:#FAF5FF; border-color:#D8B4FE;">
           <div class="flex items-center gap-3 mb-2">
-            <i class="las la-headset text-xl" style="color: #7C3AED;"></i>
-            <h3 class="font-semibold">Asesoría Técnica</h3>
+            <i class="las la-lightbulb text-xl" style="color: #7C3AED;"></i>
+            <h3 class="font-semibold">Innovación</h3>
           </div>
-          <p class="text-gray-600">Equipo especializado para resolver tus consultas</p>
+          <p class="text-gray-600">Mejoramos procesos y soluciones para superar expectativas.</p>
         </div>
       </div>
 
