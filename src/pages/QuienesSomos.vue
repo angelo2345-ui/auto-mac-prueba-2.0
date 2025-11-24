@@ -77,7 +77,10 @@
       </div>
 
       <!-- Valores -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+      <div class="mt-10">
+        <h3 class="text-2xl font-bold mb-4" style="font-family: var(--fuente-titulos);">Valores</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="rounded-xl border p-6 reveal" style="background-color: rgb(222 173 35 / 0.1); border-color: var(--color-amarillo);">
           <div class="flex items-center gap-3 mb-2">
             <i class="las la-shield-alt text-xl" style="color: var(--color-amarillo);"></i>

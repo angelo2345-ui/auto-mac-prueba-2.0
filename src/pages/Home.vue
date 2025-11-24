@@ -141,7 +141,7 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <!-- Información de la empresa -->
           <div class="space-y-8">
             <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
@@ -177,8 +177,9 @@
             </div>
           </div>
 
-          <!-- Características destacadas -->
+          <!-- Características destacadas / Valores -->
           <div class="space-y-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Valores</h3>
             <div class="bg-yellow-50 border-l-4 p-6 rounded-r-xl" style="border-color:var(--color-amarillo);">
               <div class="flex items-center gap-4">
                 <i class="la la-truck la-2x" style="color:var(--color-amarillo);"></i>
