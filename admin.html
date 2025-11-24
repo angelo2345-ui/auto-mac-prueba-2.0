@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Blog - Google Sheets</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            min-height: 250px;
+            resize: vertical;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .success {
+            background: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #667eea;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #1565c0;
+        }
+        
+        .helper-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loginForm">
+            <h1>🔐 Acceso Admin</h1>
+            <p class="subtitle">Panel de administración del blog</p>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input type="password" id="password" placeholder="Ingresa la contraseña">
+                <div id="loginError" class="error hidden"></div>
+            </div>
+            <button onclick="login()">Acceder</button>
+        </div>
+        
+        <div id="blogForm" class="hidden">
+            <h1>✍️ Nuevo Post</h1>
+            <p class="subtitle">Los cambios se verán reflejados en unos minutos</p>
+            
+            <div class="info-box">
+                💡 El contenido se puede escribir en <strong>Markdown</strong> o <strong>HTML</strong>
+            </div>
+            
+            <form id="postForm">
+                <div class="form-group">
+                    <label>Título del Post: *</label>
+                    <input type="text" id="title" required placeholder="Ej: Mi primer post sobre programación">
+                </div>
+                
+                <div class="form-group">
+                    <label>Fecha de Publicación: *</label>
+                    <input type="date" id="date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Autor:</label>
+                    <input type="text" id="author" placeholder="Tu nombre">
+                </div>
+                
+                <div class="form-group">
+                    <label>Categoría:</label>
+                    <input type="text" id="category" placeholder="Ej: Tecnología, Viajes, Personal">
+                </div>
+                
+                <div class="form-group">
+                    <label>Etiquetas (separadas por comas):</label>
+                    <input type="text" id="tags" placeholder="Ej: javascript, tutorial, desarrollo web">
+                    <div class="helper-text">Las etiquetas ayudan a categorizar tu contenido</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Imagen destacada (URL):</label>
+                    <input type="url" id="image" placeholder="https://ejemplo.com/imagen.jpg">
+                    <div class="helper-text">URL completa de la imagen principal del post</div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Resumen/Descripción:</label>
+                    <textarea id="excerpt" rows="3" placeholder="Breve descripción que aparecerá en las vistas previas..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Contenido del Post: *</label>
+                    <textarea id="content" required placeholder="Escribe aquí el contenido de tu post usando Markdown o HTML...
+
+Ejemplo Markdown:
+# Título
+## Subtítulo
+**Negrita** y *cursiva*
+- Lista item 1
+- Lista item 2
+
+[Link](https://ejemplo.com)
+![Imagen](url-imagen.jpg)"></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn">📤 Publicar Post</button>
+            </form>
+            
+            <div id="loading" class="loading hidden">
+                <p>📤 Enviando post a Google Sheets...</p>
+                <p style="font-size: 14px; margin-top: 10px;">El post se publicará automáticamente en unos minutos</p>
+            </div>
+            
+            <div id="success" class="success hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        // ⚙️ CONFIGURACIÓN - Cambia estos valores
+        const CONFIG = {
+            password: 'mipassword123',  // Cambia esta contraseña
+            scriptURL: 'TU_URL_DEL_SCRIPT_AQUI'  // URL del Google Apps Script (ver instrucciones)
+        };
+
+        // Establecer fecha de hoy por defecto
+        document.getElementById('date').valueAsDate = new Date();
+
+        function login() {
+            const pass = document.getElementById('password').value;
+            const error = document.getElementById('loginError');
+            
+            if (pass === CONFIG.password) {
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('blogForm').classList.remove('hidden');
+            } else {
+                error.textContent = '❌ Contraseña incorrecta';
+                error.classList.remove('hidden');
+            }
+        }
+
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const success = document.getElementById('success');
+            
+            // Recopilar datos del formulario
+            const formData = {
+                timestamp: new Date().toISOString(),
+                title: document.getElementById('title').value,
+                date: document.getElementById('date').value,
+                author: document.getElementById('author').value,
+                category: document.getElementById('category').value,
+                tags: document.getElementById('tags').value,
+                image: document.getElementById('image').value,
+                excerpt: document.getElementById('excerpt').value,
+                content: document.getElementById('content').value
+            };
+            
+            // Mostrar loading
+            submitBtn.disabled = true;
+            loading.classList.remove('hidden');
+            success.classList.add('hidden');
+            
+            try {
+                // Enviar a Google Sheets
+                const response = await fetch(CONFIG.scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    // Mostrar éxito
+                    loading.classList.add('hidden');
+                    success.innerHTML = `
+                        ✅ <strong>¡Post enviado exitosamente!</strong><br>
+                        <small>Tu post "${formData.title}" se publicará automáticamente en unos minutos.</small>
+                    `;
+                    success.classList.remove('hidden');
+                    
+                    // Limpiar formulario
+                    document.getElementById('postForm').reset();
+                    document.getElementById('date').valueAsDate = new Date();
+                    
+                    submitBtn.disabled = false;
+                } else {
+                    throw new Error(result.message || 'Error desconocido');
+                }
+            } catch (error) {
+                loading.classList.add('hidden');
+                alert('❌ Error al enviar el post: ' + error.message + '\n\nVerifica que la URL del script esté correctamente configurada.');
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // Permitir login con Enter
+        document.getElementById('password').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                login();
+            }
+        });
+    </script>
+</body>
+</html>
