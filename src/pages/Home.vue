@@ -164,12 +164,12 @@
             </div>
 
             <!-- Misión destacada -->
-            <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200">
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl">
               <div class="flex items-center gap-4 mb-4">
                 <i class="la la-bullseye la-2x" style="color:var(--color-amarillo);"></i>
-                <h3 class="text-2xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">VISIÓN</h3>
+                <h3 class="text-2xl font-bold" style="font-family:var(--fuente-titulos);">VISIÓN</h3>
               </div>
-              <p class="text-gray-700 leading-relaxed text-lg">
+              <p class="text-gray-100 leading-relaxed text-lg">
                 Mantener la excelencia en la distribución de repuestos para el sector de 
                 <strong>transporte, industrial, minería, agrícola y construcción</strong>, 
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.

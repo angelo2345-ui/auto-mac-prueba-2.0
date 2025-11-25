@@ -13,7 +13,7 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="text-center text-white reveal">
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight" style="font-family: var(--fuente-principal);">
-          <span class="text-[var(--color-amarillo)]">Automac</span>
+          <span class="text-black">Automac</span>
         </h1>
         <p class="mt-3 text-black"><b>Compromiso, respaldo y calidad para tu operación</b></p>
         <div class="mt-6 flex items-center justify-center gap-4">
@@ -53,12 +53,12 @@
             </ul>
 
             <!-- Visión -->
-            <div class="mt-6 p-6 rounded-2xl bg-white text-gray-900 border border-gray-200 reveal">
+            <div class="mt-6 p-6 rounded-2xl bg-gray-900 text-white border border-gray-700 reveal">
               <div class="flex items-center gap-3 mb-2">
                 <i class="las la-eye text-2xl" style="color: var(--color-amarillo);"></i>
                 <h3 class="text-xl font-bold">Visión</h3>
               </div>
-              <p class="text-gray-700">
+              <p class="text-gray-100">
                 Mantener la excelencia en la distribución de repuestos para el sector de
                 <strong>transporte, industrial, minería, agrícola y construcción</strong>,
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.

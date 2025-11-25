@@ -90,7 +90,7 @@
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             style="font-family: var(--fuente-titulos)">
-          Blog de <span class="subtitulo-amarillo">Automac</span> - Repuestos y Maquinaria Pesada
+          Blog de <span class="text-gray-900">Automac</span> - Repuestos y Maquinaria Pesada
         </h1>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
           Noticias, historias corporativas y evolución de Automac en República Dominicana. Líder en repuestos para maquinaria pesada, camiones y equipos industriales.
@@ -124,52 +124,74 @@ export default {
   data() {
     return {
       currentArticle: null,
-      posts: [
-        {
-          id: 1,
-          title: 'En 2001, llegamos a República Dominicana con solo tres productos y un contenedor prestado',
-          excerpt: 'Los humildes inicios de Automac en el mercado dominicano. Una historia de perseverancia y visión empresarial que comenzó con una pequeña inversión y grandes sueños.',
-          content: `
-            <p class="mb-6">En el año 2001, cuando el sector automotriz dominicano atravesaba una época de grandes cambios, tres emprendedores visionarios decidieron apostar por un mercado que apenas comenzaba a desarrollarse: los repuestos para maquinaria pesada y transporte comercial.</p>
-            
-            <p class="mb-6">Con apenas tres referencias de productos y un contenedor prestado por un proveedor que creyó en nuestra visión, dimos los primeros pasos de lo que hoy conocemos como Automac. Esos primeros productos eran filtros de aire para camiones Freightliner, bombas de agua para tractores John Deere, y kit de embrague para equipos Caterpillar.</p>
-            
-            <p class="mb-6">El contenedor llegó al puerto de Haina un miércoles de julio, y para el viernes ya habíamos vendido el 60% del inventario a tres clientes que se convirtieron en nuestros primeros socios comerciales: Transportes del Cibao, Constructora Estrella, y Agroindustrias del Este.</p>
-            
-            <p class="mb-6">Lo que comenzó como una pequeña oficina de 30 metros cuadrados en la zona industrial de Villa Mella, hoy se ha convertido en una empresa líder con más de 5,000 referencias en inventario y presencia en todo el territorio nacional.</p>
-            
-            <p class="mb-6">Esos tres productos iniciales nos enseñaron la importancia de la calidad, la confianza del cliente, y que en este negocio, cada pieza cuenta para mantener las operaciones de nuestros clientes en funcionamiento.</p>
-          `,
-          author: 'Automac',
-          date: '2025-02-27',
-          category: 'Historia',
-          featuredImage: '/images/blog/2.webp'
-        },
-        {
-          id: 2,
-          title: 'Durante la crisis de 2008, transformamos un almacén abandonado en nuestra primera planta de ensamblaje',
-          excerpt: 'Cómo la crisis económica mundial se convirtió en una oportunidad de crecimiento y expansión para Automac. La historia de nuestra primera planta de ensamblaje.',
-          content: `
-            <p class="mb-6">El año 2008 será recordado mundialmente por la crisis financiera, pero para Automac representó el momento de una transformación que definiría nuestro futuro. Mientras muchas empresas se contraían, nosotros vimos una oportunidad única.</p>
-            
-            <p class="mb-6">En plena crisis, identificamos un almacén abandonado de 2,500 metros cuadrados en la zona franca de San Pedro de Macorís. El propietario, afectado por la situación económica, nos ofreció condiciones de alquiler que no podíamos rechazar: 18 meses sin pago inicial, con opción de compra al final del período.</p>
-            
-            <p class="mb-6">Fue entonces cuando tomamos la decisión más arriesgada de nuestra historia empresarial: convertir ese espacio en nuestra primera planta de ensamblaje de componentes hidráulicos. Con un equipo de apenas 12 empleados y maquinaria adquirida de segunda mano, comenzamos a ensamblar cilindros hidráulicos, bombas de engranajes, y válvulas de control.</p>
-            
-            <p class="mb-6">El primer producto que salió de esa planta fue un cilindro hidráulico para una excavadora Caterpillar 320D. Recuerdo perfectamente ese momento: era un martes de noviembre, y todos los empleados se reunieron para ver la primera prueba de funcionamiento. Cuando el cilindro respondió perfectamente, supimos que habitamos tomado la decisión correcta.</p>
-            
-            <p class="mb-6">En menos de 18 meses, no solo cumplimos con el compromiso de compra del inmueble, sino que habíamos triplicado nuestra capacidad de producción y creado 45 nuevos empleos directos. Esa planta se convirtió en el corazón técnico de Automac y el punto de partida para nuestra expansión hacia el ensamblaje de componentes especializados.</p>
-          `,
-          author: 'Automac',
-          date: '2025-04-09',
-          category: 'Expansión',
-          featuredImage: '/images/blog/1.webp'
-        },
-       
-      ]
+      posts: []
     }
   },
   methods: {
+    async fetchPosts() {
+      try {
+        const repoUser = 'angelo2345-ui'
+        const repoName = 'automac'
+        const branch = 'main'
+        const folder = 'postblog'
+        // Listar archivos del folder
+        const listUrl = `https://api.github.com/repos/${repoUser}/${repoName}/contents/${folder}?ref=${branch}`
+        const listRes = await fetch(listUrl)
+        if (!listRes.ok) throw new Error('No se pudo listar posts del repositorio')
+        const files = await listRes.json()
+        const mdFiles = files.filter(f => f.name.endsWith('.md') && f.download_url)
+        const posts = []
+        for (const f of mdFiles) {
+          const rawRes = await fetch(f.download_url)
+          if (!rawRes.ok) continue
+          const raw = await rawRes.text()
+          const parsed = this.parseFrontMatter(raw)
+          if (!parsed) continue
+          posts.push({
+            id: posts.length + 1,
+            title: parsed.frontMatter.title || f.name,
+            date: parsed.frontMatter.date || '',
+            author: parsed.frontMatter.author || 'Automac',
+            category: parsed.frontMatter.category || 'General',
+            tags: parsed.frontMatter.tags || [],
+            featuredImage: parsed.frontMatter.image || '',
+            excerpt: parsed.frontMatter.excerpt || '',
+            content: parsed.content || ''
+          })
+        }
+        // Ordenar por fecha desc si disponible
+        this.posts = posts.sort((a, b) => new Date(b.date) - new Date(a.date))
+      } catch (err) {
+        console.error('fetchPosts error:', err)
+      }
+    },
+    parseFrontMatter(text) {
+      // Espera formato: ---\nkey: value\n...\n---\n\ncontenido
+      const start = text.indexOf('---')
+      if (start !== 0) return { frontMatter: {}, content: text }
+      const end = text.indexOf('\n---', start + 3)
+      if (end === -1) return { frontMatter: {}, content: text }
+      const fmBlock = text.slice(start + 3, end).trim()
+      const content = text.slice(end + 4).trim()
+      const frontMatter = {}
+      fmBlock.split('\n').forEach(line => {
+        const idx = line.indexOf(':')
+        if (idx > -1) {
+          const key = line.slice(0, idx).trim()
+          let value = line.slice(idx + 1).trim()
+          // Quitar comillas y manejar arrays simples
+          if (value.startsWith('"') && value.endsWith('"')) value = value.slice(1, -1)
+          if (value.startsWith('[') && value.endsWith(']')) {
+            value = value
+              .slice(1, -1)
+              .split(',')
+              .map(v => v.trim().replace(/^"|"$/g, ''))
+          }
+          frontMatter[key] = value
+        }
+      })
+      return { frontMatter, content }
+    },
     viewArticle(post) {
       this.currentArticle = post
       // Crear URL SEO-friendly
@@ -229,14 +251,14 @@ export default {
     }
   },
   mounted() {
-    // Si hay un ID en la ruta, cargar el artículo correspondiente
-    if (this.id) {
-      const articleId = parseInt(this.id)
-      this.currentArticle = this.posts.find(post => post.id === articleId)
+    // Cargar posts desde GitHub y sincronizar estado
+    this.fetchPosts().then(() => {
+      if (this.id) {
+        const articleId = parseInt(this.id)
+        this.currentArticle = this.posts.find(post => post.id === articleId)
+      }
       this.updatePageTitle()
-    } else {
-      this.updatePageTitle()
-    }
+    })
   },
   watch: {
     // Observar cambios en los parámetros de la ruta
