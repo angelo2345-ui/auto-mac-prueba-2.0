@@ -75,18 +75,18 @@
   </section>
    <!-- Marcas Certificadas -->
 
-  <!-- Servicios Principales -->
-  <section id="servicios" class="py-16 bg-white">
+  <!-- Nuestros Valores -->
+  <section id="valores" class="py-16 bg-white">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
   <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6" style="background-color:var(--color-amarillo);">
           <i class="las la-cogs la-3x text-white"></i>
         </div>
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">
-          Servicios que <span style="color:var(--color-amarillo);font-family:var(--fuente-titulos);">Nos caracterizan</span>
+          Nuestros Valores
         </h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Contamos con Asistencia profesional que complementa nuestra oferta de suministros de alta calidad
+          Principios que guían nuestro trabajo y relación con cada cliente.
         </p>
   <div class="w-24 h-1 mx-auto mt-6 rounded-full" style="background-color:var(--color-amarillo);"></div>
       </div>
@@ -94,34 +94,34 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         <div class="group bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-green-200">
           <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <i class="las la-warehouse la-3x text-white"></i>
+            <i class="las la-shield-alt la-3x text-white"></i>
           </div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Stock Inmediato</h3>
-          <p class="text-gray-600">Miles de repuestos disponibles en nuestra tienda física</p>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Integridad</h3>
+          <p class="text-gray-600">Ética, transparencia y responsabilidad en cada decisión.</p>
         </div>
 
         <div class="group bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-200">
           <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <i class="las la-shipping-fast la-3x text-white"></i>
+            <i class="las la-award la-3x text-white"></i>
           </div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Importación Directa</h3>
-          <p class="text-gray-600">Atendemos solicitudes especiales de productos según disponibilidad de nuestras marcas representadas.</p>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Calidad</h3>
+          <p class="text-gray-600">Garantizamos repuestos originales y compatibles certificados.</p>
         </div>
 
         <div class="group bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-purple-200">
           <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <i class="las la-globe la-3x text-white"></i>
+            <i class="las la-handshake la-3x text-white"></i>
           </div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Comercio Global</h3>
-          <p class="text-gray-600">Red internacional de proveedores certificados</p>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Compromiso</h3>
+          <p class="text-gray-600">Acompañamos a nuestros clientes para asegurar su continuidad operativa.</p>
         </div>
 
         <div class="group bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-yellow-200">
           <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-            <i class="las la-headset la-3x text-white"></i>
+            <i class="las la-lightbulb la-3x text-white"></i>
           </div>
-    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Atención Inmediata</h3>
-          <p class="text-gray-600">Respuesta rápida y asesoría técnica especializada</p>
+    <h3 class="text-xl font-bold text-gray-900 mb-3" style="font-family:var(--fuente-titulos);">Innovación</h3>
+          <p class="text-gray-600">Mejoramos procesos y soluciones para superar expectativas.</p>
         </div>
       </div>
     </div>
@@ -134,14 +134,14 @@
         <!-- Encabezado -->
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" style="font-family:var(--fuente-titulos);">
-            <span style="color:var(--color-amarillo);">Compromiso</span>, Respaldo y <span style="color:var(--color-amarillo);">Calidad</span>
+            Compromiso, Respaldo y Calidad
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             15 años siendo el socio confiable para el mantenimiento de tu flota
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <!-- Información de la empresa -->
           <div class="space-y-8">
             <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
@@ -150,13 +150,13 @@
                   <i class="la la-users la-2x text-white"></i>
                 </div>
                 <div>
-                  <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">QUIÉNES SOMOS</h3>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-4" style="font-family:var(--fuente-titulos);">MISIÓN</h3>
                   <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                    Somos especialistas en la <strong style="color: var(--color-amarillo)">importación, exportación y comercialización</strong> 
+                    Somos especialistas en la <strong>importación, exportación y comercialización</strong> 
                     de repuestos para camiones, tractores y equipos industriales.
                   </p>
                   <p class="text-gray-700 leading-relaxed text-lg">
-                    Con <strong style="color: var(--color-amarillo)">más de 15 años de experiencia</strong>, nos hemos consolidado como 
+                    Con <strong>más de 15 años de experiencia</strong>, nos hemos consolidado como 
                     líderes en el sector, ofreciendo soluciones integrales para el mantenimiento preventivo y correctivo.
                   </p>
                 </div>
@@ -167,18 +167,19 @@
             <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-2xl shadow-xl">
               <div class="flex items-center gap-4 mb-4">
                 <i class="la la-bullseye la-2x" style="color:var(--color-amarillo);"></i>
-                <h3 class="text-2xl font-bold" style="font-family:var(--fuente-titulos);color: var(--color-amarillo);">NUESTRA MISIÓN</h3>
+                <h3 class="text-2xl font-bold" style="font-family:var(--fuente-titulos);">VISIÓN</h3>
               </div>
               <p class="text-gray-100 leading-relaxed text-lg">
                 Mantener la excelencia en la distribución de repuestos para el sector de 
-                <strong style="color:var(--color-amarillo);">transporte, industrial, minería, agrícola y construcción</strong>, 
+                <strong>transporte, industrial, minería, agrícola y construcción</strong>, 
                 brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
               </p>
             </div>
           </div>
 
-          <!-- Características destacadas -->
+          <!-- Características destacadas / Valores -->
           <div class="space-y-6">
+            <h3 class="text-3xl md:text-4xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Valores</h3>
             <div class="bg-yellow-50 border-l-4 p-6 rounded-r-xl" style="border-color:var(--color-amarillo);">
               <div class="flex items-center gap-4">
                 <i class="la la-truck la-2x" style="color:var(--color-amarillo);"></i>

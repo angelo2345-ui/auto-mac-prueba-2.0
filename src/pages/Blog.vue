@@ -90,7 +90,7 @@
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             style="font-family: var(--fuente-titulos)">
-          Blog de <span class="subtitulo-amarillo">Automac</span> - Repuestos y Maquinaria Pesada
+          Blog de <span class="text-gray-900">Automac</span> - Repuestos y Maquinaria Pesada
         </h1>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto">
           Noticias, historias corporativas y evolución de Automac en República Dominicana. Líder en repuestos para maquinaria pesada, camiones y equipos industriales.
