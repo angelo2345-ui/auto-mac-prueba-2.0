@@ -906,6 +906,31 @@ export default {
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
+        // Nuevos productos
+        // Amortiguadores (Suspensión)
+        {
+          id: 62,
+          name: 'Amortiguadores',
+          category: 'Suspensión',
+          description: 'Amortiguadores para sistemas de suspensión de camiones y equipos.',
+          price: '$250.00',
+          image: '/images/productos/Suspensión/amortiguadores-removebg-preview.png',
+          stock: 'Disponible',
+          marca: 'Durotruck, Pai, KTC',
+          modelo: 'Aplicaciones para vehículos pesados'
+        },
+        // Sensores (Sistemas Eléctricos)
+        {
+          id: 63,
+          name: 'Sensores',
+          category: 'sistemas-electricos',
+          description: 'Sensores eléctricos para monitoreo y control de sistemas.',
+          price: '$250.00',
+          image: '/images/productos/Sistemas Eléctricos/sensores-removebg-preview.png',
+          stock: 'Disponible',
+          marca: 'BOSCH; HELLA',
+          modelo: 'Aplicaciones para vehículos pesados'
+        },
       ]
     };
   },
