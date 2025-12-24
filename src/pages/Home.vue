@@ -1,14 +1,14 @@
 <template>
   <!-- Hero Section -->
   <section
-    class="relative h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
+    class="relative mt-20 lg:mt-24 h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
     aria-label="Sección principal de Automac"
   >
     <!-- Capas de fondo precargadas -->
     <div
       v-for="(slide, index) in slides"
       :key="index"
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700 ease-in-out"
+      class="absolute inset-0 bg-cover bg-top bg-no-repeat transition-opacity duration-700 ease-in-out"
       :class="{ 'opacity-100': index === currentSlideIndex, 'opacity-0': index !== currentSlideIndex }"
       :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
     ></div>
