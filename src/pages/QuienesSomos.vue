@@ -27,8 +27,8 @@
   <!-- Acerca de la empresa -->
   <section class="bg-gray-50 py-12">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-200 p-6 reveal h-full">
+      <div class="grid grid-cols-1 gap-8 items-stretch">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 reveal h-full">
           <div class="flex items-center gap-4 mb-4">
             <div class="h-12 w-12 flex items-center justify-center rounded-full" style="background-color: var(--color-amarillo);">
               <i class="las la-users text-2xl text-black"></i>
@@ -65,14 +65,6 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden reveal h-full">
-          <!-- Imagen corporativa real -->
-          <img 
-            src="/images/quienes%20somos/automac%20frente.jpg" 
-            alt="Foto de la empresa Automac" 
-            class="w-full h-full object-cover"
-          />
         </div>
       </div>
 
@@ -153,32 +145,56 @@
         </div>
       </div>
 
-      <!-- Equipo (placeholders de imagen) -->
+      <!-- Equipo -->
       <div class="mt-12">
         <div class="flex items-center gap-3 mb-4 reveal">
           <i class="las la-id-card text-2xl" style="color: var(--color-amarillo);"></i>
           <h3 class="text-xl font-bold">Nuestro Equipo</h3>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal">
-            <div class="w-full h-32 rounded-lg bg-gray-100 border border-dashed border-gray-300 mb-3"></div>
-            <div class="font-semibold">Nombre Apellido</div>
-            <div class="text-gray-600 text-sm">Cargo</div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <!-- Yosias Gonzalez -->
+          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
+            <div class="mb-3">
+              <img src="/images/EQUIPO/YOSIASGONZALEZDIRECTORACOMERCIAL.jpeg" alt="Yosias Gonzalez" class="w-full" />
+            </div>
+            <div class="font-semibold">Yosias Gonzalez</div>
+            <div class="text-gray-600 text-sm">Directora Comercial</div>
           </div>
-          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal">
-            <div class="w-full h-32 rounded-lg bg-gray-100 border border-dashed border-gray-300 mb-3"></div>
-            <div class="font-semibold">Nombre Apellido</div>
-            <div class="text-gray-600 text-sm">Cargo</div>
+          
+          <!-- Betty Segura -->
+          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
+            <div class="mb-3">
+              <img src="/images/EQUIPO/BETTY%20SEGURA_ENCARGADA%20DE%20FINANZAS.jpeg" alt="Betty Segura" class="w-full" />
+            </div>
+            <div class="font-semibold">Betty Segura</div>
+            <div class="text-gray-600 text-sm">Encargada de Finanzas</div>
           </div>
-          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal">
-            <div class="w-full h-32 rounded-lg bg-gray-100 border border-dashed border-gray-300 mb-3"></div>
-            <div class="font-semibold">Nombre Apellido</div>
-            <div class="text-gray-600 text-sm">Cargo</div>
+          
+          <!-- Orietta Guzman -->
+          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
+            <div class="mb-3">
+              <img src="/images/EQUIPO/ORIETTA%20GUZMAN_ENCARGADA%20DE%20TIENDA.jpeg" alt="Orietta Guzman" class="w-full" />
+            </div>
+            <div class="font-semibold">Orietta Guzman</div>
+            <div class="text-gray-600 text-sm">Encargada de Tienda</div>
           </div>
-          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal">
-            <div class="w-full h-32 rounded-lg bg-gray-100 border border-dashed border-gray-300 mb-3"></div>
-            <div class="font-semibold">Nombre Apellido</div>
-            <div class="text-gray-600 text-sm">Cargo</div>
+          
+          <!-- Stephanie Amador -->
+          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
+            <div class="mb-3">
+              <img src="/images/EQUIPO/STEPHANIE%20AMADOR_AUXILIAR%20DE%20PLATAFORMAS%20DIGITALES.jpeg" alt="Stephanie Amador" class="w-full" />
+            </div>
+            <div class="font-semibold">Stephanie Amador</div>
+            <div class="text-gray-600 text-sm">Auxiliar de Plataformas Digitales</div>
+          </div>
+          
+          <!-- Neftaly de Jesus -->
+          <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
+            <div class="mb-3">
+              <img src="/images/EQUIPO/NEFTALY%20DE%20JESUS_AUXILIAR%20DE%20CAJA.jpeg" alt="Neftaly de Jesus" class="w-full" />
+            </div>
+            <div class="font-semibold">Neftaly de Jesus</div>
+            <div class="text-gray-600 text-sm">Auxiliar de Caja</div>
           </div>
         </div>
       </div>
