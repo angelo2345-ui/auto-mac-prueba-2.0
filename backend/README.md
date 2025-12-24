@@ -4,7 +4,7 @@ Backend en Java Spring Boot para manejar el formulario de contacto del sitio web
 
 ## 🚀 Características
 
-- **API REST** para recibir datos del formulario de contacto
+- **API REST** para recibir datos del formulario de contacto.
 - **Envío automático de correos** a info@automacdom.com.do
 - **Validación de datos** con mensajes de error personalizados
 - **CORS habilitado** para integración con el frontend
