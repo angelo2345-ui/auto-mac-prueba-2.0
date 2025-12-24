@@ -13,7 +13,7 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
       <div class="text-center text-white reveal">
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight" style="font-family: var(--fuente-principal);">
-          <span style="color: #2c2b25">Somos</span> <span class="text-[var(--color-amarillo)]">Automac</span>
+          <span class="text-black">Automac</span>
         </h1>
         <p class="mt-3 text-black"><b>Compromiso, respaldo y calidad para tu operación</b></p>
         <div class="mt-6 flex items-center justify-center gap-4">
@@ -33,17 +33,17 @@
             <div class="h-12 w-12 flex items-center justify-center rounded-full" style="background-color: var(--color-amarillo);">
               <i class="las la-users text-2xl text-black"></i>
             </div>
-            <h2 class="text-2xl font-bold">Quiénes Somos</h2>
+            <h2 class="text-2xl font-bold">Misión</h2>
           </div>
           <div class="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              Somos especialistas en la <strong style="color: var(--color-amarillo)">importación, exportación y comercialización</strong> de repuestos para camiones, tractores y equipos industriales.
+              Somos especialistas en la <strong>importación, exportación y comercialización</strong> de repuestos para camiones, tractores y equipos industriales.
             </p>
             <p>
-              Con <strong style="color: var(--color-amarillo)">más de 15 años de experiencia</strong>, ofrecemos soluciones integrales para el mantenimiento preventivo y correctivo.
+              Con <strong>más de 15 años de experiencia</strong>, ofrecemos soluciones integrales para el mantenimiento preventivo y correctivo.
             </p>
             <p>
-              Atendemos a los sectores de <strong style="color: var(--color-amarillo)">transporte, industrial, minería, agrícola y construcción</strong>, con cobertura nacional y soporte en toda la cadena de suministro.
+              Atendemos a los sectores de <strong>transporte, industrial, minería, agrícola y construcción</strong>, con cobertura nacional y soporte en toda la cadena de suministro.
             </p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Importaciones bajo pedido y logística nacional.</li>
@@ -51,6 +51,19 @@
               <li>Garantía de calidad en repuestos originales y compatibles.</li>
               <li>Asesoría técnica para selección, instalación y mantenimiento.</li>
             </ul>
+
+            <!-- Visión -->
+            <div class="mt-6 p-6 rounded-2xl bg-gray-900 text-white border border-gray-700 reveal">
+              <div class="flex items-center gap-3 mb-2">
+                <i class="las la-eye text-2xl" style="color: var(--color-amarillo);"></i>
+                <h3 class="text-xl font-bold">Visión</h3>
+              </div>
+              <p class="text-gray-100">
+                Mantener la excelencia en la distribución de repuestos para el sector de
+                <strong>transporte, industrial, minería, agrícola y construcción</strong>,
+                brindando el mejor servicio y garantizando la continuidad operativa de nuestros clientes.
+              </p>
+            </div>
           </div>
         </div>
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden reveal h-full">
@@ -63,35 +76,38 @@
         </div>
       </div>
 
-      <!-- Valores / servicios -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+      <!-- Valores -->
+      <div class="mt-10">
+        <h3 class="text-2xl font-bold mb-4" style="font-family: var(--fuente-titulos);">Valores</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="rounded-xl border p-6 reveal" style="background-color: rgb(222 173 35 / 0.1); border-color: var(--color-amarillo);">
           <div class="flex items-center gap-3 mb-2">
-            <i class="las la-truck text-xl" style="color: var(--color-amarillo);"></i>
-            <h3 class="font-semibold">Envíos Nacionales</h3>
+            <i class="las la-shield-alt text-xl" style="color: var(--color-amarillo);"></i>
+            <h3 class="font-semibold">Integridad</h3>
           </div>
-          <p class="text-gray-600">Cobertura completa en todo el territorio nacional</p>
+          <p class="text-gray-600">Actuamos con ética, transparencia y responsabilidad en cada decisión.</p>
         </div>
         <div class="rounded-xl border p-6 reveal" style="background-color:#F0FDF4; border-color:#86EFAC;">
           <div class="flex items-center gap-3 mb-2">
             <i class="las la-award text-xl" style="color: #16a34a;"></i>
-            <h3 class="font-semibold">Garantía de Calidad</h3>
+            <h3 class="font-semibold">Calidad</h3>
           </div>
-          <p class="text-gray-600">100% repuestos originales y compatibles certificados</p>
+          <p class="text-gray-600">Garantizamos repuestos originales y compatibles certificados.</p>
         </div>
         <div class="rounded-xl border p-6 reveal" style="background-color:#EFF6FF; border-color:#93C5FD;">
           <div class="flex items-center gap-3 mb-2">
-            <i class="las la-shipping-fast text-xl" style="color: #2563EB;"></i>
-            <h3 class="font-semibold">Entrega Rápida</h3>
+            <i class="las la-handshake text-xl" style="color: #2563EB;"></i>
+            <h3 class="font-semibold">Compromiso</h3>
           </div>
-          <p class="text-gray-600">Stock disponible y tiempos de entrega optimizados</p>
+          <p class="text-gray-600">Acompañamos a nuestros clientes para asegurar la continuidad operativa.</p>
         </div>
         <div class="rounded-xl border p-6 reveal" style="background-color:#FAF5FF; border-color:#D8B4FE;">
           <div class="flex items-center gap-3 mb-2">
-            <i class="las la-headset text-xl" style="color: #7C3AED;"></i>
-            <h3 class="font-semibold">Asesoría Técnica</h3>
+            <i class="las la-lightbulb text-xl" style="color: #7C3AED;"></i>
+            <h3 class="font-semibold">Innovación</h3>
           </div>
-          <p class="text-gray-600">Equipo especializado para resolver tus consultas</p>
+          <p class="text-gray-600">Mejoramos procesos y soluciones para superar expectativas.</p>
         </div>
       </div>
 
@@ -106,11 +122,11 @@
           <div class="mt-1 text-gray-600">Clientes satisfechos</div>
         </div>
         <div class="stat-card rounded-2xl bg-white border border-gray-200 p-6 text-center reveal">
-          <div class="text-3xl font-extrabold counter" data-target="3500">0</div>
+          <div class="text-3xl font-extrabold counter" data-target="10000" data-plus="true">+0</div>
           <div class="mt-1 text-gray-600">Referencias de repuestos</div>
         </div>
         <div class="stat-card rounded-2xl bg-white border border-gray-200 p-6 text-center reveal">
-          <div class="text-3xl font-extrabold counter" data-target="500">0</div>
+          <div class="text-3xl font-extrabold counter" data-target="500" data-plus="true">+0</div>
           <div class="mt-1 text-gray-600">Proyectos completados</div>
         </div>
       </div>
@@ -235,7 +251,7 @@ export default {
           const tick = (now) => {
             const progress = Math.min((now - start) / duration, 1);
             const value = Math.floor(progress * target);
-            el.textContent = value.toLocaleString();
+            el.textContent = (el.dataset.plus ? '+' : '') + value.toLocaleString(); // Añadir signo + si el atributo data-plus es true
             if (progress < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
