@@ -179,7 +179,7 @@
 
           <!-- Características destacadas / Valores -->
           <div class="space-y-6">
-            <h3 class="text-3xl md:text-4xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Valores</h3>
+             <!-- <h3 class="text-3xl md:text-4xl font-bold text-gray-900" style="font-family:var(--fuente-titulos);">Valores</h3>-->
             <div class="bg-yellow-50 border-l-4 p-6 rounded-r-xl" style="border-color:var(--color-amarillo);">
               <div class="flex items-center gap-4">
                 <i class="la la-truck la-2x" style="color:var(--color-amarillo);"></i>
