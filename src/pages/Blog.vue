@@ -115,6 +115,8 @@
 
 <script>
 import BlogCard from '../components/BlogCard.vue'
+import { db } from '../firebase'
+import { collection, getDocs, query, orderBy } from 'firebase/firestore'
 
 export default {
   props: ['id', 'slug'],
@@ -124,52 +126,36 @@ export default {
   data() {
     return {
       currentArticle: null,
-      posts: [
-        {
-          id: 1,
-          title: 'En 2001, llegamos a República Dominicana con solo tres productos y un contenedor prestado',
-          excerpt: 'Los humildes inicios de Automac en el mercado dominicano. Una historia de perseverancia y visión empresarial que comenzó con una pequeña inversión y grandes sueños.',
-          content: `
-            <p class="mb-6">En el año 2001, cuando el sector automotriz dominicano atravesaba una época de grandes cambios, tres emprendedores visionarios decidieron apostar por un mercado que apenas comenzaba a desarrollarse: los repuestos para maquinaria pesada y transporte comercial.</p>
-            
-            <p class="mb-6">Con apenas tres referencias de productos y un contenedor prestado por un proveedor que creyó en nuestra visión, dimos los primeros pasos de lo que hoy conocemos como Automac. Esos primeros productos eran filtros de aire para camiones Freightliner, bombas de agua para tractores John Deere, y kit de embrague para equipos Caterpillar.</p>
-            
-            <p class="mb-6">El contenedor llegó al puerto de Haina un miércoles de julio, y para el viernes ya habíamos vendido el 60% del inventario a tres clientes que se convirtieron en nuestros primeros socios comerciales: Transportes del Cibao, Constructora Estrella, y Agroindustrias del Este.</p>
-            
-            <p class="mb-6">Lo que comenzó como una pequeña oficina de 30 metros cuadrados en la zona industrial de Villa Mella, hoy se ha convertido en una empresa líder con más de 5,000 referencias en inventario y presencia en todo el territorio nacional.</p>
-            
-            <p class="mb-6">Esos tres productos iniciales nos enseñaron la importancia de la calidad, la confianza del cliente, y que en este negocio, cada pieza cuenta para mantener las operaciones de nuestros clientes en funcionamiento.</p>
-          `,
-          author: 'Automac',
-          date: '2025-02-27',
-          category: 'Historia',
-          featuredImage: '/images/blog/2.webp'
-        },
-        {
-          id: 2,
-          title: 'Durante la crisis de 2008, transformamos un almacén abandonado en nuestra primera planta de ensamblaje',
-          excerpt: 'Cómo la crisis económica mundial se convirtió en una oportunidad de crecimiento y expansión para Automac. La historia de nuestra primera planta de ensamblaje.',
-          content: `
-            <p class="mb-6">El año 2008 será recordado mundialmente por la crisis financiera, pero para Automac representó el momento de una transformación que definiría nuestro futuro. Mientras muchas empresas se contraían, nosotros vimos una oportunidad única.</p>
-            
-            <p class="mb-6">En plena crisis, identificamos un almacén abandonado de 2,500 metros cuadrados en la zona franca de San Pedro de Macorís. El propietario, afectado por la situación económica, nos ofreció condiciones de alquiler que no podíamos rechazar: 18 meses sin pago inicial, con opción de compra al final del período.</p>
-            
-            <p class="mb-6">Fue entonces cuando tomamos la decisión más arriesgada de nuestra historia empresarial: convertir ese espacio en nuestra primera planta de ensamblaje de componentes hidráulicos. Con un equipo de apenas 12 empleados y maquinaria adquirida de segunda mano, comenzamos a ensamblar cilindros hidráulicos, bombas de engranajes, y válvulas de control.</p>
-            
-            <p class="mb-6">El primer producto que salió de esa planta fue un cilindro hidráulico para una excavadora Caterpillar 320D. Recuerdo perfectamente ese momento: era un martes de noviembre, y todos los empleados se reunieron para ver la primera prueba de funcionamiento. Cuando el cilindro respondió perfectamente, supimos que habitamos tomado la decisión correcta.</p>
-            
-            <p class="mb-6">En menos de 18 meses, no solo cumplimos con el compromiso de compra del inmueble, sino que habíamos triplicado nuestra capacidad de producción y creado 45 nuevos empleos directos. Esa planta se convirtió en el corazón técnico de Automac y el punto de partida para nuestra expansión hacia el ensamblaje de componentes especializados.</p>
-          `,
-          author: 'Automac',
-          date: '2025-04-09',
-          category: 'Expansión',
-          featuredImage: '/images/blog/1.webp'
-        },
-       
-      ]
+      loading: true,
+      posts: []
     }
   },
   methods: {
+    async fetchPosts() {
+      try {
+        this.loading = true
+        const q = query(collection(db, "posts"), orderBy("date", "desc"))
+        const querySnapshot = await getDocs(q)
+        this.posts = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        
+        // Si hay un ID en la ruta, cargar el artículo correspondiente una vez cargados los posts
+        if (this.id) {
+          const articleId = this.id // Firestore IDs son strings, no necesitamos parseInt si usamos IDs de documento
+          // Pero si guardamos un campo numérico 'id' manual, entonces sí.
+          // Asumiremos que el ID de la URL coincide con el ID del documento o el campo id.
+          // Para compatibilidad con los IDs numéricos anteriores, buscamos por ambos.
+          this.currentArticle = this.posts.find(post => post.id == this.id)
+          this.updatePageTitle()
+        }
+      } catch (error) {
+        console.error("Error fetching posts:", error)
+      } finally {
+        this.loading = false
+      }
+    },
     viewArticle(post) {
       this.currentArticle = post
       // Crear URL SEO-friendly
@@ -193,6 +179,7 @@ export default {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },
     formatDate(dateString) {
+      if (!dateString) return ''
       const options = { 
         year: 'numeric', 
         month: 'long', 
@@ -229,23 +216,16 @@ export default {
     }
   },
   mounted() {
-    // Si hay un ID en la ruta, cargar el artículo correspondiente
-    if (this.id) {
-      const articleId = parseInt(this.id)
-      this.currentArticle = this.posts.find(post => post.id === articleId)
-      this.updatePageTitle()
-    } else {
-      this.updatePageTitle()
-    }
+    this.fetchPosts()
+    this.updatePageTitle()
   },
   watch: {
     // Observar cambios en los parámetros de la ruta
     $route(to, from) {
-      if (to.params.id) {
-        const articleId = parseInt(to.params.id)
-        this.currentArticle = this.posts.find(post => post.id === articleId)
+      if (to.params.id && this.posts.length > 0) {
+        this.currentArticle = this.posts.find(post => post.id == to.params.id)
         this.updatePageTitle()
-      } else {
+      } else if (!to.params.id) {
         this.currentArticle = null
         this.updatePageTitle()
       }
@@ -311,3 +291,4 @@ export default {
   }
 }
 </style>
+
