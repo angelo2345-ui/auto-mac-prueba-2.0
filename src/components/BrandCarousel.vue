@@ -17,7 +17,7 @@
     </div>
     
     <!-- Grid de marcas con diseño profesional -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-12">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
       <div v-for="(brand, index) in brands" :key="index" 
            class="brand-card group cursor-pointer relative overflow-hidden">
         <div class="bg-white rounded-xl p-6 h-32 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 relative">
@@ -76,7 +76,7 @@
 import { ref } from 'vue'
 
 const brands = ref([
-  'pai', 'automann', 'KTC', 'KMP brand', 'N.Y.C Genuine Parts', 'Premier Manufacturing'
+  'pai', 'automann', 'KTC', 'N.Y.C Genuine Parts', 'Premier Manufacturing'
 ])
 
 // Función para obtener la ruta correcta de la imagen según la marca
@@ -97,7 +97,6 @@ const getBrandUrl = (brand) => {
     'pai': 'https://www.pai.com/new-pai-products',
     'automann': 'https://www.automann.com/products',
     'KTC': 'https://ktcbrothers.com/en/business-lines/',
-    'KMP brand': 'https://www.kmpbrand.com/',
     'N.Y.C Genuine Parts': 'https://www.nycofamerica.com/',
     'Premier Manufacturing': 'https://www.premier-mfg.com/shop/'
   }

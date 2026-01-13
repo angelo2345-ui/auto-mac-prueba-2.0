@@ -163,7 +163,7 @@
           <!-- Yosias Gonzalez -->
           <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
             <div class="mb-3">
-              <img src="/images/EQUIPO/YOSIASGONZALEZDIRECTORACOMERCIAL2.jpeg" alt="Yosias Gonzalez" class="w-full" />
+              <img src="/images/EQUIPO/YOSIASGONZALEZDIRECTORACOMERCIAL.jpeg" alt="Yosias Gonzalez" class="w-full" />
             </div>
             <div class="font-semibold">Yosias Gonzalez</div>
             <div class="text-gray-600 text-sm">Directora Comercial</div>
@@ -172,7 +172,7 @@
           <!-- Betty Segura -->
           <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
             <div class="mb-3">
-              <img src="/images/EQUIPO/BETTY%20SEGURA_ENCARGADA%20DE%20FINANZAS2.jpeg" alt="Betty Segura" class="w-full" />
+              <img src="/images/EQUIPO/BETTY%20SEGURA_ENCARGADA%20DE%20FINANZAS.jpeg" alt="Betty Segura" class="w-full" />
             </div>
             <div class="font-semibold">Betty Segura</div>
             <div class="text-gray-600 text-sm">Encargada de Finanzas</div>
@@ -181,7 +181,7 @@
           <!-- Orietta Guzman -->
           <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
             <div class="mb-3">
-              <img src="/images/EQUIPO/ORIETTA%20GUZMAN_ENCARGADA%20DE%20TIENDA2.jpeg" alt="Orietta Guzman" class="w-full" />
+              <img src="/images/EQUIPO/ORIETTA%20GUZMAN_ENCARGADA%20DE%20TIENDA.jpeg" alt="Orietta Guzman" class="w-full" />
             </div>
             <div class="font-semibold">Orietta Guzman</div>
             <div class="text-gray-600 text-sm">Encargada de Tienda</div>
@@ -190,7 +190,7 @@
           <!-- Stephanie Amador -->
           <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
             <div class="mb-3">
-              <img src="/images/EQUIPO/STEPHANIE%20AMADOR_AUXILIAR%20DE%20PLATAFORMAS%20DIGITALES2.jpeg" alt="Stephanie Amador" class="w-full" />
+              <img src="/images/EQUIPO/STEPHANIE%20AMADOR_AUXILIAR%20DE%20PLATAFORMAS%20DIGITALES.jpeg" alt="Stephanie Amador" class="w-full" />
             </div>
             <div class="font-semibold">Stephanie Amador</div>
             <div class="text-gray-600 text-sm">Auxiliar de Plataformas Digitales</div>
@@ -199,7 +199,7 @@
           <!-- Neftaly de Jesus -->
           <div class="bg-white rounded-xl border border-gray-200 p-4 text-center reveal hover:shadow-lg transition-shadow">
             <div class="mb-3">
-              <img src="/images/EQUIPO/NEFTALY%20DE%20JESUS_AUXILIAR%20DE%20CAJA2.jpeg" alt="Neftaly de Jesus" class="w-full" />
+              <img src="/images/EQUIPO/NEFTALY%20DE%20JESUS_AUXILIAR%20DE%20CAJA.jpeg" alt="Neftaly de Jesus" class="w-full" />
             </div>
             <div class="font-semibold">Neftaly de Jesus</div>
             <div class="text-gray-600 text-sm">Auxiliar de Caja</div>

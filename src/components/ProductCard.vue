@@ -15,7 +15,6 @@
         <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-800 transition-colors">{{ product.name }}</h3>
         
       </div>
-      <p class="text-sm text-gray-600 mb-3 line-clamp-2">{{ product.description }}</p>
       <button @click="$emit('show-details', product)" class="w-full bg-yellow-600 hover:bg-yellow-900 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">
         Ver Detalles
       </button>

@@ -5,7 +5,7 @@
       !isHeaderVisible ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
     ]"
     :style="{
-      background: 'black',
+      background: 'var(--color-fondo-menu)',
       borderBottom: scrolled ? '1px solid rgba(107, 114, 128, 0.5)' : 'none',
       boxShadow: scrolled ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
     }"
@@ -26,10 +26,10 @@
             />
           </div>
           <div class="flex flex-col">
-            <span class="text-white text-xl sm:text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+            <span class="text-[color:var(--color-texto-menu)] text-xl sm:text-2xl font-bold tracking-tight">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
-            <span class="text-xs text-white font-medium tracking-wide -mt-1">Soluciones automotrices</span>
+            <span class="text-xs text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
           </div>
         </router-link>
 
@@ -38,7 +38,7 @@
           <router-link 
             to="/" 
             exact
-            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path === '/' }"
           >
             <i class="las la-home"></i>
@@ -52,7 +52,7 @@
           </router-link>
           <router-link 
             to="/quienes-somos" 
-            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/quienes-somos') }"
           >
             <i class="las la-users"></i>
@@ -66,7 +66,7 @@
 
           <router-link 
             to="/productos" 
-            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/productos') }"
           >
             <i class="las la-tools"></i>
@@ -81,7 +81,7 @@
 
           <router-link 
             to="/contacto" 
-            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/contacto') }"
           >
             <i class="las la-envelope"></i>
@@ -94,7 +94,7 @@
           </router-link>
           <router-link 
             to="/blog" 
-            class="relative text-white hover:text-white font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/blog') }"
           >
             <i class="las la-rss"></i>
@@ -117,8 +117,8 @@
           aria-label="Toggle navigation menu"
           :aria-expanded="menuActive"
         >
-          <i v-if="!menuActive" class="las la-bars text-2xl text-white"></i>
-          <i v-if="menuActive" class="las la-times text-2xl" :class="menuActive ? 'text-black' : 'text-white'"></i>
+          <i v-if="!menuActive" class="las la-bars text-2xl" :class="!menuActive ? 'text-[color:var(--color-texto-menu)]' : ''"></i>
+          <i v-if="menuActive" class="las la-times text-2xl" :class="menuActive ? 'text-[color:var(--color-texto-menu)]' : 'text-white'"></i>
         </button>
       </div>
 
@@ -128,14 +128,14 @@
           'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
           menuActive ? 'max-h-screen visible' : 'max-h-0 invisible'
         ]"
-        style="background: var(--color-negro);"
+        style="background: var(--color-fondo-menu);"
       >
         <nav class="py-6 space-y-2 border-t border-gray-700/50 mt-4" style="font-family: var(--fuente-principal);">
           <router-link 
             to="/" 
             exact
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
               'text-yellow-400 bg-yellow-400/10': $route.path === '/',
               'hover:bg-white/5': $route.path !== '/'
@@ -158,7 +158,7 @@
           <router-link 
             to="/quienes-somos" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
               'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/quienes-somos'),
               'hover:bg-white/5': !$route.path.startsWith('/quienes-somos')
@@ -182,7 +182,7 @@
           <router-link 
             to="/productos" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
               'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/productos'),
               'hover:bg-white/5': !$route.path.startsWith('/productos')
@@ -206,7 +206,7 @@
           <router-link 
             to="/blog" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
               'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/blog'),
               'hover:bg-white/5': !$route.path.startsWith('/blog')
@@ -230,7 +230,7 @@
           <router-link 
             to="/contacto" 
             @click="closeMenu"
-            class="flex items-center justify-between px-6 py-4 text-gray-200 hover:text-white font-medium transition-all duration-300 rounded-lg mx-2 group"
+            class="flex items-center justify-between px-6 py-4 text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 rounded-lg mx-2 group"
             :class="{
               'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/contacto'),
               'hover:bg-white/5': !$route.path.startsWith('/contacto')

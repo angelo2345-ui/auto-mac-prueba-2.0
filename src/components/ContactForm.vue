@@ -22,12 +22,16 @@
       </div>
     </div>
 
-    <form @submit.prevent="submitForm" class="space-y-6">
+    <form ref="form" @submit.prevent="submitForm" class="space-y-6">
+      <!-- Campo oculto para el email de destino -->
+      <input type="hidden" name="to_email" value="automac.repuestos@gmail.com" />
+      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="form-group">
           <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
           <input 
             id="name"
+            name="from_name"
             v-model="form.name" 
             type="text" 
             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
@@ -40,6 +44,7 @@
           <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico *</label>
           <input 
             id="email"
+            name="from_email"
             v-model="form.email" 
             type="email" 
             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
@@ -53,6 +58,7 @@
         <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
         <input 
           id="phone"
+          name="phone"
           v-model="form.phone" 
           type="text" 
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
@@ -62,19 +68,42 @@
       </div>
       <div class="form-group">
         <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Asunto</label>
-        <input 
+        <select 
           id="subject"
+          name="subject"
           v-model="form.subject" 
-          type="text" 
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
-          placeholder="Asunto de tu mensaje" 
+          required
           :disabled="isLoading"
-        />
+        >
+          <option value="" disabled>Selecciona un asunto</option>
+          <option value="Consulta General">Consulta General</option>
+          <option value="Cotización">Cotización</option>
+          <option value="Soporte">Soporte</option>
+          <option value="Unete a nuestro equipo">Únete a nuestro equipo</option>
+        </select>
       </div>
+
+      <!-- File Input for CV -->
+      <div v-if="form.subject === 'Unete a nuestro equipo'" class="form-group">
+        <label for="cv_file" class="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV (PDF, Word) *</label>
+        <input 
+          id="cv_file"
+          name="cv_file"
+          type="file" 
+          accept=".pdf,.doc,.docx"
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
+          :disabled="isLoading"
+          required
+        />
+        <p class="text-xs text-gray-500 mt-1">Por favor adjunta tu CV para aplicar.</p>
+      </div>
+
       <div class="form-group">
         <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje *</label>
         <textarea 
           id="message"
+          name="message"
           v-model="form.message" 
           rows="5" 
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all" 
@@ -131,38 +160,39 @@ export default {
       this.errorMessage = '';
       
       // Validar campos requeridos
-      if (!this.form.name.trim() || !this.form.email.trim() || !this.form.message.trim()) {
+      if (!this.form.name.trim() || !this.form.email.trim() || !this.form.message.trim() || !this.form.subject) {
         this.showError('Por favor, completa todos los campos obligatorios.');
         return;
+      }
+
+      // Validar archivo si es necesario
+      if (this.form.subject === 'Unete a nuestro equipo') {
+        const fileInput = this.$el.querySelector('input[type="file"]');
+        if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+           this.showError('Por favor, adjunta tu CV.');
+           return;
+        }
       }
 
       this.isLoading = true;
 
       try {
-        // Preparar datos para EmailJS
-        const templateParams = {
-          from_name: this.form.name.trim(),
-          from_email: this.form.email.trim(),
-          phone: this.form.phone.trim() || 'No proporcionado',
-          subject: this.form.subject.trim() || 'Consulta desde sitio web',
-          message: this.form.message.trim(),
-          to_email: 'automac.repuestos@gmail.com' // Email de destino
-        };
-
-        // Enviar email usando EmailJS
-        // NOTA: Necesitas configurar estos valores en tu cuenta de EmailJS:
-        // - SERVICE_ID: ID del servicio de email (ej: Gmail)
-        // - TEMPLATE_ID: ID del template que crearás
-        // - PUBLIC_KEY: Tu clave pública de EmailJS
-        await emailjs.send(
+        // Enviar email usando EmailJS sendForm
+        // Esto permite enviar archivos adjuntos si el input type="file" está en el formulario
+        await emailjs.sendForm(
           'service_f9wl0jh',        // Reemplazar con tu Service ID
           'template_ri35mw6',       // Reemplazar con tu Template ID
-          templateParams,
+          this.$refs.form,          // Referencia al formulario HTML
           'ul8xI6kMa5JdQcuq9'         // Reemplazar con tu Public Key
         );
 
         this.showSuccess();
         this.resetForm();
+        
+        // Limpiar el input file si existe manualmente ya que no está ligado a v-model
+        const fileInput = this.$el.querySelector('input[type="file"]');
+        if (fileInput) fileInput.value = '';
+
       } catch (error) {
         console.error('Error al enviar el email:', error);
         this.showError('Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente.');
