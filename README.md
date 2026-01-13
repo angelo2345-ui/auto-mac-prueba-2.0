@@ -1,1 +1,1 @@
-# automac
+# automacp
