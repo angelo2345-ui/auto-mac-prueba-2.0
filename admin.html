@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Blog - Automac</title>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --blue: #3b82f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        h1 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        input:focus, textarea:focus {
+            outline: 2px solid var(--primary);
+            border-color: transparent;
+        }
+        
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        button:hover {
+            opacity: 0.9;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .post-list {
+            margin-top: 3rem;
+            border-top: 2px solid #e5e7eb;
+            padding-top: 2rem;
+        }
+
+        .post-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-delete {
+            background: #ef4444;
+            width: auto;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-edit {
+            background: var(--blue);
+            width: auto;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .btn-cancel {
+            background: #9ca3af;
+            margin-top: 10px;
+        }
+
+        .hidden { display: none; }
+        
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(150%);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        
+        .toast.show { transform: translateY(0); }
+        .toast.error { background: #ef4444; }
+
+        /* Preview de imagen */
+        #imagePreview {
+            max-width: 100%;
+            max-height: 200px;
+            margin-top: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- LOGIN VIEW -->
+        <div id="loginView">
+            <h1>🔐 Admin Automac</h1>
+            <p class="subtitle">Inicia sesión para gestionar el blog</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required placeholder="admin@automac.com">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" id="loginBtn">Ingresar</button>
+            </form>
+        </div>
+
+        <!-- DASHBOARD VIEW -->
+        <div id="dashboardView" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h1 id="formTitle">✍️ Nuevo Post</h1>
+                <div>
+                    <button onclick="restoreExamplePosts()" style="width: auto; background: #6b7280; margin-right: 10px;">Restaurar Ejemplos</button>
+                    <button onclick="logout()" style="width: auto; background: #ef4444;">Salir</button>
+                </div>
+            </div>
+
+            <form id="postForm">
+                <input type="hidden" id="editPostId">
+                
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Extracto (Resumen corto)</label>
+                    <textarea id="excerpt" rows="2" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Contenido (HTML permitido)</label>
+                    <textarea id="content" rows="10" required placeholder="<p>Escribe aquí tu contenido...</p>"></textarea>
+                    <small style="color: #666">Tip: Usa etiquetas &lt;p&gt; para párrafos.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Autor</label>
+                    <input type="text" id="author" value="Automac" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select id="category">
+                        <option>Noticias</option>
+                        <option>Historia</option>
+                        <option>Productos</option>
+                        <option>Eventos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Imagen Destacada</label>
+                    <input type="file" id="imageInput" accept="image/*">
+                    <img id="imagePreview" src="" alt="Vista previa">
+                    <!-- Campo oculto para mantener la imagen anterior al editar -->
+                    <input type="hidden" id="existingImage">
+                </div>
+
+                <button type="submit" id="submitBtn">Publicar Post</button>
+                <button type="button" id="cancelBtn" class="btn-cancel hidden" onclick="cancelEdit()">Cancelar Edición</button>
+            </form>
+
+            <div class="post-list">
+                <h3>📚 Posts Publicados</h3>
+                <div id="postsContainer">Cargando posts...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Operación exitosa</div>
+
+    <!-- FIREBASE SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, onSnapshot, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        
+        // CONFIGURACIÓN DE TU PROYECTO
+        const firebaseConfig = {
+            apiKey: "AIzaSyC0EIGduwOGJr2xgeSLMgbUvtXY4iebkC0",
+            authDomain: "automac-blog.firebaseapp.com",
+            projectId: "automac-blog",
+            storageBucket: "automac-blog.firebasestorage.app",
+            messagingSenderId: "605756706622",
+            appId: "1:605756706622:web:d4bcd05971f43b1845a66f"
+        };
+
+        // INICIALIZAR FIREBASE
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // ELEMENTOS DOM
+        const loginView = document.getElementById('loginView');
+        const dashboardView = document.getElementById('dashboardView');
+        const loginForm = document.getElementById('loginForm');
+        const postForm = document.getElementById('postForm');
+        const postsContainer = document.getElementById('postsContainer');
+        const imageInput = document.getElementById('imageInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const formTitle = document.getElementById('formTitle');
+        const submitBtn = document.getElementById('submitBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const editPostId = document.getElementById('editPostId');
+        const existingImage = document.getElementById('existingImage');
+
+        // MANEJO DE ESTADO DE AUTH
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                loginView.classList.add('hidden');
+                dashboardView.classList.remove('hidden');
+                loadPosts();
+            } else {
+                loginView.classList.remove('hidden');
+                dashboardView.classList.add('hidden');
+            }
+        });
+
+        // LOGIN
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('loginBtn');
+
+            try {
+                btn.textContent = 'Verificando...';
+                btn.disabled = true;
+                await signInWithEmailAndPassword(auth, email, password);
+                showToast('Bienvenido Admin');
+            } catch (error) {
+                showToast('Error: ' + error.message, true);
+                btn.disabled = false;
+                btn.textContent = 'Ingresar';
+            }
+        });
+
+        // LOGOUT GLOBAL
+        window.logout = () => signOut(auth);
+
+        // PREVIEW IMAGEN
+        imageInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // FUNCIÓN MÁGICA: COMPRIMIR IMAGEN A BASE64
+        function compressImage(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const MAX_WIDTH = 800;
+                        const scaleSize = MAX_WIDTH / img.width;
+                        
+                        const newWidth = (img.width > MAX_WIDTH) ? MAX_WIDTH : img.width;
+                        const newHeight = (img.width > MAX_WIDTH) ? (img.height * scaleSize) : img.height;
+
+                        canvas.width = newWidth;
+                        canvas.height = newHeight;
+                        
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                        
+                        const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                        resolve(dataUrl);
+                    };
+                    img.onerror = (err) => reject(err);
+                };
+                reader.onerror = (err) => reject(err);
+            });
+        }
+
+        // CREAR O ACTUALIZAR POST
+        postForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Procesando...';
+
+            try {
+                let imageUrl = existingImage.value; // Mantener imagen anterior por defecto
+                
+                // 1. Si hay NUEVA imagen, procesarla
+                const file = imageInput.files[0];
+                if (file) {
+                    try {
+                        imageUrl = await compressImage(file);
+                        if (imageUrl.length > 1000000) {
+                            throw new Error("Imagen demasiado grande");
+                        }
+                    } catch (imgError) {
+                        throw new Error("Error procesando la imagen");
+                    }
+                }
+
+                const postData = {
+                    title: document.getElementById('title').value,
+                    excerpt: document.getElementById('excerpt').value,
+                    content: document.getElementById('content').value,
+                    author: document.getElementById('author').value,
+                    date: document.getElementById('date').value,
+                    category: document.getElementById('category').value,
+                    featuredImage: imageUrl,
+                    updatedAt: new Date()
+                };
+
+                // 2. Decidir si es CREAR o ACTUALIZAR
+                if (editPostId.value) {
+                    // MODO EDICIÓN
+                    await updateDoc(doc(db, "posts", editPostId.value), postData);
+                    showToast('Post actualizado exitosamente');
+                } else {
+                    // MODO CREACIÓN
+                    postData.createdAt = new Date(); // Solo al crear
+                    await addDoc(collection(db, "posts"), postData);
+                    showToast('Post publicado exitosamente');
+                }
+
+                cancelEdit(); // Resetear formulario
+
+            } catch (error) {
+                console.error(error);
+                showToast(error.message, true);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = editPostId.value ? 'Actualizar Post' : 'Publicar Post';
+            }
+        });
+
+        // RESTAURAR POSTS DE EJEMPLO
+        window.restoreExamplePosts = async () => {
+            if(!confirm('¿Quieres restaurar los posts de ejemplo? Esto agregará 2 posts clásicos a tu blog.')) return;
+            
+            try {
+                const posts = [
+                    {
+                        title: "Expertos en Maquinaria Pesada",
+                        excerpt: "Conoce nuestra trayectoria liderando el mercado de repuestos en República Dominicana.",
+                        content: "<p>En Automac, nos enorgullece ser líderes en la importación y distribución de repuestos para maquinaria pesada y camiones. Con años de experiencia en el mercado, garantizamos la calidad y durabilidad de cada pieza que ofrecemos.</p><p>Nuestro compromiso es mantener tu flota en movimiento con las mejores marcas y un servicio personalizado.</p>",
+                        author: "Automac",
+                        date: "2023-10-15",
+                        category: "Historia",
+                        featuredImage: "/images/blog/1.webp",
+                        createdAt: new Date()
+                    },
+                    {
+                        title: "Mantenimiento Preventivo: La Clave del Éxito",
+                        excerpt: "Descubre por qué el mantenimiento regular es vital para la vida útil de tus equipos.",
+                        content: "<p>El mantenimiento preventivo no es un gasto, es una inversión. Realizar cambios de aceite, filtros y revisiones periódicas puede extender la vida útil de tu motor por años.</p><p>En Automac contamos con toda la línea de filtros y lubricantes necesarios para que tu maquinaria opere al 100% de su capacidad.</p>",
+                        author: "Automac",
+                        date: "2023-10-20",
+                        category: "Consejos",
+                        featuredImage: "/images/blog/2.webp",
+                        createdAt: new Date()
+                    }
+                ];
+
+                for (const post of posts) {
+                    await addDoc(collection(db, "posts"), post);
+                }
+                
+                showToast('Posts de ejemplo restaurados');
+            } catch (error) {
+                console.error(error);
+                showToast('Error: ' + error.message, true);
+            }
+        }
+
+        // CARGAR POSTS (TIEMPO REAL)
+        function loadPosts() {
+            const q = query(collection(db, "posts"), orderBy("date", "desc"));
+            
+            onSnapshot(q, (snapshot) => {
+                postsContainer.innerHTML = '';
+                snapshot.forEach((doc) => {
+                    const post = doc.data();
+                    const div = document.createElement('div');
+                    div.className = 'post-item';
+                    div.innerHTML = `
+                        <div>
+                            <strong>${post.title}</strong><br>
+                            <small>${post.date} - ${post.category}</small>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-edit" onclick="editPost('${doc.id}')">Editar</button>
+                            <button class="btn-delete" onclick="deletePost('${doc.id}')">Eliminar</button>
+                        </div>
+                    `;
+                    postsContainer.appendChild(div);
+                });
+            });
+        }
+
+        // MODO EDICIÓN: Cargar datos en el form
+        window.editPost = async (id) => {
+            try {
+                const docSnap = await getDoc(doc(db, "posts", id));
+                if (docSnap.exists()) {
+                    const post = docSnap.data();
+                    
+                    // Llenar formulario
+                    editPostId.value = id;
+                    document.getElementById('title').value = post.title;
+                    document.getElementById('excerpt').value = post.excerpt;
+                    document.getElementById('content').value = post.content;
+                    document.getElementById('author').value = post.author;
+                    document.getElementById('date').value = post.date;
+                    document.getElementById('category').value = post.category;
+                    existingImage.value = post.featuredImage || '';
+
+                    // Mostrar preview si hay imagen
+                    if (post.featuredImage) {
+                        imagePreview.src = post.featuredImage;
+                        imagePreview.style.display = 'block';
+                    } else {
+                        imagePreview.style.display = 'none';
+                    }
+
+                    // Cambiar interfaz a modo edición
+                    formTitle.textContent = "✏️ Editando Post";
+                    submitBtn.textContent = "Actualizar Post";
+                    cancelBtn.classList.remove('hidden');
+                    
+                    // Scroll arriba
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } catch (error) {
+                showToast("Error al cargar post: " + error.message, true);
+            }
+        }
+
+        // CANCELAR EDICIÓN
+        window.cancelEdit = () => {
+            postForm.reset();
+            editPostId.value = '';
+            existingImage.value = '';
+            imagePreview.style.display = 'none';
+            imagePreview.src = '';
+            
+            formTitle.textContent = "✍️ Nuevo Post";
+            submitBtn.textContent = "Publicar Post";
+            cancelBtn.classList.add('hidden');
+        }
+
+        // ELIMINAR POST GLOBAL
+        window.deletePost = async (id) => {
+            if(confirm('¿Seguro que quieres eliminar este post?')) {
+                try {
+                    await deleteDoc(doc(db, "posts", id));
+                    showToast('Post eliminado');
+                    // Si estábamos editando este mismo post, cancelar edición
+                    if (editPostId.value === id) {
+                        cancelEdit();
+                    }
+                } catch (error) {
+                    showToast('Error eliminando: ' + error.message, true);
+                }
+            }
+        }
+
+        // UTILIDAD TOAST
+        function showToast(msg, isError = false) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.className = isError ? 'toast show error' : 'toast show';
+            setTimeout(() => {
+                toast.className = 'toast';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
