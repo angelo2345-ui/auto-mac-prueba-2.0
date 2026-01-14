@@ -101,3 +101,4 @@ export default {}
 <style scoped>
 /* El diseño principal usa Tailwind, pero puedes agregar estilos extra aquí si lo necesitas */
 </style>
+  

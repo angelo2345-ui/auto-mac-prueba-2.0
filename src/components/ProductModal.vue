@@ -27,6 +27,9 @@
                 </div>
                 
                 <div class="md:w-1/2">
+                  <h4 class="text-lg font-semibold text-blue-800 mb-2">Descripción</h4>
+                  <p class="text-gray-600 mb-4">{{ product.description }}</p>
+                  
                   <h4 class="text-lg font-semibold text-blue-800 mb-2">Especificaciones</h4>
                   <ul class="list-disc pl-5 text-gray-600 mb-4">
                     <li>Compatible con múltiples marcas</li>

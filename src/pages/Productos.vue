@@ -95,6 +95,15 @@
               </a>
             </li>
             <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+              <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">KMP BRAND</span>
+              <a href="https://www.kmpbrand.com/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="text-blue-600 hover:text-blue-800 underline text-sm font-medium">
+                https://www.kmpbrand.com/
+              </a>
+            </li>
+            <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
               <span class="font-semibold text-gray-800" style="font-family: var(--fuente-principal);">N.Y.C GENUINE PARTS</span>
               <a href="https://www.nycofamerica.com/" 
                  target="_blank" 
