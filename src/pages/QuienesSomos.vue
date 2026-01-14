@@ -27,8 +27,8 @@
   <!-- Acerca de la empresa -->
   <section class="bg-gray-50 py-12">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-200 p-6 reveal h-full">
+      <div class="grid grid-cols-1 gap-8 items-stretch">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 reveal h-full">
           <div class="flex items-center gap-4 mb-4">
             <div class="h-12 w-12 flex items-center justify-center rounded-full" style="background-color: var(--color-amarillo);">
               <i class="las la-users text-2xl text-black"></i>
@@ -65,14 +65,6 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden reveal h-full">
-          <!-- Imagen corporativa real -->
-          <img 
-            src="/images/quienes%20somos/automac%20frente.jpg" 
-            alt="Foto de la empresa Automac" 
-            class="w-full h-full object-cover"
-          />
         </div>
       </div>
 
