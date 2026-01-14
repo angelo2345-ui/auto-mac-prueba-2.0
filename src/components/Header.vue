@@ -29,7 +29,7 @@
             <span class="text-[color:var(--color-texto-menu)] text-xl sm:text-2xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
-            <span class="text-xs text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
+            <span class="text-xs text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotricess</span>
           </div>
         </router-link>
 
