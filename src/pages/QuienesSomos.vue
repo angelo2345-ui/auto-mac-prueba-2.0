@@ -205,6 +205,17 @@
             <div class="text-gray-600 text-sm">Auxiliar de Caja</div>
           </div>
         </div>
+
+        <!-- Botón Únete a nuestro equipo -->
+        <div class="mt-12 text-center reveal">
+          <router-link 
+            :to="{ path: '/contacto', query: { subject: 'Unete a nuestro equipo' } }" 
+            class="group inline-flex items-center px-8 py-4 rounded-full bg-black text-white font-bold text-lg hover:bg-[var(--color-amarillo)] hover:text-black transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            <i class="las la-user-plus text-2xl mr-3 group-hover:scale-110 transition-transform"></i>
+            Únete a nuestro equipo
+          </router-link>
+        </div>
       </div>
 
       <!-- CTA -->

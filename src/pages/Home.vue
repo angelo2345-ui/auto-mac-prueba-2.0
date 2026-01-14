@@ -4,14 +4,19 @@
     class="relative mt-20 lg:mt-24 h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
     aria-label="Sección principal de Automac"
   >
-    <!-- Capas de fondo precargadas -->
-    <div
-      v-for="(slide, index) in slides"
-      :key="index"
-      class="absolute inset-0 bg-cover bg-top bg-no-repeat transition-opacity duration-700 ease-in-out"
-      :class="{ 'opacity-100': index === currentSlideIndex, 'opacity-0': index !== currentSlideIndex }"
-      :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
-    ></div>
+    <!-- Capas de fondo optimizadas -->
+    <div class="absolute inset-0 w-full h-full">
+      <img
+        v-for="(slide, index) in slides"
+        :key="index"
+        :src="slide.backgroundImage"
+        :alt="slide.title"
+        class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700 ease-in-out"
+        :class="{ 'opacity-100': index === currentSlideIndex, 'opacity-0': index !== currentSlideIndex }"
+        :loading="index === 0 ? 'eager' : 'lazy'"
+        :decoding="index === 0 ? 'auto' : 'async'"
+      />
+    </div>
 
     <!-- Overlay oscuro -->
     <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/60 z-10"></div>
@@ -249,7 +254,6 @@ export default {
     return {
       currentSlideIndex: 0,
       autoSlideInterval: null,
-      imagesLoaded: false,
       slides: [
         {
           title: 'Compromiso y Calidad',
@@ -333,29 +337,12 @@ export default {
     }
   },
   mounted() {
-    this.preloadImages().then(() => {
-      this.imagesLoaded = true
-      this.startAutoSlide()
-    })
+    this.startAutoSlide()
   },
   beforeUnmount() {
     this.stopAutoSlide()
   },
   methods: {
-    // Precarga todas las imágenes para evitar peticiones durante las transiciones
-    preloadImages() {
-      const imagePromises = this.slides.map(slide => {
-        return new Promise((resolve, reject) => {
-          const img = new Image()
-          img.onload = resolve
-          img.onerror = reject
-          img.src = slide.backgroundImage
-        })
-      })
-      
-      return Promise.all(imagePromises)
-    },
-    
     setCurrentSlide(index) {
       if (index !== this.currentSlideIndex) {
         this.currentSlideIndex = index
@@ -374,11 +361,9 @@ export default {
     },
     
     startAutoSlide() {
-      if (this.imagesLoaded) {
-        this.autoSlideInterval = setInterval(() => {
-          this.nextSlide()
-        }, 5000)
-      }
+      this.autoSlideInterval = setInterval(() => {
+        this.nextSlide()
+      }, 5000)
     },
     
     stopAutoSlide() {

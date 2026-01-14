@@ -4,6 +4,8 @@
       <img 
         :src="product.image" 
         :alt="product.name" 
+        loading="lazy"
+        decoding="async"
         :class="[
           'max-h-full max-w-full object-contain transition-transform duration-300',
           isLargeProduct(product.name) ? 'scale-[1.35] group-hover:scale-[1.55]' : 'group-hover:scale-105'

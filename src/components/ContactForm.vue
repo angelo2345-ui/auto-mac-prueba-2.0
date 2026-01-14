@@ -152,6 +152,11 @@ export default {
       errorMessage: ''
     }
   },
+  mounted() {
+    if (this.$route.query.subject) {
+      this.form.subject = this.$route.query.subject;
+    }
+  },
   methods: {
     async submitForm() {
       // Resetear mensajes

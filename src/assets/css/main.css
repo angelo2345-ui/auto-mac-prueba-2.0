@@ -8,8 +8,8 @@
 	--color-amarillo: #dead23;   /* Amarillo corporativo actualizado */
 	--color-gris: #EAE0C8;       /* Gris Perla */
 	--color-negro: #000000;      /* Negro */
-    --color-fondo-menu: #dfdfdfe5; /* Color de fondo para Menú y Footer */
-    --color-texto-menu: #58574d; /* Color de texto para Menú y Footer */
+    --color-fondo-menu: #f3f3f3; /* Color de fondo para Menú y Footer */
+    --color-texto-menu: #000000; /* Color de texto para Menú y Footer */
     --fuente-principal: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     --fuente-titulos: "Oswald", Arial, Helvetica, sans-serif;
 }

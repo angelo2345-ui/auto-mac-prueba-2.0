@@ -23,6 +23,8 @@
         <div class="bg-white rounded-xl p-6 h-32 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 relative">
           <div class="brand-image-container mb-2">
             <img :src="getImagePath(brand)" :alt="brand" 
+                 loading="lazy"
+                 decoding="async"
                  :class="[
                    'brand-image opacity-80 group-hover:opacity-100 transition-opacity duration-300',
                    {'automann-image': brand === 'automann'}
