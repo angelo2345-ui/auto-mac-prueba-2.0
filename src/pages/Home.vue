@@ -3,6 +3,8 @@
   <section
     class="relative mt-20 lg:mt-24 h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
     aria-label="Sección principal de Automac"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
   >
     <!-- Capas de fondo optimizadas -->
     <div class="absolute inset-0 w-full h-full">
@@ -45,19 +47,31 @@
       </div>
     </div>
 
-    <!-- Indicadores de slides -->
-    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
-      <button
-        v-for="(slide, index) in slides"
-        :key="index"
-        @click="setCurrentSlide(index)"
-        class="w-3 h-3 rounded-full transition-all duration-300"
-        :class="{
-          'bg-yellow-500 scale-125': index === currentSlideIndex,
-          'bg-white/60 hover:bg-white/80': index !== currentSlideIndex
-        }"
-        :aria-label="`Ir al slide ${index + 1}`"
-      ></button>
+    <!-- Indicadores de slides y botón de pausa -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex items-center gap-4">
+      <!-- Botón de pausa/reproducir -->
+      <button 
+        @click="togglePause"
+        class="w-8 h-8 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+        :aria-label="isPaused ? 'Reanudar slides' : 'Pausar slides'"
+      >
+        <i class="las" :class="isPaused ? 'la-play' : 'la-pause'"></i>
+      </button>
+
+      <!-- Indicadores -->
+      <div class="flex space-x-3">
+        <button
+          v-for="(slide, index) in slides"
+          :key="index"
+          @click="setCurrentSlide(index)"
+          class="w-3 h-3 rounded-full transition-all duration-300"
+          :class="{
+            'bg-yellow-500 scale-125': index === currentSlideIndex,
+            'bg-white/60 hover:bg-white/80': index !== currentSlideIndex
+          }"
+          :aria-label="`Ir al slide ${index + 1}`"
+        ></button>
+      </div>
     </div>
 
     <!-- Flecha: Slide anterior -->
@@ -254,6 +268,8 @@ export default {
     return {
       currentSlideIndex: 0,
       autoSlideInterval: null,
+      isPaused: false,
+      isHovering: false,
       slides: [
         {
           title: 'Compromiso y Calidad',
@@ -284,7 +300,7 @@ export default {
         {
           title: 'Importaciones',
           subtitle: 'Comercio Internacional',
-          description: 'Importaciones y soluciones en comercio internacional. Contamos con amplia experiencia en repuestos para equipos industriales.',
+          description: 'Importaciones y soluciones en comercio internacional. Gestionamos la logística global para traer los repuestos que necesitas desde cualquier parte del mundo.',
           badge: 'Importación directa',
           primaryButton: 'Solicitar Importación',
           backgroundImage: 'images/logos/exportaciones.avif',
@@ -360,7 +376,31 @@ export default {
       this.resetAutoSlide()
     },
     
+    togglePause() {
+      this.isPaused = !this.isPaused
+      this.updateAutoSlideState()
+    },
+
+    handleMouseEnter() {
+      this.isHovering = true
+      this.updateAutoSlideState()
+    },
+
+    handleMouseLeave() {
+      this.isHovering = false
+      this.updateAutoSlideState()
+    },
+
+    updateAutoSlideState() {
+      if (this.isPaused || this.isHovering) {
+        this.stopAutoSlide()
+      } else {
+        this.startAutoSlide()
+      }
+    },
+
     startAutoSlide() {
+      if (this.autoSlideInterval) return
       this.autoSlideInterval = setInterval(() => {
         this.nextSlide()
       }, 5000)
@@ -375,7 +415,9 @@ export default {
     
     resetAutoSlide() {
       this.stopAutoSlide()
-      this.startAutoSlide()
+      if (!this.isPaused && !this.isHovering) {
+        this.startAutoSlide()
+      }
     }
   }
 }

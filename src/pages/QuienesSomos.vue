@@ -132,7 +132,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <h4 class="font-semibold">2009</h4>
-            <p class="text-gray-300">Nacimiento de Automac con foco en repuestos de camiones.</p>
+            <p class="text-gray-300">Nacimiento de Automac con enfoque en repuestos de camiones.</p>
           </div>
           <div>
             <h4 class="font-semibold">2015</h4>
@@ -149,7 +149,7 @@
       <div class="mt-12">
         <div class="flex items-center gap-3 mb-4 reveal">
           <i class="las la-id-card text-2xl" style="color: var(--color-amarillo);"></i>
-          <h3 class="text-xl font-bold">Nuestro Equipo</h3>
+          <h3 class="text-xl font-bold">Personal de Servicio</h3>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           <!-- Yosias Gonzalez -->
