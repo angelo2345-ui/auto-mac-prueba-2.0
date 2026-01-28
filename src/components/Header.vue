@@ -10,35 +10,35 @@
       boxShadow: scrolled ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
     }"
   >
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-      <div class="flex items-center justify-between h-20 lg:h-24">
+    <div class="max-w-8xl px-6 sm:px-8 lg:px-10">
+      <div class="flex items-center justify-between h-28 lg:h-40">
         <!-- Logo Section - Mejorado con gradientes y efectos más modernos -->
         <router-link 
           to="/" 
-          class="flex items-center space-x-4 group transition-all duration-300 hover:scale-105 ml-2"
+          class="flex items-center space-x-4 group transition-all duration-300 hover:scale-105 ml-4 lg:ml-12"
           @click="closeMenu"
         >
-          <div class="mt-10 mb-10">
+          <div class="mt-2 mb-2">
             <img 
               src="/images/logos/Automac Imagen.png" 
               alt="Logo Automac" 
-              class="h-20 w-20 sm:h-25 sm:w-25 object-contain transition-transform duration-300 group-hover:scale-110 " 
+              class="h-32 w-32 sm:h-44 sm:w-44 object-contain transition-transform duration-300 group-hover:scale-110 " 
             />
           </div>
           <div class="flex flex-col">
-            <span class="text-[color:var(--color-texto-menu)] text-xl sm:text-2xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
+            <span class="text-[color:var(--color-texto-menu)] text-3xl sm:text-5xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
-            <span class="text-xs text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
+            <span class="text-lg sm:text-xl text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
           </div>
         </router-link>
 
         <!-- Desktop Navigation - Mejorado con indicador activo y mejores transiciones -->
-        <nav class="hidden md:flex items-center space-x-6">
+        <nav class="hidden md:flex items-center space-x-6 mr-4 lg:mr-12">
           <router-link 
             to="/" 
             exact
-            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-xl text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path === '/' }"
           >
             <i class="las la-home"></i>
@@ -52,7 +52,7 @@
           </router-link>
           <router-link 
             to="/quienes-somos" 
-            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-xl text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2 whitespace-nowrap"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/quienes-somos') }"
           >
             <i class="las la-users"></i>
@@ -66,7 +66,7 @@
 
           <router-link 
             to="/productos" 
-            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-xl text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/productos') }"
           >
             <i class="las la-tools"></i>
@@ -81,7 +81,7 @@
 
           <router-link 
             to="/contacto" 
-            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-xl text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/contacto') }"
           >
             <i class="las la-envelope"></i>
@@ -94,7 +94,7 @@
           </router-link>
           <router-link 
             to="/blog" 
-            class="relative text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            class="relative text-xl text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
             :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/blog') }"
           >
             <i class="las la-rss"></i>
@@ -112,7 +112,7 @@
         <!-- Mobile Menu Button - Corregido -->
         <button
           @click="toggleMenu"
-          class="md:hidden relative w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/80 hover:bg-gray-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
+          class="md:hidden relative w-16 h-16 flex items-center justify-center rounded-lg bg-gray-800/80 hover:bg-gray-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 mr-4 lg:mr-12"
           :class="{ 'bg-yellow-400 hover:bg-yellow-500': menuActive }"
           aria-label="Toggle navigation menu"
           :aria-expanded="menuActive"
@@ -144,7 +144,7 @@
           >
             <div class="flex items-center gap-3">
               <i class="las la-home text-xl"></i>
-              <span class="text-lg font-medium">Inicio</span>
+              <span class="text-xl font-medium">Inicio</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -167,7 +167,7 @@
           >
             <div class="flex items-center gap-3">
               <i class="las la-users text-xl"></i>
-              <span class="text-lg font-medium">Quiénes Somos</span>
+              <span class="text-xl font-medium">Quiénes Somos</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -191,7 +191,7 @@
           >
             <div class="flex items-center gap-3">
               <i class="las la-tools text-xl"></i>
-              <span class="text-lg font-medium">Productos</span>
+              <span class="text-xl font-medium">Productos</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -215,7 +215,7 @@
           >
             <div class="flex items-center gap-3">
               <i class="las la-rss text-xl"></i>
-              <span class="text-lg font-medium">Blog</span>
+              <span class="text-xl font-medium">Blog</span>
             </div>
             <svg 
               class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
@@ -239,7 +239,7 @@
           >
             <div class="flex items-center gap-3">
               <i class="las la-envelope text-xl"></i>
-              <span class="text-lg font-medium">Contacto</span>
+              <span class="text-xl font-medium">Contacto</span>
             </div>
           
           </router-link>

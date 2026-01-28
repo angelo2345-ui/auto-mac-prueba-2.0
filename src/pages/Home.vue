@@ -1,7 +1,7 @@
 <template>
   <!-- Hero Section -->
   <section
-    class="relative mt-20 lg:mt-24 h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
+    class="relative mt-28 lg:mt-40 h-[65vh] sm:h-[80vh] lg:h-[85vh] min-h-[500px] max-h-[800px] flex items-center overflow-hidden"
     aria-label="Sección principal de Automac"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
@@ -21,7 +21,12 @@
     </div>
 
     <!-- Overlay oscuro -->
-    <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/60 z-10"></div>
+    <div 
+      class="absolute inset-0 bg-gradient-to-r z-10 transition-all duration-700"
+      :class="slides[currentSlideIndex].title === 'Minería' 
+        ? 'from-gray-900/60 via-gray-900/40 to-gray-900/20' 
+        : 'from-gray-900/90 via-gray-900/75 to-gray-900/60'"
+    ></div>
 
     <!-- Contenido con transición sincronizada -->
     <div class="container relative z-20 px-4 sm:px-6 lg:px-8">
@@ -153,7 +158,7 @@
         <!-- Encabezado -->
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6" style="font-family:var(--fuente-titulos);">
-            Compromiso, Respaldo y Calidad
+            Compromiso y Respaldo
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             15 años siendo el socio confiable para el mantenimiento de tu flota
@@ -272,9 +277,9 @@ export default {
       isHovering: false,
       slides: [
         {
-          title: 'Compromiso y Calidad',
+          title: 'Compromiso y Respaldo',
           subtitle: 'Suministros para camiones y tractores',
-          description: '¡Contamos con servicios que complementan nuestra oferta de suministros para camiones y tractores! Compromiso, respaldo y calidad en cada producto que ofrecemos.',
+          description: '¡Contamos con servicios que complementan nuestra oferta de suministros para camiones y tractores! Compromiso y Respaldo en cada producto que ofrecemos.',
           badge: '15 años de experiencia garantizada',
           primaryButton: 'Ver Catálogo',
           backgroundImage: 'images/tractor.webp',
@@ -329,7 +334,7 @@ export default {
           description: 'Componentes y suministros para equipos de construcción e industria: calidad, respaldo y disponibilidad.',
           badge: 'Sector construcción',
           primaryButton: 'Conocer más',
-          backgroundImage: 'images/inicio/construccion.jpg',
+          backgroundImage: 'images/inicio/csm_WIKUS-Loesungen-Bauwesen_1760x586_f60ee9a554.jpg',
           stats: [
             { value: '200+', label: 'Referencias industriales' },
             { value: '24/7', label: 'Soporte y asesoría' },

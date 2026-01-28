@@ -282,12 +282,12 @@ export default {
 }
 
 .breadcrumb-nav{
-  margin-top: 98px !important;
+  margin-top: 160px !important;
 }
 /* Responsive padding para el breadcrumb */
 @media (max-width: 1023px) {
   .breadcrumb-nav {
-    margin-top: 83px !important;
+    margin-top: 112px !important;
   }
 }
 </style>

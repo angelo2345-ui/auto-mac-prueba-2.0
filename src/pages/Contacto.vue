@@ -90,10 +90,16 @@ export default {
 
 <style scoped>
 .contact-section {
-  padding: 80px 0 0 0; /* Añadido padding superior para evitar superposición con el header */
+  padding: 112px 0 0 0; /* Ajustado para el nuevo header de 7rem (mobile) */
   background-color: #f8f9fa;
   min-height: 100vh;
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .contact-section {
+    padding-top: 160px; /* Ajustado para el nuevo header de 10rem (desktop) */
+  }
 }
 
 .container {

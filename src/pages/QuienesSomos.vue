@@ -1,7 +1,7 @@
 <template>
   <div ref="root">
   <!-- Hero corporativo -->
-  <section class="relative pt-24 lg:pt-28 pb-16">
+  <section class="relative pt-32 lg:pt-44 pb-16">
     <div
       class="absolute inset-0 -z-10"
       :style="{
@@ -43,7 +43,7 @@
               Con <strong>más de 15 años de experiencia</strong>, ofrecemos soluciones integrales para el mantenimiento preventivo y correctivo.
             </p>
             <p>
-              Atendemos a los sectores de <strong>transporte, industrial, minería, agrícola y construcción</strong>, con cobertura nacional y soporte en toda la cadena de suministro.
+              Atendemos a los sectores de <strong>transporte, industria, minería, agrícola y construcción</strong>, con cobertura nacional y soporte en toda la cadena de suministro.
             </p>
             <ul class="list-disc pl-6 space-y-2">
               <li>Importaciones bajo pedido y logística nacional.</li>

@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-100 py-12 pt-32">
+  <section class="bg-gray-50 py-12 pt-32 lg:pt-48">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Encabezado de la sección -->
       <div class="text-center mb-12">
