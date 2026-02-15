@@ -42,7 +42,8 @@
               <div class="contact-icon">🟢</div>
               <div class="contact-details">
                 <h4>WhatsApp</h4>
-                <p><a href="https://wa.me/18296874000" target="_blank" rel="noopener noreferrer">849-629-2984</a></p>
+                <p><a href="https://wa.me/18496292984" target="_blank" rel="noopener noreferrer">849-629-2984</a></p>
+                <p><a href="https://wa.me/18296292974" target="_blank" rel="noopener noreferrer">829-629-2974</a></p>
               </div>
             </div>
             
