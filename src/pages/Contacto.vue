@@ -26,6 +26,7 @@
               <div class="contact-details">
                 <h4>Email</h4>
                 <p><a href="mailto:info@automacdom.com.do">info@automacdom.com.do</a></p>
+                <p><a href="mailto:rpventas@automacdom.com.do">rpventas@automacdom.com.do</a></p>
               </div>
             </div>
             
@@ -34,7 +35,6 @@
               <div class="contact-details">
                 <h4>Teléfonos</h4>
                 <p>829-687-4000</p>
-                <p>849-629-2974</p>
               </div>
             </div>
 
@@ -42,7 +42,7 @@
               <div class="contact-icon">🟢</div>
               <div class="contact-details">
                 <h4>WhatsApp</h4>
-                <p><a href="https://wa.me/18296874000" target="_blank" rel="noopener noreferrer">Chat por WhatsApp</a></p>
+                <p><a href="https://wa.me/18296874000" target="_blank" rel="noopener noreferrer">849-629-2984</a></p>
               </div>
             </div>
             
@@ -159,19 +159,26 @@ export default {
 
 .contact-item {
   display: flex;
+  align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
 .contact-icon {
+  width: 2rem; /* Fixed width to ensure vertical alignment of text */
+  text-align: center;
   font-size: 1.5rem;
+  line-height: 1.5rem;
   margin-right: 1rem;
   color: var(--color-amarillo);
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .contact-details h4 {
   font-size: 1.1rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   color: #333;
+  line-height: 1.5rem; /* Matches icon size for better alignment */
 }
 
 .contact-details p {

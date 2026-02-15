@@ -157,6 +157,40 @@
         .toast.show { transform: translateY(0); }
         .toast.error { background: #ef4444; }
 
+        /* Tabs Styles */
+        .tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .tab-btn {
+            padding: 1rem 2rem;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6b7280;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            width: auto;
+        }
+        .tab-btn:hover {
+            color: var(--primary);
+            opacity: 1;
+        }
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Preview de imagen */
         #imagePreview {
             max-width: 100%;
             max-height: 200px;
@@ -169,6 +203,7 @@
 <body>
 
     <div class="container">
+        <!-- LOGIN VIEW -->
         <div id="loginView">
             <h1>🔐 Admin Automac</h1>
             <p class="subtitle">Inicia sesión para gestionar el blog</p>
@@ -185,79 +220,162 @@
             </form>
         </div>
 
+        <!-- DASHBOARD VIEW -->
         <div id="dashboardView" class="hidden">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <h1 id="formTitle">✍️ Nuevo Post</h1>
+                <h1>Panel de Administración</h1>
                 <div>
-                    <button onclick="restoreExamplePosts()" style="width: auto; background: #6b7280; margin-right: 10px;">Restaurar Ejemplos</button>
                     <button onclick="logout()" style="width: auto; background: #ef4444;">Salir</button>
                 </div>
             </div>
 
-            <form id="postForm">
-                <input type="hidden" id="editPostId">
-                
-                <div class="form-group">
-                    <label>Título</label>
-                    <input type="text" id="title" required>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('blog')">Blog</button>
+                <button class="tab-btn" onclick="switchTab('vacancies')">Vacantes</button>
+            </div>
+
+            <!-- BLOG SECTION -->
+            <div id="blogSection" class="tab-content active">
+                <h2 id="formTitle" style="margin-bottom: 1rem;">✍️ Nuevo Post</h2>
+
+                <form id="postForm">
+                    <input type="hidden" id="editPostId">
+                    
+                    <div class="form-group">
+                        <label>Título</label>
+                        <input type="text" id="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Extracto (Resumen corto)</label>
+                        <textarea id="excerpt" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contenido (HTML permitido)</label>
+                        <textarea id="content" rows="10" required placeholder="<p>Escribe aquí tu contenido...</p>"></textarea>
+                        <small style="color: #666">Tip: Usa etiquetas &lt;p&gt; para párrafos.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Autor</label>
+                        <input type="text" id="author" value="Automac" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select id="category">
+                            <option>Noticias</option>
+                            <option>Historia</option>
+                            <option>Productos</option>
+                            <option>Eventos</option>
+                            <option>Consejos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Imagen Destacada</label>
+                        <input type="file" id="imageInput" accept="image/*">
+                        <img id="imagePreview" src="" alt="Vista previa">
+                        <!-- Campo oculto para mantener la imagen anterior al editar -->
+                        <input type="hidden" id="existingImage">
+                    </div>
+
+                    <button type="submit" id="submitBtn">Publicar Post</button>
+                    <button type="button" id="cancelBtn" class="btn-cancel hidden" onclick="cancelEdit()">Cancelar Edición</button>
+                </form>
+
+                <div class="post-list">
+                    <h3>📚 Posts Publicados</h3>
+                    <div id="postsContainer">Cargando posts...</div>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label>Extracto (Resumen corto)</label>
-                    <textarea id="excerpt" rows="2" required></textarea>
+            <!-- VACANCIES SECTION -->
+            <div id="vacanciesSection" class="tab-content">
+                <h2 id="vacancyFormTitle" style="margin-bottom: 1rem;">💼 Nueva Vacante</h2>
+                <form id="vacancyForm">
+                    <input type="hidden" id="editVacancyId">
+                    
+                    <div class="form-group">
+                        <label>Título del Puesto</label>
+                        <input type="text" id="vacTitle" required placeholder="Ej: Técnico en Maquinaria">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select id="vacCategory">
+                            <option>Ventas</option>
+                            <option>Servicio Técnico</option>
+                            <option>Logística</option>
+                            <option>Tecnología</option>
+                            <option>Recursos Humanos</option>
+                            <option>Administración</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ubicación</label>
+                        <input type="text" id="vacLocation" required placeholder="Ej: Santo Domingo">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de Contrato</label>
+                        <select id="vacType">
+                            <option>Tiempo Completo</option>
+                            <option>Medio Tiempo</option>
+                            <option>Presencial</option>
+                            <option>Remoto</option>
+                            <option>Híbrido</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descripción del Puesto</label>
+                        <textarea id="vacDescription" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Responsabilidades (una por línea o separadas por punto)</label>
+                        <textarea id="vacResponsibilities" rows="5" required placeholder="Tarea 1&#10;Tarea 2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Requisitos (uno por línea o separados por punto)</label>
+                        <textarea id="vacRequirements" rows="5" required placeholder="Requisito 1&#10;Requisito 2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Competencias (separadas por coma)</label>
+                        <input type="text" id="vacCompetencies" required placeholder="Ej: Liderazgo, Proactividad, Inglés">
+                    </div>
+
+                    <button type="submit" id="submitVacancyBtn">Publicar Vacante</button>
+                    <button type="button" id="cancelVacancyBtn" class="btn-cancel hidden" onclick="cancelVacancyEdit()">Cancelar Edición</button>
+                </form>
+
+                <div class="post-list">
+                    <h3>📋 Vacantes Publicadas</h3>
+                    <div id="vacanciesContainer">Cargando vacantes...</div>
                 </div>
-
-                <div class="form-group">
-                    <label>Contenido (HTML permitido)</label>
-                    <textarea id="content" rows="10" required placeholder="<p>Escribe aquí tu contenido...</p>"></textarea>
-                    <small style="color: #666">Tip: Usa etiquetas &lt;p&gt; para párrafos.</small>
-                </div>
-
-                <div class="form-group">
-                    <label>Autor</label>
-                    <input type="text" id="author" value="Automac" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Fecha</label>
-                    <input type="date" id="date" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Categoría</label>
-                    <select id="category">
-                        <option>Noticias</option>
-                        <option>Historia</option>
-                        <option>Productos</option>
-                        <option>Eventos</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Imagen Destacada</label>
-                    <input type="file" id="imageInput" accept="image/*">
-                    <img id="imagePreview" src="" alt="Vista previa">
-                    <input type="hidden" id="existingImage">
-                </div>
-
-                <button type="submit" id="submitBtn">Publicar Post</button>
-                <button type="button" id="cancelBtn" class="btn-cancel hidden" onclick="cancelEdit()">Cancelar Edición</button>
-            </form>
-
-            <div class="post-list">
-                <h3>📚 Posts Publicados</h3>
-                <div id="postsContainer">Cargando posts...</div>
             </div>
         </div>
     </div>
 
     <div id="toast" class="toast">Operación exitosa</div>
 
+    <!-- FIREBASE SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, onSnapshot, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
         
+        // CONFIGURACIÓN DE TU PROYECTO
         const firebaseConfig = {
             apiKey: "AIzaSyC0EIGduwOGJr2xgeSLMgbUvtXY4iebkC0",
             authDomain: "automac-blog.firebaseapp.com",
@@ -267,10 +385,12 @@
             appId: "1:605756706622:web:d4bcd05971f43b1845a66f"
         };
 
+        // INICIALIZAR FIREBASE
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
 
+        // ELEMENTOS DOM - BLOG
         const loginView = document.getElementById('loginView');
         const dashboardView = document.getElementById('dashboardView');
         const loginForm = document.getElementById('loginForm');
@@ -284,17 +404,43 @@
         const editPostId = document.getElementById('editPostId');
         const existingImage = document.getElementById('existingImage');
 
+        // ELEMENTOS DOM - VACANTES
+        const vacancyForm = document.getElementById('vacancyForm');
+        const vacanciesContainer = document.getElementById('vacanciesContainer');
+        const vacancyFormTitle = document.getElementById('vacancyFormTitle');
+        const submitVacancyBtn = document.getElementById('submitVacancyBtn');
+        const cancelVacancyBtn = document.getElementById('cancelVacancyBtn');
+        const editVacancyId = document.getElementById('editVacancyId');
+
+        // TABS LOGIC
+        window.switchTab = (tabName) => {
+            // Update buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            if(tabName === 'blog') {
+                document.getElementById('blogSection').classList.add('active');
+            } else {
+                document.getElementById('vacanciesSection').classList.add('active');
+            }
+        }
+
+        // MANEJO DE ESTADO DE AUTH
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 loginView.classList.add('hidden');
                 dashboardView.classList.remove('hidden');
                 loadPosts();
+                loadVacancies();
             } else {
                 loginView.classList.remove('hidden');
                 dashboardView.classList.add('hidden');
             }
         });
 
+        // LOGIN
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value;
@@ -313,8 +459,10 @@
             }
         });
 
+        // LOGOUT GLOBAL
         window.logout = () => signOut(auth);
 
+        // PREVIEW IMAGEN
         imageInput.addEventListener('change', function(e) {
             const file = e.target.files[0];
             if (file) {
@@ -327,6 +475,7 @@
             }
         });
 
+        // FUNCIÓN MÁGICA: COMPRIMIR IMAGEN A BASE64
         function compressImage(file) {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -357,13 +506,16 @@
             });
         }
 
+        // CREAR O ACTUALIZAR POST
         postForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             submitBtn.disabled = true;
             submitBtn.textContent = 'Procesando...';
 
             try {
-                let imageUrl = existingImage.value;
+                let imageUrl = existingImage.value; // Mantener imagen anterior por defecto
+                
+                // 1. Si hay NUEVA imagen, procesarla
                 const file = imageInput.files[0];
                 if (file) {
                     try {
@@ -387,16 +539,19 @@
                     updatedAt: new Date()
                 };
 
+                // 2. Decidir si es CREAR o ACTUALIZAR
                 if (editPostId.value) {
+                    // MODO EDICIÓN
                     await updateDoc(doc(db, "posts", editPostId.value), postData);
                     showToast('Post actualizado exitosamente');
                 } else {
-                    postData.createdAt = new Date();
+                    // MODO CREACIÓN
+                    postData.createdAt = new Date(); // Solo al crear
                     await addDoc(collection(db, "posts"), postData);
                     showToast('Post publicado exitosamente');
                 }
 
-                cancelEdit();
+                cancelEdit(); // Resetear formulario
 
             } catch (error) {
                 console.error(error);
@@ -407,6 +562,7 @@
             }
         });
 
+        // RESTAURAR POSTS DE EJEMPLO
         window.restoreExamplePosts = async () => {
             if(!confirm('¿Quieres restaurar los posts de ejemplo? Esto agregará 2 posts clásicos a tu blog.')) return;
             
@@ -445,6 +601,7 @@
             }
         }
 
+        // CARGAR POSTS (TIEMPO REAL)
         function loadPosts() {
             const q = query(collection(db, "posts"), orderBy("date", "desc"));
             
@@ -469,12 +626,14 @@
             });
         }
 
+        // MODO EDICIÓN: Cargar datos en el form
         window.editPost = async (id) => {
             try {
                 const docSnap = await getDoc(doc(db, "posts", id));
                 if (docSnap.exists()) {
                     const post = docSnap.data();
                     
+                    // Llenar formulario
                     editPostId.value = id;
                     document.getElementById('title').value = post.title;
                     document.getElementById('excerpt').value = post.excerpt;
@@ -484,6 +643,7 @@
                     document.getElementById('category').value = post.category;
                     existingImage.value = post.featuredImage || '';
 
+                    // Mostrar preview si hay imagen
                     if (post.featuredImage) {
                         imagePreview.src = post.featuredImage;
                         imagePreview.style.display = 'block';
@@ -491,10 +651,12 @@
                         imagePreview.style.display = 'none';
                     }
 
+                    // Cambiar interfaz a modo edición
                     formTitle.textContent = "✏️ Editando Post";
                     submitBtn.textContent = "Actualizar Post";
                     cancelBtn.classList.remove('hidden');
                     
+                    // Scroll arriba
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             } catch (error) {
@@ -502,6 +664,7 @@
             }
         }
 
+        // CANCELAR EDICIÓN
         window.cancelEdit = () => {
             postForm.reset();
             editPostId.value = '';
@@ -514,11 +677,13 @@
             cancelBtn.classList.add('hidden');
         }
 
+        // ELIMINAR POST GLOBAL
         window.deletePost = async (id) => {
             if(confirm('¿Seguro que quieres eliminar este post?')) {
                 try {
                     await deleteDoc(doc(db, "posts", id));
                     showToast('Post eliminado');
+                    // Si estábamos editando este mismo post, cancelar edición
                     if (editPostId.value === id) {
                         cancelEdit();
                     }
@@ -528,6 +693,274 @@
             }
         }
 
+        // === LÓGICA DE VACANTES ===
+
+        // CREAR O ACTUALIZAR VACANTE
+        vacancyForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitVacancyBtn.disabled = true;
+            submitVacancyBtn.textContent = 'Procesando...';
+
+            try {
+                // Parse lists (split by new lines or bullets)
+                const parseList = (text) => text.split(/\n/).map(i => i.replace(/^- /, '').trim()).filter(i => i);
+                const parseComma = (text) => text.split(',').map(i => i.trim()).filter(i => i);
+
+                const vacancyData = {
+                    title: document.getElementById('vacTitle').value,
+                    category: document.getElementById('vacCategory').value,
+                    location: document.getElementById('vacLocation').value,
+                    type: document.getElementById('vacType').value,
+                    description: document.getElementById('vacDescription').value,
+                    responsibilities: parseList(document.getElementById('vacResponsibilities').value),
+                    requirements: parseList(document.getElementById('vacRequirements').value),
+                    competencies: parseComma(document.getElementById('vacCompetencies').value),
+                    updatedAt: new Date()
+                };
+
+                if (editVacancyId.value) {
+                    // Actualizar
+                    await updateDoc(doc(db, "vacancies", editVacancyId.value), vacancyData);
+                    showToast('Vacante actualizada exitosamente');
+                } else {
+                    // Crear
+                    vacancyData.createdAt = new Date();
+                    await addDoc(collection(db, "vacancies"), vacancyData);
+                    showToast('Vacante publicada exitosamente');
+                }
+
+                cancelVacancyEdit();
+
+            } catch (error) {
+                console.error(error);
+                showToast(error.message, true);
+            } finally {
+                submitVacancyBtn.disabled = false;
+                submitVacancyBtn.textContent = editVacancyId.value ? 'Actualizar Vacante' : 'Publicar Vacante';
+            }
+        });
+
+        // RESTAURAR VACANTES DE EJEMPLO
+        window.restoreExampleVacancies = async () => {
+            if(!confirm('¿Quieres restaurar las vacantes de ejemplo? Esto agregará 5 vacantes clásicas.')) return;
+            
+            try {
+                const vacancies = [
+                    {
+                        title: 'Asesor Comercial de Repuestos',
+                        category: 'Ventas',
+                        location: 'Santo Domingo',
+                        type: 'Tiempo Completo',
+                        description: 'Buscamos un Asesor Comercial dinámico y orientado a resultados para unirse a nuestro equipo de ventas. El candidato ideal será responsable de gestionar y ampliar nuestra cartera de clientes en el sector de repuestos para maquinaria pesada y camiones.',
+                        responsibilities: [
+                            'Atender y asesorar a clientes sobre repuestos y soluciones automotrices.',
+                            'Gestionar cotizaciones y seguimiento de pedidos.',
+                            'Identificar nuevas oportunidades de negocio y prospección de clientes.',
+                            'Mantener actualizada la base de datos de clientes y visitas.',
+                            'Cumplir con las metas de ventas mensuales asignadas.'
+                        ],
+                        requirements: [
+                            'Experiencia mínima de 2 años en ventas de repuestos automotrices o maquinaria.',
+                            'Conocimiento técnico básico de mecánica diésel (deseable).',
+                            'Habilidades de negociación y comunicación efectiva.',
+                            'Manejo de herramientas informáticas (Office, CRM).',
+                            'Vehículo propio (preferible).'
+                        ],
+                        competencies: ['Orientación al cliente', 'Negociación', 'Proactividad', 'Trabajo en equipo'],
+                        createdAt: new Date()
+                    },
+                    {
+                        title: 'Técnico en Maquinaria Pesada',
+                        category: 'Servicio Técnico',
+                        location: 'Santiago',
+                        type: 'Tiempo Completo',
+                        description: 'Estamos contratando un Técnico Especialista en Maquinaria Pesada para realizar mantenimientos preventivos y correctivos. Buscamos a alguien con sólida experiencia técnica y capacidad para diagnosticar fallas complejas en equipos de construcción y minería.',
+                        responsibilities: [
+                            'Realizar diagnósticos y reparaciones de sistemas hidráulicos, motores y transmisiones.',
+                            'Ejecutar mantenimientos preventivos programados.',
+                            'Documentar reportes técnicos de servicio.',
+                            'Asistir a clientes en campo cuando sea necesario.',
+                            'Mantener el área de trabajo y herramientas en óptimas condiciones.'
+                        ],
+                        requirements: [
+                            'Técnico en Mecánica Automotriz, Diésel o Maquinaria Pesada.',
+                            'Experiencia comprobable de 3+ años en puestos similares.',
+                            'Conocimiento en lectura de planos hidráulicos y eléctricos.',
+                            'Disponibilidad para viajar eventualmente a zonas de trabajo.',
+                            'Licencia de conducir al día.'
+                        ],
+                        competencies: ['Análisis técnico', 'Resolución de problemas', 'Responsabilidad', 'Seguridad industrial'],
+                        createdAt: new Date()
+                    },
+                    {
+                        title: 'Auxiliar de Almacén',
+                        category: 'Logística',
+                        location: 'Santo Domingo',
+                        type: 'Tiempo Completo',
+                        description: 'Únete a nuestro equipo de logística como Auxiliar de Almacén. Serás responsable de asegurar la correcta recepción, almacenamiento y despacho de mercancía, garantizando la exactitud del inventario y el orden en la bodega.',
+                        responsibilities: [
+                            'Recibir y verificar mercancía entrante contra facturas/órdenes.',
+                            'Organizar y clasificar repuestos en los estantes correspondientes.',
+                            'Preparar pedidos para despacho a clientes y sucursales.',
+                            'Participar en conteos cíclicos e inventarios generales.',
+                            'Mantener el orden y limpieza del almacén.'
+                        ],
+                        requirements: [
+                            'Bachiller completado.',
+                            'Experiencia previa en almacén o logística (1 año mínimo).',
+                            'Capacidad para levantar cargas moderadas.',
+                            'Organizado y atento a los detalles.',
+                            'Disponibilidad inmediata.'
+                        ],
+                        competencies: ['Orden y limpieza', 'Trabajo bajo presión', 'Disciplina', 'Integridad'],
+                        createdAt: new Date()
+                    },
+                    {
+                        title: 'Soporte Técnico IT',
+                        category: 'Tecnología',
+                        location: 'Santo Domingo',
+                        type: 'Presencial',
+                        description: 'Buscamos un Soporte Técnico IT para garantizar la operatividad de los equipos informáticos y redes de la empresa. La persona será el primer punto de contacto para resolver incidencias tecnológicas de los colaboradores.',
+                        responsibilities: [
+                            'Brindar soporte técnico a usuarios (hardware y software).',
+                            'Instalar y configurar equipos de cómputo y periféricos.',
+                            'Gestionar cuentas de usuario y correos electrónicos.',
+                            'Realizar mantenimiento preventivo a equipos informáticos.',
+                            'Monitorear el funcionamiento de la red interna.'
+                        ],
+                        requirements: [
+                            'Estudiante de término o graduado en Informática o Sistemas.',
+                            'Experiencia en soporte técnico (1-2 años).',
+                            'Conocimientos en Windows, Office 365 y redes básicas.',
+                            'Vocación de servicio.'
+                        ],
+                        competencies: ['Servicio al cliente', 'Diagnóstico técnico', 'Paciencia', 'Aprendizaje continuo'],
+                        createdAt: new Date()
+                    },
+                    {
+                        title: 'Generalista de RRHH',
+                        category: 'Recursos Humanos',
+                        location: 'Santo Domingo',
+                        type: 'Tiempo Completo',
+                        description: 'Estamos buscando un Generalista de Recursos Humanos para apoyar en los procesos de reclutamiento, administración de personal, capacitación y clima laboral, asegurando el cumplimiento de las políticas internas y leyes laborales.',
+                        responsibilities: [
+                            'Gestionar procesos de reclutamiento y selección.',
+                            'Administrar expedientes de personal y novedades de nómina.',
+                            'Coordinar actividades de bienestar y capacitación.',
+                            'Atender consultas de colaboradores sobre beneficios y procedimientos.',
+                            'Apoyar en la evaluación del desempeño.'
+                        ],
+                        requirements: [
+                            'Licenciatura en Psicología Industrial, Administración o afines.',
+                            'Experiencia de 3 años como generalista de RRHH.',
+                            'Conocimiento del Código de Trabajo de la República Dominicana.',
+                            'Manejo de subsistemas de RRHH.',
+                            'Excel intermedio.'
+                        ],
+                        competencies: ['Empatía', 'Comunicación asertiva', 'Confidencialidad', 'Organización'],
+                        createdAt: new Date()
+                    }
+                ];
+
+                for (const vac of vacancies) {
+                    await addDoc(collection(db, "vacancies"), vac);
+                }
+                
+                showToast('Vacantes de ejemplo restauradas');
+            } catch (error) {
+                console.error(error);
+                showToast('Error: ' + error.message, true);
+            }
+        }
+
+        // CARGAR VACANTES
+        function loadVacancies() {
+            const q = query(collection(db, "vacancies"), orderBy("createdAt", "desc"));
+            
+            onSnapshot(q, (snapshot) => {
+                vacanciesContainer.innerHTML = '';
+                if(snapshot.empty) {
+                    vacanciesContainer.innerHTML = '<p style="color: #666; font-style: italic;">No hay vacantes publicadas.</p>';
+                    return;
+                }
+
+                snapshot.forEach((doc) => {
+                    const vac = doc.data();
+                    const div = document.createElement('div');
+                    div.className = 'post-item';
+                    div.innerHTML = `
+                        <div>
+                            <strong>${vac.title}</strong><br>
+                            <small>${vac.category} - ${vac.location} (${vac.type})</small>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-edit" onclick="editVacancy('${doc.id}')">Editar</button>
+                            <button class="btn-delete" onclick="deleteVacancy('${doc.id}')">Eliminar</button>
+                        </div>
+                    `;
+                    vacanciesContainer.appendChild(div);
+                });
+            });
+        }
+
+        // EDITAR VACANTE
+        window.editVacancy = async (id) => {
+            try {
+                const docSnap = await getDoc(doc(db, "vacancies", id));
+                if (docSnap.exists()) {
+                    const vac = docSnap.data();
+                    
+                    editVacancyId.value = id;
+                    document.getElementById('vacTitle').value = vac.title;
+                    document.getElementById('vacCategory').value = vac.category;
+                    document.getElementById('vacLocation').value = vac.location;
+                    document.getElementById('vacType').value = vac.type;
+                    document.getElementById('vacDescription').value = vac.description;
+                    
+                    // Join arrays back to text
+                    document.getElementById('vacResponsibilities').value = vac.responsibilities.map(i => `- ${i}`).join('\n');
+                    document.getElementById('vacRequirements').value = vac.requirements.map(i => `- ${i}`).join('\n');
+                    document.getElementById('vacCompetencies').value = vac.competencies.join(', ');
+
+                    vacancyFormTitle.textContent = "✏️ Editando Vacante";
+                    submitVacancyBtn.textContent = "Actualizar Vacante";
+                    cancelVacancyBtn.classList.remove('hidden');
+                    
+                    // Switch to vacancies tab if not active (just in case)
+                    // But usually we are already there
+                    
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } catch (error) {
+                showToast("Error al cargar vacante: " + error.message, true);
+            }
+        }
+
+        // CANCELAR EDICIÓN VACANTE
+        window.cancelVacancyEdit = () => {
+            vacancyForm.reset();
+            editVacancyId.value = '';
+            vacancyFormTitle.textContent = "💼 Nueva Vacante";
+            submitVacancyBtn.textContent = "Publicar Vacante";
+            cancelVacancyBtn.classList.add('hidden');
+        }
+
+        // ELIMINAR VACANTE
+        window.deleteVacancy = async (id) => {
+            if(confirm('¿Seguro que quieres eliminar esta vacante?')) {
+                try {
+                    await deleteDoc(doc(db, "vacancies", id));
+                    showToast('Vacante eliminada');
+                    if (editVacancyId.value === id) {
+                        cancelVacancyEdit();
+                    }
+                } catch (error) {
+                    showToast('Error eliminando: ' + error.message, true);
+                }
+            }
+        }
+
+        // UTILIDAD TOAST
         function showToast(msg, isError = false) {
             const toast = document.getElementById('toast');
             toast.textContent = msg;
@@ -539,4 +972,3 @@
     </script>
 </body>
 </html>
-

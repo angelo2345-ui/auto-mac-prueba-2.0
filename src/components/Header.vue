@@ -22,14 +22,14 @@
             <img 
               src="/images/logos/Automac Imagen.png" 
               alt="Logo Automac" 
-              class="h-32 w-32 sm:h-44 sm:w-44 object-contain transition-transform duration-300 group-hover:scale-110 " 
+              class="h-28 w-28 sm:h-44 sm:w-44 object-contain transition-transform duration-300 group-hover:scale-110 " 
             />
           </div>
           <div class="flex flex-col">
-            <span class="text-[color:var(--color-texto-menu)] text-3xl sm:text-5xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
+            <span class="text-[color:var(--color-texto-menu)] text-2xl sm:text-5xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
-            <span class="text-lg sm:text-xl text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
+            <span class="text-base sm:text-xl text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
           </div>
         </router-link>
 
@@ -89,6 +89,20 @@
             <span 
               class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
               :class="{ 'scale-x-100': $route.path.startsWith('/contacto') }"
+            ></span>
+            <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          </router-link>
+
+          <router-link 
+            to="/unete" 
+            class="relative text-xl text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 px-4 py-2 rounded-lg group flex items-center gap-2"
+            :class="{ 'text-[var(--color-amarillo)]': $route.path.startsWith('/unete') }"
+          >
+            <i class="las la-briefcase"></i>
+            Únete a Nosotros
+            <span 
+              class="absolute inset-x-1 -bottom-1 h-0.5 bg-yellow-400 rounded-full transform scale-x-0 transition-transform duration-300 origin-center"
+              :class="{ 'scale-x-100': $route.path.startsWith('/unete') }"
             ></span>
             <span class="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-amber-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
           </router-link>
@@ -242,6 +256,30 @@
               <span class="text-xl font-medium">Contacto</span>
             </div>
           
+          </router-link>
+
+          <router-link 
+            to="/unete" 
+            @click="closeMenu"
+            class="flex items-center justify-between px-6 py-4 text-[color:var(--color-texto-menu)] hover:text-[color:var(--color-texto-menu)] font-medium transition-all duration-300 rounded-lg mx-2 group"
+            :class="{
+              'text-yellow-400 bg-yellow-400/10': $route.path.startsWith('/unete'),
+              'hover:bg-white/5': !$route.path.startsWith('/unete')
+            }"
+            style="font-family: var(--fuente-principal);"
+          >
+            <div class="flex items-center gap-3">
+              <i class="las la-briefcase text-xl"></i>
+              <span class="text-xl font-medium">Únete a Nosotros</span>
+            </div>
+            <svg 
+              class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
           </router-link>
           
          

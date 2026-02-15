@@ -279,7 +279,7 @@ export default {
         {
           title: 'Compromiso y Respaldo',
           subtitle: 'Suministros para camiones y tractores',
-          description: '¡Contamos con servicios que complementan nuestra oferta de suministros para camiones y tractores! Compromiso y Respaldo en cada producto que ofrecemos.',
+          description: '¡Contamos con servicios que complementan nuestra oferta de suministros para camiones y tractores! Para los sectores agrícola, industrial, construcción y minería.',
           badge: '15 años de experiencia garantizada',
           primaryButton: 'Ver Catálogo',
           backgroundImage: 'images/tractor.webp',
