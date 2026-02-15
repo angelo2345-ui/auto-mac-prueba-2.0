@@ -2,7 +2,7 @@
   <section class="section contact-section">
     <div class="container">
       <div class="section-header">
-        <div class="section-icon">📞 Contáctanos </div>
+        <div class="section-icon"> <strong>Contáctanos</strong> 📞 </div>
         <p class="section-description">Estamos aquí para ayudarte con cualquier consulta sobre nuestros productos y servicios</p>
       </div>
       

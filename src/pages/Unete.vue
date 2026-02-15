@@ -3,10 +3,10 @@
     <!-- Hero Section -->
     <div class="bg-gray-50 py-24 mb-20">
       <div class="w-full px-4 sm:px-8 lg:px-16 text-center">
-        <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 mb-8" style="font-family: var(--fuente-titulos);">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-8" style="font-family: var(--fuente-titulos);">
           Únete a la familia <span style="color: var(--color-amarillo);">AUTOMAC</span>
         </h1>
-        <p class="text-2xl lg:text-3xl text-gray-600 max-w-6xl mx-auto leading-relaxed">
+        <p class="text-2xl lg:text-2xl text-gray-600 max-w-6xl mx-auto leading-relaxed">
           En AUTOMAC estamos comprometidos con nuestra gente, su desarrollo y bienestar. 
           Buscamos talento apasionado por el sector automotriz y maquinaria pesada.
         </p>
