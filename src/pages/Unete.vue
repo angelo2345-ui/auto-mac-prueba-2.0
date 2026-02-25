@@ -7,8 +7,7 @@
           Únete a la familia <span style="color: var(--color-amarillo);">AUTOMAC</span>
         </h1>
         <p class="text-2xl lg:text-2xl text-gray-600 max-w-6xl mx-auto leading-relaxed">
-          En AUTOMAC estamos comprometidos con nuestra gente, su desarrollo y bienestar. 
-          Buscamos talento apasionado por el sector automotriz y maquinaria pesada.
+          En Automac estamos comprometidos con el bienestar, desarrollo y crecimiento de los talentos que forman parte de nuestra organización. Promovemos un entorno que impulsa el aprendizaje continuo, la excelencia y la pasión por el sector automotriz y la maquinaria pesada, invitando a profesionales comprometidos a crecer junto a nosotros.
         </p>
       </div>
     </div>

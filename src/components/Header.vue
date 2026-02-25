@@ -29,7 +29,7 @@
             <span class="text-[color:var(--color-texto-menu)] text-2xl sm:text-5xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
-            <span class="text-base sm:text-xl text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Soluciones automotrices</span>
+            <span class="text-sm sm:text-base text-[color:var(--color-texto-menu)] font-medium tracking-wide -mt-1">Repuestos para camiones y tractores</span>
           </div>
         </router-link>
 
