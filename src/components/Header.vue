@@ -10,22 +10,23 @@
       boxShadow: scrolled ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : 'none'
     }"
   >
-    <div class="max-w-8xl px-6 sm:px-8 lg:px-10">
-      <div class="flex items-center justify-between h-28 lg:h-40">
+    <div class="max-w-8xl px-3 sm:px-8 lg:px-10">
+      <div class="relative flex items-center justify-between h-32 md:h-40">
         <!-- Logo Section - Mejorado con gradientes y efectos más modernos -->
         <router-link 
           to="/" 
-          class="flex items-center space-x-4 group transition-all duration-300 hover:scale-105 ml-4 lg:ml-12"
+          
+          class="flex items-center space-x-0 md:space-x-4 group transition-all duration-300 hover:scale-105 ml-0 sm:ml-4 lg:ml-12"
           @click="closeMenu"
         >
-          <div class="mt-2 mb-2">
+          <div class="mt-0 mb-0 -ml-10 -mr-7 md:mr-0">
             <img 
-              src="/images/logos/Automac Imagen.png" 
+              src="/images/LOGO_DE_AUTOMAC_OFC-removebg-preview.png" 
               alt="Logo Automac" 
-              class="h-28 w-28 sm:h-44 sm:w-44 object-contain transition-transform duration-300 group-hover:scale-110 " 
+              class="h-64 w-64 sm:h-56 sm:w-56 lg:h-64 lg:w-64 object-contain flex-none -my-2 scale-125 lg:scale-150" 
             />
           </div>
-          <div class="flex flex-col">
+          <div class="flex flex-col -ml-5 md:ml-">
             <span class="text-[color:var(--color-texto-menu)] text-2xl sm:text-5xl font-bold tracking-tight" style="font-family: var(--fuente-titulos);">
               Auto<span style="color: var(--color-amarillo);" class="drop-shadow-md">mac</span>
             </span>
@@ -126,7 +127,7 @@
         <!-- Mobile Menu Button - Corregido -->
         <button
           @click="toggleMenu"
-          class="md:hidden relative w-16 h-16 flex items-center justify-center rounded-lg bg-gray-800/80 hover:bg-gray-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 mr-4 lg:mr-12"
+          class="md:hidden relative w-16 h-16 flex items-center justify-center rounded-lg bg-transparent hover:bg-transparent transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-400/50 mr-4 lg:mr-12"
           :class="{ 'bg-yellow-400 hover:bg-yellow-500': menuActive }"
           aria-label="Toggle navigation menu"
           :aria-expanded="menuActive"
