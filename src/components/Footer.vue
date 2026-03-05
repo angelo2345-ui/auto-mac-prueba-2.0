@@ -5,8 +5,8 @@
         <!-- Columna Automac -->
         <div>
           <div class="flex items-center space-x-3 mb-4">
-            <div class="p-2">
-              <img src="/images/LOGO_DE_AUTOMAC_OFC-removebg-preview.png" alt="Logo Automac" class="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
+            <div class="p-2 -ml-2">
+              <img src="/images/fondo blanco.png" alt="Logo Automac" class="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
             </div>
             <span class="text-white text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">Auto<span style="color: var(--color-amarillo);">mac</span></span>
           </div>
