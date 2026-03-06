@@ -62,9 +62,9 @@
              class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg">
       </div>
 
-      <!-- Contenido del artículo -->
       <div class="prose prose-lg max-w-none">
-        <div v-html="currentArticle.content" class="text-gray-700 leading-relaxed"></div>
+        <div v-if="isHtmlContent" v-html="currentArticle.content" class="text-gray-700 leading-relaxed"></div>
+        <div v-else class="text-gray-700 leading-relaxed whitespace-pre-line" v-text="currentArticle.content"></div>
       </div>
 
       <!-- Botón volver -->
@@ -128,6 +128,12 @@ export default {
       currentArticle: null,
       loading: true,
       posts: []
+    }
+  },
+  computed: {
+    isHtmlContent() {
+      const c = this.currentArticle?.content || ''
+      return /<(p|br|ul|ol|li|h[1-6]|strong|em|a|img)[\s>]/i.test(c)
     }
   },
   methods: {
@@ -291,4 +297,3 @@ export default {
   }
 }
 </style>
-
