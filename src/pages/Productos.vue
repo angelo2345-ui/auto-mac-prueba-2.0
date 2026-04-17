@@ -898,6 +898,18 @@ export default {
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
         },
+        // Gatos estabilizadores
+        {
+          id: 64,
+          name: 'Gatos estabilizadores',
+          category: 'iluminacion-cabina',
+          description: 'Gatos estabilizadores para equipos y vehículos pesados.',
+          price: '$250.00',
+          image: '/images/productos/Iluminación y  Cabina/GATOS ESTABILIZADORES.png',
+          stock: 'Disponible',
+          marca: 'KTC, NYC, JPM, Automann',
+          modelo: 'Aplicaciones para vehículos pesados'
+        },
         // Nuevos productos
         // Amortiguadores (Suspensión)
         {
