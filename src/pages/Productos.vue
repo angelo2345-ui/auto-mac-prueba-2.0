@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <section class="bg-gray-50 py-12 pt-32 lg:pt-48">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Encabezado de la sección -->
@@ -168,7 +168,7 @@ export default {
           category: 'motor',
           description: 'Juego de juntas para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/motor/Juego de juntas.png',
+          image: '/images/productos/motor/juego-de-juntas.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -180,7 +180,7 @@ export default {
           category: 'motor',
           description: 'Guía de válvulas para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/motor/Guías de válvulas.png',
+          image: '/images/productos/motor/guias-de-valvulas.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -192,7 +192,7 @@ export default {
           category: 'motor',
           description: 'Kit reparación motor para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/motor/Kit reparación motor.png',
+          image: '/images/productos/motor/kit-reparacion-motor.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -204,7 +204,7 @@ export default {
           category: 'motor',
           description: 'Solenoides para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/solenoides_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/solenoides_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -216,7 +216,7 @@ export default {
           category: 'motor',
           description: 'Sellos de válvula para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/motor/Sellos de válvula.png',
+          image: '/images/productos/motor/sellos-de-valvula.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -228,7 +228,7 @@ export default {
           category: 'motor',
           description: 'Bomba de combustible para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/motor/Bomba de combustible.png',
+          image: '/images/productos/motor/bomba-de-combustible.png',
           stock: 'Disponible',
           marca: 'PAI; KTC; PREMIER',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -242,7 +242,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Depósito de coolant para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/deposito_de_coolant_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/deposito_de_coolant_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -254,7 +254,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Radiadores para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/radiadores_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/radiadores_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -266,7 +266,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Coolers para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Sistema de Enfriamiento/Coolers.png',
+          image: '/images/productos/sistema-de-enfriamiento/coolers.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -278,7 +278,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Abrazaderas para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Sistema de Enfriamiento/Abrazaderas.png',
+          image: '/images/productos/sistema-de-enfriamiento/abrazaderas.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -290,7 +290,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Mangueras de silicona para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Sistema de Enfriamiento/Mangueras de silicona.webp',
+          image: '/images/productos/sistema-de-enfriamiento/mangueras-de-silicona.webp',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -302,7 +302,7 @@ export default {
           category: 'Sistema de Enfriamiento',
           description: 'Bombas de agua para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Sistema de Enfriamiento/Bombas de agua.png',
+          image: '/images/productos/sistema-de-enfriamiento/bombas-de-agua.png',
           stock: 'Disponible',
           marca: 'Automann, Pai, KTC, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -315,7 +315,7 @@ export default {
           category: 'Transmisión / Cardán',
           description: 'Kit de clutch para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Transmisión - Cardán/Kit de clutch.png',
+          image: '/images/productos/transmision-cardan/kit-de-clutch.png',
           stock: 'Disponible',
           marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -327,7 +327,7 @@ export default {
           category: 'Transmisión / Cardán',
           description: 'Crucetas de cardán para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Transmisión - Cardán/Crucetas de cardán.png',
+          image: '/images/productos/transmision-cardan/crucetas-de-cardan.png',
           stock: 'Disponible',
           marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -339,7 +339,7 @@ export default {
           category: 'Transmisión / Cardán',
           description: 'Gomas de cardán para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Transmisión - Cardán/Gomas de cardán.png',
+          image: '/images/productos/transmision-cardan/gomas-de-cardan.png',
           stock: 'Disponible',
           marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -351,7 +351,7 @@ export default {
           category: 'Transmisión / Cardán',
           description: 'Soportes de cardán para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Transmisión - Cardán/soportes de cardán.png',
+          image: '/images/productos/transmision-cardan/soportes-de-cardan.png',
           stock: 'Disponible',
           marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -363,7 +363,7 @@ export default {
           category: 'Transmisión / Cardán',
           description: 'Retenedoras para motores diésel y sistemas de transmisión.',
           price: '$250.00',
-          image: '/images/productos/Transmisión - Cardán/Retenedoras.png',
+          image: '/images/productos/transmision-cardan/retenedoras.png',
           stock: 'Disponible',
           marca: 'Pai, KTC, LUKE, NYC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -376,7 +376,7 @@ export default {
           category: 'Suspensión',
           description:'Tensores para motores diésel y sistemas de Suspensión .',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/tensores_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/tensores_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -388,7 +388,7 @@ export default {
           category: 'Suspensión',
           description:'Bolsas de aire para motores diésel y sistemas de Suspensión .',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/bolsas_de_aire_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/bolsas_de_aire_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -400,7 +400,7 @@ export default {
           category: 'Suspensión',
           description:'Grapas para motores diésel y sistemas de Suspensión .',
           price: '$250.00',
-          image: '/images/productos/Suspensión/Grapas.png',
+          image: '/images/productos/suspension/grapas.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -412,7 +412,7 @@ export default {
           category: 'Suspensión',
           description:'Bujes para motores diésel y sistemas de Suspensión .',
           price: '$250.00',
-          image: '/images/productos/Suspensión/Bujes.png',
+          image: '/images/productos/suspension/bujes.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -424,7 +424,7 @@ export default {
           category: 'Suspensión',
           description:'Muelle, Madre de muelle & Hojas',
           price: '$250.00',
-          image: '/images/productos/Suspensión/Muelles.png',
+          image: '/images/productos/suspension/muelles.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -437,7 +437,7 @@ export default {
           category: 'Hidráulico',
           description: 'Bombas hidráulicas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Hidráulico/Bombas hidráulicas.png',
+          image: '/images/productos/hidraulico/bombas-hidraulicas.png',
           stock: 'Disponible',
           marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -449,7 +449,7 @@ export default {
           category: 'Hidráulico',
           description: 'Válvulas de control para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Hidráulico/Válvulas de control.png',
+          image: '/images/productos/hidraulico/valvulas-de-control.png',
           stock: 'Disponible',
           marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -461,7 +461,7 @@ export default {
           category: 'Hidráulico',
           description: 'Cilindros hidráulicos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Hidráulico/Cilindros hidráulicos.png',
+          image: '/images/productos/hidraulico/cilindros-hidraulicos.png',
           stock: 'Disponible',
           marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -473,7 +473,7 @@ export default {
           category: 'Hidráulico',
           description: 'Mangueras hidráulicas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Hidráulico/Mangueras hidráulicas.png',
+          image: '/images/productos/hidraulico/mangueras-hidraulicas.png',
           stock: 'Disponible',
           marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -485,7 +485,7 @@ export default {
           category: 'Hidráulico',
           description: 'Válvulas de aire 4 y 5 vías para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Hidráulico/Válvulas de aire 4 y 5 vías.png',
+          image: '/images/productos/hidraulico/valvulas-de-aire-4-y-5-vias.png',
           stock: 'Disponible',
           marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -497,7 +497,7 @@ export default {
           category: 'Hidráulico',
           description: 'Gatos hidráulicos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Hidráulico/Gatos hidráulicos.png',
+          image: '/images/productos/hidraulico/gatos-hidraulicos.png',
           stock: 'Disponible',
           marca: 'Durotruck, Automann, NYC, Pai',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -510,7 +510,7 @@ export default {
           category: 'Filtros',
           description: 'Filtros de aire para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Filtros/Filtros Aire.png',
+          image: '/images/productos/filtros/filtros-aire.png',
           stock: 'Disponible',
           modelo: 'Para motores diésel de alto rendimiento'
         },
@@ -521,7 +521,7 @@ export default {
           category: 'Filtros',
           description: 'Filtros de aceite para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Filtros/Filtros de aceite.png',
+          image: '/images/productos/filtros/filtros-de-aceite.png',
           stock: 'Disponible',
           modelo: 'Para motores diésel de alto rendimiento'
         },
@@ -532,7 +532,7 @@ export default {
           category: 'Filtros',
           description: 'Filtros de cabina para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Filtros/Filtros de cabina.png',
+          image: '/images/productos/filtros/filtros-de-cabina.png',
           stock: 'Disponible',
           modelo: 'Para motores diésel de alto rendimiento'
         },
@@ -543,7 +543,7 @@ export default {
           category: 'Filtros',
           description: 'Filtros de hidráulico para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Filtros/Filtros Hidráulicos.png',
+          image: '/images/productos/filtros/filtros-hidraulicos.png',
           stock: 'Disponible',
           modelo: 'Para motores diésel de alto rendimiento'
         },
@@ -554,7 +554,7 @@ export default {
           category: 'Filtros',
           description: 'Filtros de combustible para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Filtros/Filtros Combustible.png',
+          image: '/images/productos/filtros/filtros-combustible.png',
           stock: 'Disponible',
           modelo: 'Para motores diésel de alto rendimiento'
         },
@@ -565,7 +565,7 @@ export default {
           category: 'Filtros',
           description: 'Filtros de transmisión para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Filtros/Filtros Transmisión.png',
+          image: '/images/productos/filtros/filtros-transmision.png',
           stock: 'Disponible',
           modelo: 'Para motores diésel de alto rendimiento'
         },
@@ -577,7 +577,7 @@ export default {
           category: 'Turbo / Admisión',
           description: 'Cartucho CHRA para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Turbo y Admisión/Cartucho CHRA.png',
+          image: '/images/productos/turbo-y-admision/cartucho-chra.png',
           stock: 'Disponible',
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -589,7 +589,7 @@ export default {
           category: 'Turbo / Admisión',
           description: 'Válvula de control para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Turbo y Admisión/Válvula de control.png',
+          image: '/images/productos/turbo-y-admision/valvula-de-control.png',
           stock: 'Disponible',
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -601,7 +601,7 @@ export default {
           category: 'Turbo / Admisión',
           description: 'Abrazadera turbo para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Turbo y Admisión/Abrazadera turbo.png',
+          image: '/images/productos/turbo-y-admision/abrazadera-turbo.png',
           stock: 'Disponible',
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -613,7 +613,7 @@ export default {
           category: 'Turbo / Admisión',
           description: 'Carcasa compresor para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Turbo y Admisión/Carcasa compresor.png',
+          image: '/images/productos/turbo-y-admision/carcasa-compresor.png',
           stock: 'Disponible',
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -625,7 +625,7 @@ export default {
           category: 'Turbo / Admisión',
           description: 'Carcasa turbina para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Turbo y Admisión/Carcasa turbina.png',
+          image: '/images/productos/turbo-y-admision/carcasa-turbina.png',
           stock: 'Disponible',
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -637,7 +637,7 @@ export default {
           category: 'Turbo / Admisión',
           description: 'Turbo compresor para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Turbo y Admisión/Turbo compresor.png',
+          image: '/images/productos/turbo-y-admision/turbo-compresor.png',
           stock: 'Disponible',
           marca: 'PAI; PREMIER; KTC',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -650,7 +650,7 @@ export default {
           category: 'Rodamientos y Poleas',
           description: 'Rodamientos de bola para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Rodamientos y Poleas/Rodamientos de bola.png',
+          image: '/images/productos/rodamientos-y-poleas/rodamientos-de-bola.png',
           stock: 'Disponible',
           marca: 'SKF; NTN; GATES; DAYCO; BAND',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -662,7 +662,7 @@ export default {
           category: 'Rodamientos y Poleas',
           description: 'Rodillos cónicos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Rodamientos y Poleas/Rodillos cónicos.png',
+          image: '/images/productos/rodamientos-y-poleas/rodillos-conicos.png',
           stock: 'Disponible',
           marca: 'SKF; NTN; GATES; DAYCO; BAND',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -674,7 +674,7 @@ export default {
           category: 'Rodamientos y Poleas',
           description: 'Chumaceras para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Rodamientos y Poleas/Chumaceras.png',
+          image: '/images/productos/rodamientos-y-poleas/chumaceras.png',
           stock: 'Disponible',
           marca: 'SKF; NTN; GATES; DAYCO; BAND',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -686,7 +686,7 @@ export default {
           category: 'Rodamientos y Poleas',
           description: 'Rodamientos de aguja para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Rodamientos y Poleas/Rodamientos de aguja.png',
+          image: '/images/productos/rodamientos-y-poleas/rodamientos-de-aguja.png',
           stock: 'Disponible',
           marca: 'SKF; NTN; GATES; DAYCO; BAND',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -698,7 +698,7 @@ export default {
           category: 'Rodamientos y Poleas',
           description: 'Correas y poleas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Rodamientos y Poleas/Correas y poleas.png',
+          image: '/images/productos/rodamientos-y-poleas/correas-y-poleas.png',
           stock: 'Disponible',
           marca: 'SKF; NTN; GATES; DAYCO; BAND',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -712,7 +712,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Ventiladores para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/Ventiladores.png',
+          image: '/images/productos/sistemas-electricos/ventiladores.png',
           stock: 'Disponible',
           marca: 'BOSH; HELLA',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -724,7 +724,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Bombillos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/Bombillos.png',
+          image: '/images/productos/sistemas-electricos/bombillos.png',
           stock: 'Disponible',
           marca: 'BOSH; HELLA',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -736,7 +736,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Fusibles para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/Fusibles.png',
+          image: '/images/productos/sistemas-electricos/fusibles.png',
           stock: 'Disponible',
           marca: 'BOSH; HELLA',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -748,7 +748,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Pitos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/Pitos.png',
+          image: '/images/productos/sistemas-electricos/pitos.png',
           stock: 'Disponible',
           marca: 'BOSH; HELLA',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -760,7 +760,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Conectores para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/Conectores.png',
+          image: '/images/productos/sistemas-electricos/conectores.png',
           stock: 'Disponible',
           marca: 'BOSH; HELLA',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -772,7 +772,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Switches para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/Switches.png',
+          image: '/images/productos/sistemas-electricos/switches.png',
           stock: 'Disponible',
           marca: 'BOSH; HELLA',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -785,7 +785,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Lámparas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Lámparas.png',
+          image: '/images/productos/iluminacion-y-cabina/lamparas.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -797,7 +797,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Faros para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Faros.png',
+          image: '/images/productos/iluminacion-y-cabina/faros.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -809,7 +809,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Lámparas de prevención para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Lámparas de prevención.png',
+          image: '/images/productos/iluminacion-y-cabina/lamparas-de-prevencion.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -821,7 +821,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Lámparas de trabajo para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Lámparas de trabajo.png',
+          image: '/images/productos/iluminacion-y-cabina/lamparas-de-trabajo.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -833,7 +833,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Parrillas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/parrillas_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/parrillas_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -845,7 +845,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Lámparas de trabajo para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Lámparas de trabajo.png',
+          image: '/images/productos/iluminacion-y-cabina/lamparas-de-trabajo.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -857,7 +857,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Limpiabrisas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Limpiabrisas.png',
+          image: '/images/productos/iluminacion-y-cabina/limpiabrisas.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -869,7 +869,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Espejos para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/nuevos cambios img/espejos_2-removebg-preview.png',
+          image: '/images/productos/nuevos-cambios-img/espejos_2-removebg-preview.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -881,7 +881,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Cornetas para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Cornetas.png',
+          image: '/images/productos/iluminacion-y-cabina/cornetas.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -893,7 +893,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Accesorios de cabina para motores diésel y sistemas de hidráulico.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/Accesorios de cabina.png',
+          image: '/images/productos/iluminacion-y-cabina/accesorios-de-cabina.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Para motores diésel de alto rendimiento'
@@ -905,7 +905,7 @@ export default {
           category: 'iluminacion-cabina',
           description: 'Gatos estabilizadores para equipos y vehículos pesados.',
           price: '$250.00',
-          image: '/images/productos/Iluminación y  Cabina/GATOS ESTABILIZADORES.png',
+          image: '/images/productos/iluminacion-y-cabina/gatos-estabilizadores.png',
           stock: 'Disponible',
           marca: 'KTC, NYC, JPM, Automann',
           modelo: 'Aplicaciones para vehículos pesados'
@@ -918,7 +918,7 @@ export default {
           category: 'Suspensión',
           description: 'Amortiguadores para sistemas de suspensión de camiones y equipos.',
           price: '$250.00',
-          image: '/images/productos/Suspensión/amortiguadores-removebg-preview.png',
+          image: '/images/productos/suspension/amortiguadores-removebg-preview.png',
           stock: 'Disponible',
           marca: 'Durotruck, Pai, KTC',
           modelo: 'Aplicaciones para vehículos pesados'
@@ -930,7 +930,7 @@ export default {
           category: 'sistemas-electricos',
           description: 'Sensores eléctricos para monitoreo y control de sistemas.',
           price: '$250.00',
-          image: '/images/productos/Sistemas Eléctricos/sensores-removebg-preview.png',
+          image: '/images/productos/sistemas-electricos/sensores-removebg-preview.png',
           stock: 'Disponible',
           marca: 'BOSCH; HELLA',
           modelo: 'Aplicaciones para vehículos pesados'
@@ -962,3 +962,4 @@ export default {
 /* Estilos adicionales con Tailwind */
 </style>
   
+
